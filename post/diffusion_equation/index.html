@@ -5,12 +5,12 @@
     <title>Exploring the diffusion equation with Python | Zoltán Sylvester</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://zsylvester.gihub.io/css/foundation.min.css">
-    <link rel="stylesheet" href="https://zsylvester.gihub.io/css/highlight.min.css">
-    <link rel="stylesheet" href="https://zsylvester.gihub.io/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://zsylvester.gihub.io/css/academicons.min.css">
-    <link rel="stylesheet" href="https://zsylvester.gihub.io/css/fonts.css">
-    <link rel="stylesheet" href="https://zsylvester.gihub.io/css/finite.css">
+    <link rel="stylesheet" href="https://zsylvester.github.io/css/foundation.min.css">
+    <link rel="stylesheet" href="https://zsylvester.github.io/css/highlight.min.css">
+    <link rel="stylesheet" href="https://zsylvester.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://zsylvester.github.io/css/academicons.min.css">
+    <link rel="stylesheet" href="https://zsylvester.github.io/css/fonts.css">
+    <link rel="stylesheet" href="https://zsylvester.github.io/css/finite.css">
   </head>
   <body>
     <header>
@@ -21,7 +21,7 @@
 	      <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
 	    </button>
 	    <div class="title-bar-title site-title">
-	      <a href="https://zsylvester.gihub.io/">Zoltán Sylvester</a>
+	      <a href="https://zsylvester.github.io/">Zoltán Sylvester</a>
 	    </div>
 	    <div class="title-bar-right pull-right">
 	      
@@ -34,17 +34,17 @@
 	  
 	    <div class="top-bar" id="site-menu" >     
 	      <div class="top-bar-title show-for-medium site-title">
-		      <a href="https://zsylvester.gihub.io/">Zoltán Sylvester</a>
+		      <a href="https://zsylvester.github.io/">Zoltán Sylvester</a>
 	      </div>
 	      <div class="top-bar-left">
 		      <ul class="menu vertical medium-horizontal">
   		      
   		      
-  		      <li><a href="https://zsylvester.gihub.io/research/">Research</a></li>
+  		      <li><a href="https://zsylvester.github.io/research/">Research</a></li>
   		      
-  		      <li><a href="https://zsylvester.gihub.io/publication/">Publications</a></li>
+  		      <li><a href="https://zsylvester.github.io/publication/">Publications</a></li>
   		      
-  		      <li><a href="https://zsylvester.gihub.io/post/">Blog</a></li>
+  		      <li><a href="https://zsylvester.github.io/post/">Blog</a></li>
   		      
 		      </ul>
 	      </div>
@@ -164,7 +164,7 @@ plt.title('FTCS explicit scheme',fontsize=12)
 plt.axis([-0.5,2.5,-0.5,1.5]);
 </code></pre>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_1.png" alt="drawing" style="width: 600px;"/></p>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_1.png" alt="drawing" style="width: 600px;"/></p>
 
 <p>Now we are ready to write the code that is the solution for exercise 2 in Chapter 2 of Slingerland and Kump (2011). This is an example where the one-dimensional diffusion equation is applied to viscous flow of a Newtonian fluid adjacent to a solid wall. If the wall starts moving with a velocity of 10 m/s, and the flow is assumed to be laminar, the velocity profile of the fluid is described by the equation</p>
 
@@ -240,7 +240,7 @@ plt.axis([0,y_max,0,V0])
 plt.title('comparison between explicit numerical \n(FTCS scheme) and analytic solutions');
 </code></pre>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_2.png" alt="drawing" style="width: 600px;"/><br/><br/>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_2.png" alt="drawing" style="width: 600px;"/><br/><br/>
 The dots (analytic solution) overlap pretty well with the lines (numerical solution). However, this would not be the case if we changed the discretization so that the diffusion number was larger. Let&rsquo;s look at the stability of the FTCS numerical scheme, by computing the solution with different diffusion numbers. It turns out that the diffusion number $s$ has to be less than 0.5 for the FTCS scheme to remain stable. What follows is a reproduction of Figure 2.7 in Slingerland and Kump (2011):</p>
 
 <pre><code class="language-Python">dt = 0.0005 # grid size for time (m)
@@ -264,7 +264,7 @@ plt.axis([0,y_max,-4,4])
 plt.legend();
 </code></pre>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_3.png" alt="drawing" style="width: 600px;"/></p>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_3.png" alt="drawing" style="width: 600px;"/></p>
 
 <h2 id="laasonen-implicit-scheme">Laasonen implicit scheme</h2>
 
@@ -285,7 +285,7 @@ plt.title('Laasonen scheme',fontsize=12)
 plt.axis([-0.5,2.5,-0.5,1.5]);
 </code></pre>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_4.png" alt="drawing" style="width: 600px;"/><br/><br/>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_4.png" alt="drawing" style="width: 600px;"/><br/><br/>
 Instead of estimating the velocity at time step $n+1$ with the curvature calculated at time step $n$, as it is done in the FTCS explicit scheme, we can also estimate the curvature at time step $n+1$, using the velocity change from time step $n$ to time step $n+1$:</p>
 
 <p>$$ s\big(T(x+\Delta x)-2T(x)+T(x-\Delta x)\big) = T(t+\Delta t)-T(t) $$</p>
@@ -317,18 +317,18 @@ plt.title('first two time steps on a 1D grid of five points',fontsize=12)
 plt.axis([-0.5,4.8,-0.5,1.5]);
 </code></pre>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_5.png" alt="drawing" style="width: 600px;"/><br/><br/>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_5.png" alt="drawing" style="width: 600px;"/><br/><br/>
 First we write the equations using the Laasonen scheme centered on the three points of unknown velocity (or temperature) &ndash; these are the red dots in the figure above:</p>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_6.png" alt="drawing" style="width: 800px;"/></p>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_6.png" alt="drawing" style="width: 800px;"/></p>
 
 <p>It may seem like we have five unknowns and only three equations but $T[1,0]$ and $T[1,4]$ are on the boundaries and they are known. Let&rsquo;s rearrange the equation system so that the left hand side has ony the unknowns:</p>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_7.png" alt="drawing" style="width: 700px;"/></p>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_7.png" alt="drawing" style="width: 700px;"/></p>
 
 <p>In matrix form this is equivalent to</p>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_8.png" alt="drawing" style="width: 550px;"/></p>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_8.png" alt="drawing" style="width: 550px;"/></p>
 
 <p>This of course can be extended to larger dimensions than shown here.
 Now we are ready to write the code for the Laasonen scheme. One important difference relative to what I did in the explicit scheme example is that in this case we only keep the last two versions of the velocity distribution in memory, as opposed to preallocating the full array of $nt \times ny$ size as we did before. This difference is not a significant time saver for simple problems like this but once you start dealing with more complicated tasks and code it is not possible and/or practical to keep the results of all time steps in memory.</p>
@@ -372,7 +372,7 @@ plt.axis([0,y_max,0,V0])
 plt.title('Laasonen implicit scheme',fontsize=14);
 </code></pre>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_9.png" alt="drawing" style="width: 600px;"/><br/><br/>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_9.png" alt="drawing" style="width: 600px;"/><br/><br/>
 Just for fun, let&rsquo;s see what happens if we set in motion the right side of the domain as well; that is, set $V_1$ to a non-zero value:</p>
 
 <pre><code class="language-Python">dt = 0.01 # grid size for time (s)
@@ -392,7 +392,7 @@ plt.axis([0,y_max,0,V0])
 plt.title('Laasonen implicit scheme',fontsize=14);
 </code></pre>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_10.png" alt="drawing" style="width: 600px;"/></p>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_10.png" alt="drawing" style="width: 600px;"/></p>
 
 <h2 id="crank-nicolson-scheme">Crank-Nicolson scheme</h2>
 
@@ -418,7 +418,7 @@ plt.title('Crank-Nicolson scheme',fontsize=12)
 plt.axis([-0.5,2.5,-0.5,1.5]);
 </code></pre>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_11.png" alt="drawing" style="width: 600px;"/><br/><br/>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_11.png" alt="drawing" style="width: 600px;"/><br/><br/>
 The curvature at the halfway point can be estimated through averaging the curvatures that are calculated at $n$ and $n+1$:</p>
 
 <p>$$ 0.5s\big(T[n+1,j+1]-2T[n+1,j]+T[n+1,j-1]\big) + 0.5s\big(T[n,j+1]-2T[n,j]+T[n,j-1]\big) = T[n+1,j]-T[n,j] $$</p>
@@ -429,11 +429,11 @@ The curvature at the halfway point can be estimated through averaging the curvat
 
 <p>Just like we did for the Laasonen scheme, we can write the equations for the first two time steps:</p>
 
-<p><img src="https://zsylvester.gihub.io/img/array_1.png" alt="drawing" style="width: 700px;"/></p>
+<p><img src="https://zsylvester.github.io/img/array_1.png" alt="drawing" style="width: 700px;"/></p>
 
 <p>Writing this in matrix form, with all the unknowns on the LHS:</p>
 
-<p><img src="https://zsylvester.gihub.io/img/array_2.png" alt="drawing" style="width: 750px;"/></p>
+<p><img src="https://zsylvester.github.io/img/array_2.png" alt="drawing" style="width: 750px;"/></p>
 
 <p>Now we can write the code for the Crank-Nicolson scheme. We will use a new input parameter called $ntout$ that determines how many time steps we want to write out to memory. This way you don&rsquo;t have to re-run the code if you want to plot multiple time steps.</p>
 
@@ -474,7 +474,7 @@ plt.axis([0,y_max,0,V[0]])
 plt.title('Crank-Nicolson scheme',fontsize=14);
 </code></pre>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_12.png" alt="drawing" style="width: 600px;"/><br/><br/></p>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_12.png" alt="drawing" style="width: 600px;"/><br/><br/></p>
 
 <h2 id="fault-scarp-diffusion">Fault scarp diffusion</h2>
 
@@ -490,7 +490,7 @@ Y = (1/2.0)*Y1*(sympy.erf((a-x)/(2*sympy.sqrt(K*t))) + sympy.erf((a+x)/(2*sympy.
 Y
 </code></pre>
 
-<p><img src="https://zsylvester.gihub.io/img/eq_1.png" alt="drawing" style="width: 350px;"/><br/><br/>
+<p><img src="https://zsylvester.github.io/img/eq_1.png" alt="drawing" style="width: 350px;"/><br/><br/>
 The variables in this equation are $x$ - horizontal coordinates, $t$ - time, $a$ - value of $x$ where fault is located, $K$ - diffusion coefficient, $Y_1$ - height of fault scarp.</p>
 
 <pre><code class="language-Python">from sympy.utilities.lambdify import lambdify
@@ -520,7 +520,7 @@ plt.title('fault scarp diffusion',fontsize=14);
 plt.plot(y,np.asarray([f(x0, t_max, h, y_max/2.0, D) for x0 in y]),'r--',linewidth=2);
 </code></pre>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_13.png" alt="drawing" style="width: 800px;"/><br/><br/>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_13.png" alt="drawing" style="width: 800px;"/><br/><br/>
 The numerical and analytic solutions (dashed red line) are very similar in this case (total time = 500 years). Let&rsquo;s see what happens if we let the fault scarp evolve for a longer time.</p>
 
 <pre><code class="language-Python">dt = 2.5 # time step (years)
@@ -548,7 +548,7 @@ plt.title('fault scarp diffusion',fontsize=14);
 plt.plot(y,np.asarray([f(x0, t_max, h, y_max/2.0, D) for x0 in y]),'r--',linewidth=2);
 </code></pre>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_14.png" alt="drawing" style="width: 800px;"/><br/><br/>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_14.png" alt="drawing" style="width: 800px;"/><br/><br/>
 This doesn&rsquo;t look very good, does it? The reason for the significant mismatch between the numerical and analytic solutions is the fixed nature of the boundary conditions: we keep the elevation at 10 m on the left side and at 0 m on the right side of the domain. There are two ways of getting a correct numerical solution: we either impose boundary conditions that approximate what the system is supposed to do if the elevations were not fixed; or we extend the space domain so that the boundary conditions can be kept fixed throughout the time of interest. Let&rsquo;s do the latter; all the other parameters are the same as above.</p>
 
 <pre><code class="language-Python">dt = 2.5 # time step (years)
@@ -576,7 +576,7 @@ plt.title('fault scarp diffusion',fontsize=14);
 plt.plot(y,np.asarray([f(x0, t_max, h, y_max/2.0, D) for x0 in y]),'r--',linewidth=2);
 </code></pre>
 
-<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_15.png" alt="drawing" style="width: 800px;"/><br/><br/>
+<p><img src="https://zsylvester.github.io/img/diffusion_fig_15.png" alt="drawing" style="width: 800px;"/><br/><br/>
 Now we have a much better result. The vertical dashed lines show the extent of the domain in the previous experiment. We have also gained some insight into choosing boundary conditions and setting up the model domain. It is not uncommon that setting up the initial and boundary conditions is the most time-consuming and difficult part of running a numerical model.</p>
 
 <h2 id="further-reading">Further reading</h2>
@@ -593,12 +593,12 @@ Now we have a much better result. The vertical dashed lines show the extent of t
 
       <meta itemprop="wordCount" content="3207">
       <meta itemprop="datePublished" content="2015-02-06">
-      <meta itemprop="url" content="https://zsylvester.gihub.io/post/diffusion_equation/">
+      <meta itemprop="url" content="https://zsylvester.github.io/post/diffusion_equation/">
     </article>
 
     <ul class="pagination" role="navigation" aria-label="Pagination">
       
-      <li class="arrow" aria-disabled="true"><a href="https://zsylvester.gihub.io/post/rivers_through_time/">&laquo; <em>Previous<span class="show-for-sr"> page</span></em>: Rivers through time, as seen in Landsat images</a></li>
+      <li class="arrow" aria-disabled="true"><a href="https://zsylvester.github.io/post/rivers_through_time/">&laquo; <em>Previous<span class="show-for-sr"> page</span></em>: Rivers through time, as seen in Landsat images</a></li>
       
       
     </ul>
@@ -622,13 +622,13 @@ Now we have a much better result. The vertical dashed lines show the extent of t
     <div class="endofpage">
     </div>
 
-    <script src="https://zsylvester.gihub.io/js/jquery.js"></script>
-    <script src="https://zsylvester.gihub.io/js/what-input.js"></script>
-    <script src="https://zsylvester.gihub.io/js/foundation.min.js"></script>
-    <script src="https://zsylvester.gihub.io/js/finite.js"></script>
+    <script src="https://zsylvester.github.io/js/jquery.js"></script>
+    <script src="https://zsylvester.github.io/js/what-input.js"></script>
+    <script src="https://zsylvester.github.io/js/foundation.min.js"></script>
+    <script src="https://zsylvester.github.io/js/finite.js"></script>
 
     
-    <script src="https://zsylvester.gihub.io/js/highlight.pack.js"></script>
+    <script src="https://zsylvester.github.io/js/highlight.pack.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
     
@@ -636,7 +636,7 @@ Now we have a much better result. The vertical dashed lines show the extent of t
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
     </script>
-    <script async src="https://zsylvester.gihub.io/js/MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
+    <script async src="https://zsylvester.github.io/js/MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
     
     
   </body>
