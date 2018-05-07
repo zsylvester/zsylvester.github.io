@@ -1,0 +1,643 @@
+<!doctype html>
+<html class="no-js" lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Exploring the diffusion equation with Python | Zoltán Sylvester</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://zsylvester.gihub.io/css/foundation.min.css">
+    <link rel="stylesheet" href="https://zsylvester.gihub.io/css/highlight.min.css">
+    <link rel="stylesheet" href="https://zsylvester.gihub.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://zsylvester.gihub.io/css/academicons.min.css">
+    <link rel="stylesheet" href="https://zsylvester.gihub.io/css/fonts.css">
+    <link rel="stylesheet" href="https://zsylvester.gihub.io/css/finite.css">
+  </head>
+  <body>
+    <header>
+      <nav class="nav-bar">
+	
+	  <div class="title-bar" data-responsive-toggle="site-menu" data-hide-for="medium">	      
+	    <button class="site-hamburger" type="button" data-toggle>
+	      <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+	    </button>
+	    <div class="title-bar-title site-title">
+	      <a href="https://zsylvester.gihub.io/">Zoltán Sylvester</a>
+	    </div>
+	    <div class="title-bar-right pull-right">
+	      
+
+
+
+	    </div>
+	  </div>
+	    
+	  
+	    <div class="top-bar" id="site-menu" >     
+	      <div class="top-bar-title show-for-medium site-title">
+		      <a href="https://zsylvester.gihub.io/">Zoltán Sylvester</a>
+	      </div>
+	      <div class="top-bar-left">
+		      <ul class="menu vertical medium-horizontal">
+  		      
+  		      
+  		      <li><a href="https://zsylvester.gihub.io/research/">Research</a></li>
+  		      
+  		      <li><a href="https://zsylvester.gihub.io/publication/">Publications</a></li>
+  		      
+  		      <li><a href="https://zsylvester.gihub.io/post/">Blog</a></li>
+  		      
+		      </ul>
+	      </div>
+	      <div class="top-bar-right show-for-medium">
+      		
+
+
+
+	      </div>
+	    </div>
+	  
+	</nav>
+    </header>
+    <main>
+      
+<div class="row">
+  <div class="column small-12 medium-10 medium-offset-1 end large-8 large-offset-0">
+    <article class="article" itemscope itemtype="http://schema.org/Article">
+      
+      <h1 itemprop="name">Exploring the diffusion equation with Python</h1>
+      <div class="post-metadata">
+  <span class="post-date">
+    <time datetime="2015-02-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">February 6, 2015</time>
+  </span>
+  
+  
+  
+  
+</div>
+
+      <div class="post-body" itemprop="articleBody">
+        
+
+<p>Ever since I became interested in science, I started to have a vague idea that calculus, matrix algebra, partial differential equations, and numerical methods are all fundamental to the physical sciences and engineering and they are linked in some way to each other. The emphasis here is on the word vague; I have to admit that I had no clear, detailed understanding of how these links actually work. It seems like my formal education both in math and physics stopped just short of where everything would have nicely come together. Papers that are really important in geomorphology, sedimentology or stratigraphy seemed impossible to read as soon as they started assuming that I knew quite a bit about convective acceleration, numerical schemes, boundary conditions, and Cholesky factorization. Because I didn’t.</p>
+
+<p>So I have decided a few months ago that I had to do something about this. This blog post documents the initial – and admittedly difficult – steps of my learning; the purpose is to go through the process of discretizing a partial differential equation, setting up a numerical scheme, and solving the resulting system of equations in Python and IPython notebook. I am learning this as I am doing it, so it may seem pedestrian and slow-moving to a lot of people but I am sure there are others who will find it useful. Most of what follows, except the Python code and the bit on fault scarps, is based on and inspired by Slingerland and Kump (2011): <a href="http://www.amazon.com/dp/0691145148/ref=cm_sw_r_tw_dp_iG3Wub0YJKYJK">Mathematical Modeling of Earth’s Dynamical Systems</a> (strongly recommended). You can view and download the <a href="https://github.com/zsylvester/notebooks/blob/master/diffusion_equation.ipynb">IPython Notebook version of this post</a> from Github.</p>
+
+<h2 id="estimating-the-derivatives-in-the-diffusion-equation-using-the-taylor-expansion">Estimating the derivatives in the diffusion equation using the Taylor expansion</h2>
+
+<p>This is the one-dimensional diffusion equation:</p>
+
+<p>$$\frac{\partial T}{\partial t} - D\frac{\partial^2 T}{\partial x^2} = 0$$</p>
+
+<p>The Taylor expansion of value of a function u at a point \Delta x  ahead of the point x where the function is known can be written as:</p>
+
+<p>$$ u(x+\Delta x) = u(x) + \Delta x \frac{\partial u}{\partial x} + \frac{\Delta x^2}{2} \frac{\partial^2 u}{\partial x^2} + \frac{\Delta x^3}{6} \frac{\partial^3 u}{\partial x^3} + O(\Delta x^4) $$</p>
+
+<p>Taylor expansion of value of the function $u$ at a point one space step behind:</p>
+
+<p>$$ u(x-\Delta x) = u(x) - \Delta x \frac{\partial u}{\partial x} + \frac{\Delta x^2}{2} \frac{\partial^2 u}{\partial x^2} - \frac{\Delta x^3}{6} \frac{\partial^3 u}{\partial x^3} + O(\Delta x^4) $$</p>
+
+<p>Solving the first Taylor expansion above for $\frac{\partial u}{\partial x}$ and dropping all higher-order terms yields the forward difference operator:</p>
+
+<p>$$ \frac{\partial u}{\partial x} = \frac{u(x+\Delta x)-u(x)}{\Delta x} + O(\Delta x) $$</p>
+
+<p>Similarly, the second equation yields the backward difference operator:</p>
+
+<p>$$ \frac{\partial u}{\partial x} = \frac{u(x)-u(x-\Delta x)}{\Delta x} + O(\Delta x) $$</p>
+
+<p>Subtracting the second equation from the first one gives the centered difference operator:</p>
+
+<p>$$ \frac{\partial u}{\partial x} = \frac{u(x+\Delta x)-u(x-\Delta x)}{2\Delta x} + O(\Delta x^2) $$</p>
+
+<p>The centered difference operator is more accurate than the other two.</p>
+
+<p>Finally, if the two Taylor expansions are added, we get an estimate of the second order partial derivative:</p>
+
+<p>$$ \frac{\partial^2 u}{\partial x^2} = \frac{u(x+\Delta x)-2u(x)+u(x-\Delta x)}{\Delta x^2} + O(\Delta x^2) $$</p>
+
+<p>Next we use the forward difference operator to estimate the first term in the diffusion equation:</p>
+
+<p>$$ \frac{\partial T}{\partial t} = \frac{T(t+\Delta t)-T(t)}{\Delta t} $$</p>
+
+<p>The second term is expressed using the estimation of the second order partial derivative:</p>
+
+<p>$$ \frac{\partial^2 T}{\partial x^2} = \frac{T(x+\Delta x)-2T(x)+T(x-\Delta x)}{\Delta x^2} $$</p>
+
+<p>Now the diffusion equation can be written as</p>
+
+<p>$$ \frac{T(t+\Delta t)-T(t)}{\Delta t} - D \frac{T(x+\Delta x)-2T(x)+T(x-\Delta x)}{\Delta x^2} = 0 $$</p>
+
+<p>This is equivalent to</p>
+
+<p>$$ T(t+\Delta t) - T(t) - \frac{D\Delta t}{\Delta x^2}(T(x+\Delta x)-2T(x)+T(x-\Delta x)) = 0 $$</p>
+
+<p>The expression $ D\frac{\Delta t}{\Delta x^2} $ is called the diffusion number, denoted here with $s$:</p>
+
+<p>$$ s = D\frac{\Delta t}{\Delta x^2} $$</p>
+
+<h2 id="ftcs-explicit-scheme-and-analytic-solution">FTCS explicit scheme and analytic solution</h2>
+
+<p>If we use $n$ to refer to indices in time and $j$ to refer to indices in space, the above equation can be written as</p>
+
+<p>$$ T[n+1,j] = T[n,j] + s(T[n,j+1]-2T[n,j]+T[n,j-1]) $$</p>
+
+<p>This is called a forward-in-time, centered-in-space (FTCS) scheme. Its &lsquo;footprint&rsquo; looks like this:</p>
+
+<pre><code class="language-Python">import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+%config InlineBackend.figure_format = 'svg' # display plots in SVG format
+
+fig = plt.figure(figsize=(6,3))
+plt.plot([0,2],[0,0],'k')
+plt.plot([1,1],[0,1],'k')
+plt.plot([0,1,2,1],[0,0,0,1],'ko',markersize=10)
+plt.text(1.1,0.1,'T[n,j]')
+plt.text(0.1,0.1,'T[n,j-1]')
+plt.text(1.1,1.1,'T[n+1,j]')
+plt.text(2.1,0.1,'T[n,j+1]')
+plt.xlabel('space')
+plt.ylabel('time')
+plt.axis('equal')
+plt.yticks([0.0,1.0],[])
+plt.xticks([0.0,1.0],[])
+plt.title('FTCS explicit scheme',fontsize=12)
+plt.axis([-0.5,2.5,-0.5,1.5]);
+</code></pre>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_1.png" alt="drawing" style="width: 600px;"/></p>
+
+<p>Now we are ready to write the code that is the solution for exercise 2 in Chapter 2 of Slingerland and Kump (2011). This is an example where the one-dimensional diffusion equation is applied to viscous flow of a Newtonian fluid adjacent to a solid wall. If the wall starts moving with a velocity of 10 m/s, and the flow is assumed to be laminar, the velocity profile of the fluid is described by the equation</p>
+
+<p>$$ \frac{\partial V}{\partial t} - \nu \frac{\partial^2 V}{\partial y^2} = 0 $$</p>
+
+<p>where $\nu$ is the kinematic viscosity of the fluid. We want to figure out how the velocity will change through time as a function of distance from the wall. [Note that I have changed the original 40 m/s to 10 m/s &ndash; the former seems like an unnaturally large velocity to me].</p>
+
+<p>We can compare the numerical results with the analytic solution, which is known for this problem:</p>
+
+<p>$$ V = V_0 \Big( \sum\limits_0^\infty erfc(2n\eta_1+\eta) - \sum\limits_0^\infty erfc(2(n+1)\eta_1+\eta) \Big)  $$</p>
+
+<p>where</p>
+
+<p>$$ \eta_1 = \frac{h}{2\sqrt{\nu t}} $$</p>
+
+<p>and</p>
+
+<p>$$ \eta = \frac{y}{2\sqrt{\nu t}} $$</p>
+
+<pre><code class="language-Python">dt = 0.0005 # grid size for time (s)
+dy = 0.0005 # grid size for space (m)
+viscosity = 2*10**(-4) # kinematic viscosity of oil (m2/s)
+y_max = 0.04 # in m
+t_max = 1 # total time in s
+V0 = 10 # velocity in m/s
+
+# function to calculate velocity profiles based on a finite difference approximation to the 1D diffusion equation and the 
+# FTCS (forward-in-time, centered-in-space) scheme:
+def diffusion_FTCS(dt,dy,t_max,y_max,viscosity,V0):
+    # diffusion number (has to be less than 0.5 for the solution to be stable):
+    s = viscosity*dt/dy**2 
+    y = np.arange(0,y_max+dy,dy) 
+    t = np.arange(0,t_max+dt,dt)
+    r = len(t)
+    c = len(y)
+    V = np.zeros([r,c])
+    V[:,0] = V0
+    for n in range(0,r-1): # time
+        for j in range(1,c-1): # space
+            V[n+1,j] = V[n,j] + s*(V[n,j-1] - 2*V[n,j] + V[n,j+1]) 
+    return y,V,r,s
+# note that this can be written without the for-loop in space, but it is easier to read it this way
+
+from scipy.special import erfc
+
+# function to calculate velocity profiles using the analytic solution:
+def diffusion_analytic(t,h,V0,dy,viscosity):
+    y = np.arange(0,h+dy,dy)
+    eta1 = h/(2*(t*viscosity)**0.5)
+    eta = y/(2*(t*viscosity)**0.5)
+    sum1 = 0
+    sum2 = 0
+    for n in range(0,1000):
+        sum1 = sum1 + erfc(2*n*eta1+eta)
+        sum2 = sum2 + erfc(2*(n+1)*eta1-eta)
+    V_analytic = V0*(sum1-sum2)
+    return V_analytic
+
+y,V,r,s = diffusion_FTCS(dt,dy,t_max,y_max,viscosity,V0)
+
+# plotting:
+plt.figure(figsize=(7,5))
+plot_times = np.arange(0.2,1.0,0.1)
+for t in plot_times:
+    plt.plot(y,V[t/dt,:],'Gray',label='numerical')
+    V_analytic = diffusion_analytic(t,0.04,10,dy,viscosity)
+    plt.plot(y,V_analytic,'ok',label='analytic',markersize=3)
+    if t==0.2:
+        plt.legend(fontsize=12)
+plt.xlabel('distance from wall (m)',fontsize=12)
+plt.ylabel('velocity (m/s)',fontsize=12)
+plt.axis([0,y_max,0,V0])
+plt.title('comparison between explicit numerical \n(FTCS scheme) and analytic solutions');
+</code></pre>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_2.png" alt="drawing" style="width: 600px;"/><br/><br/>
+The dots (analytic solution) overlap pretty well with the lines (numerical solution). However, this would not be the case if we changed the discretization so that the diffusion number was larger. Let&rsquo;s look at the stability of the FTCS numerical scheme, by computing the solution with different diffusion numbers. It turns out that the diffusion number $s$ has to be less than 0.5 for the FTCS scheme to remain stable. What follows is a reproduction of Figure 2.7 in Slingerland and Kump (2011):</p>
+
+<pre><code class="language-Python">dt = 0.0005 # grid size for time (m)
+dy = 0.0005 # grid size for space (s)
+y,V,r,s = diffusion_FTCS(dt,dy,t_max,y_max,viscosity,V0)
+V_analytic = diffusion_analytic(0.5,0.04,V0,dy,viscosity)
+plt.figure(figsize=(7,5))
+plt.plot(y,V_analytic-V[int(0.5/dt)],'--k',label='small s')
+
+dy = 0.0010
+dt = 0.00254
+y,V,r,s = diffusion_FTCS(dt,dy,t_max,y_max,viscosity,V0)
+V_analytic = diffusion_analytic(0.5,0.04,V0,dy,viscosity)
+V_numeric = V[int(r/2-1),:]
+
+plt.plot(y,V_analytic-V_numeric,'k',label='large s')
+plt.xlabel('distance from wall (m)',fontsize=12)
+plt.ylabel('velocity difference (m/s)',fontsize=12)
+plt.title('difference between numerical and analytic \n solutions for different \'s\' values',fontsize=14)
+plt.axis([0,y_max,-4,4])
+plt.legend();
+</code></pre>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_3.png" alt="drawing" style="width: 600px;"/></p>
+
+<h2 id="laasonen-implicit-scheme">Laasonen implicit scheme</h2>
+
+<pre><code class="language-Python">plt.figure(figsize=(6,3))
+plt.plot([0,2],[1,1],'k')
+plt.plot([1,1],[0,1],'k')
+plt.plot([0,1,2,1],[1,1,1,0],'ko',markersize=10)
+plt.text(1.1,0.1,'T[n,j]')
+plt.text(0.1,1.1,'T[n+1,j-1]')
+plt.text(1.1,1.1,'T[n+1,j]')
+plt.text(2.1,1.1,'T[n+1,j+1]')
+plt.xlabel('space')
+plt.ylabel('time')
+plt.axis('equal')
+plt.yticks([0.0,1.0],[])
+plt.xticks([0.0,1.0],[])
+plt.title('Laasonen scheme',fontsize=12)
+plt.axis([-0.5,2.5,-0.5,1.5]);
+</code></pre>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_4.png" alt="drawing" style="width: 600px;"/><br/><br/>
+Instead of estimating the velocity at time step $n+1$ with the curvature calculated at time step $n$, as it is done in the FTCS explicit scheme, we can also estimate the curvature at time step $n+1$, using the velocity change from time step $n$ to time step $n+1$:</p>
+
+<p>$$ s\big(T(x+\Delta x)-2T(x)+T(x-\Delta x)\big) = T(t+\Delta t)-T(t) $$</p>
+
+<p>Written in matrix notation, this is equiavlent to</p>
+
+<p>$$ s\big(T[n+1,j+1]-2T[n+1,j]+T[n+1,j-1]\big) = T[n+1,j]-T[n,j] $$</p>
+
+<p>After some reshuffling we get</p>
+
+<p>$$ -sT[n+1,j+1] + (1+2s)T[n+1,j] - sT[n+1,j-1] = T[n,j] $$</p>
+
+<p>This is the Laasonen fully implicit scheme. Unlike the FTCS scheme, the Laasonen scheme is unconditionally stable. Let&rsquo;s try to write some Python code that implements this scheme. First it is useful for me to go through the logic of constructing the system of equations that needs to be solved. Let&rsquo;s consider a grid that only consists of 5 nodes in space and we are going to estimate the values of $T$ at the locations marked by the red dots in the figure below. Black dots mark the locations where we already know the values of $T$ (from the initial and boundary conditions).</p>
+
+<pre><code class="language-Python">plt.figure(figsize=(6,3))
+plt.plot([0,4,4,0],[0,0,1,1],'k')
+for i in range(0,4):
+    plt.plot([i,i],[0,1],'k')
+plt.plot([0,1,2,3,4,0,4],[0,0,0,0,0,1,1],'ko',markersize=10)
+plt.plot([1,2,3],[1,1,1],'ro',markersize=10)
+for i in range(0,5):
+    plt.text(i+0.1,0.1,'T[0,'+str(i)+']')
+    plt.text(i+0.1,1.1,'T[1,'+str(i)+']')
+plt.xlabel('space')
+plt.ylabel('time')
+plt.axis('equal')
+plt.yticks([0.0,1.0],['0','1'])
+plt.title('first two time steps on a 1D grid of five points',fontsize=12)
+plt.axis([-0.5,4.8,-0.5,1.5]);
+</code></pre>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_5.png" alt="drawing" style="width: 600px;"/><br/><br/>
+First we write the equations using the Laasonen scheme centered on the three points of unknown velocity (or temperature) &ndash; these are the red dots in the figure above:</p>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_6.png" alt="drawing" style="width: 800px;"/></p>
+
+<p>It may seem like we have five unknowns and only three equations but $T[1,0]$ and $T[1,4]$ are on the boundaries and they are known. Let&rsquo;s rearrange the equation system so that the left hand side has ony the unknowns:</p>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_7.png" alt="drawing" style="width: 700px;"/></p>
+
+<p>In matrix form this is equivalent to</p>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_8.png" alt="drawing" style="width: 550px;"/></p>
+
+<p>This of course can be extended to larger dimensions than shown here.
+Now we are ready to write the code for the Laasonen scheme. One important difference relative to what I did in the explicit scheme example is that in this case we only keep the last two versions of the velocity distribution in memory, as opposed to preallocating the full array of $nt \times ny$ size as we did before. This difference is not a significant time saver for simple problems like this but once you start dealing with more complicated tasks and code it is not possible and/or practical to keep the results of all time steps in memory.</p>
+
+<pre><code class="language-Python">from scipy.sparse import diags
+def diffusion_Laasonen(dt,dy,t_max,y_max,viscosity,V0,V1):
+    s = viscosity*dt/dy**2  # diffusion number
+    y = np.arange(0,y_max+dy,dy) 
+    t = np.arange(0,t_max+dt,dt)
+    nt = len(t) # number of time steps
+    ny = len(y) # number of dy steps
+    V = np.zeros((ny,)) # initial condition
+    V[0] = V0 # boundary condition on left side
+    V[-1] = V1 # boundary condition on right side
+    A = diags([-s, 1+2*s, -s], [-1, 0, 1], shape=(ny-2, ny-2)).toarray() # create coefficient matrix
+    for n in range(nt): # time is going from second time step to last
+        Vn = V #.copy()
+        B = Vn[1:-1] # create matrix of knowns on the RHS of the equation
+        B[0] = B[0]+s*V0
+        B[-1] = B[-1]+s*V1
+        V[1:-1] = np.linalg.solve(A,B) # solve the equation using numpy
+    return y,t,V,s
+</code></pre>
+
+<p>Because this is a stable scheme, it is possible to get reasonable solutions with relatively large time steps (which was not possible with the FTCS scheme):</p>
+
+<pre><code class="language-Python">dt = 0.01 # grid size for time (s)
+dy = 0.0005 # grid size for space (m)
+viscosity = 2*10**(-4) # kinematic viscosity of oil (m2/s)
+y_max = 0.04 # in m
+V0 = 10.0 # velocity in m/s
+V1 = 0.0 # velocity in m/s
+
+plt.figure(figsize=(7,5))
+for time in np.linspace(0,1.0,10):
+    y,t,V,s = diffusion_Laasonen(dt,dy,time,y_max,viscosity,V0,V1)
+    plt.plot(y,V,'k')
+plt.xlabel('distance from wall (m)',fontsize=12)
+plt.ylabel('velocity (m/s)',fontsize=12)
+plt.axis([0,y_max,0,V0])
+plt.title('Laasonen implicit scheme',fontsize=14);
+</code></pre>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_9.png" alt="drawing" style="width: 600px;"/><br/><br/>
+Just for fun, let&rsquo;s see what happens if we set in motion the right side of the domain as well; that is, set $V_1$ to a non-zero value:</p>
+
+<pre><code class="language-Python">dt = 0.01 # grid size for time (s)
+dy = 0.0005 # grid size for space (m)
+viscosity = 2*10**(-4) # kinematic viscosity of oil (m2/s)
+y_max = 0.04 # in m
+V0 = 10.0 # velocity in m/s
+V1 = 5.0 # velocity in m/s
+
+plt.figure(figsize=(7,5))
+for time in np.linspace(0,1.0,10):
+    y,t,V,s = diffusion_Laasonen(dt,dy,time,y_max,viscosity,V0,V1)
+    plt.plot(y,V,'k')
+plt.xlabel('distance from wall (m)',fontsize=12)
+plt.ylabel('velocity (m/s)',fontsize=12)
+plt.axis([0,y_max,0,V0])
+plt.title('Laasonen implicit scheme',fontsize=14);
+</code></pre>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_10.png" alt="drawing" style="width: 600px;"/></p>
+
+<h2 id="crank-nicolson-scheme">Crank-Nicolson scheme</h2>
+
+<p>The Crank-Nicholson scheme is based on the idea that the forward-in-time approximation of the time derivative is estimating the derivative at the halfway point between times $n$ and $n+1$, therefore the curvature of space should be estimated there as well. The &lsquo;footprint&rsquo; of the scheme looks like this:</p>
+
+<pre><code class="language-Python">plt.figure(figsize=(6,3))
+plt.plot([0,2],[0,0],'k')
+plt.plot([0,2],[1,1],'k')
+plt.plot([1,1],[0,1],'k')
+plt.plot([0,1,2,0,1,2],[0,0,0,1,1,1],'ko',markersize=10)
+plt.text(0.1,0.1,'T[n,j-1]')
+plt.text(1.1,0.1,'T[n,j]')
+plt.text(2.1,0.1,'T[n,j+1]')
+plt.text(0.1,1.1,'T[n+1,j-1]')
+plt.text(1.1,1.1,'T[n+1,j]')
+plt.text(2.1,1.1,'T[n+1,j+1]')
+plt.xlabel('space')
+plt.ylabel('time')
+plt.axis('equal')
+plt.yticks([0.0,1.0],[])
+plt.xticks([0.0,1.0],[])
+plt.title('Crank-Nicolson scheme',fontsize=12)
+plt.axis([-0.5,2.5,-0.5,1.5]);
+</code></pre>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_11.png" alt="drawing" style="width: 600px;"/><br/><br/>
+The curvature at the halfway point can be estimated through averaging the curvatures that are calculated at $n$ and $n+1$:</p>
+
+<p>$$ 0.5s\big(T[n+1,j+1]-2T[n+1,j]+T[n+1,j-1]\big) + 0.5s\big(T[n,j+1]-2T[n,j]+T[n,j-1]\big) = T[n+1,j]-T[n,j] $$</p>
+
+<p>This can be rearranged so that terms at $n+1$ are on the left hand side:</p>
+
+<p>$$ -0.5sT[n+1,j-1]+(1+s)T[n+1,j]-0.5sT[n+1,j+1] = 0.5sT[n,j-1]+(1-s)T[n,j]+0.5sT[n,j+1] $$</p>
+
+<p>Just like we did for the Laasonen scheme, we can write the equations for the first two time steps:</p>
+
+<p><img src="https://zsylvester.gihub.io/img/array_1.png" alt="drawing" style="width: 700px;"/></p>
+
+<p>Writing this in matrix form, with all the unknowns on the LHS:</p>
+
+<p><img src="https://zsylvester.gihub.io/img/array_2.png" alt="drawing" style="width: 750px;"/></p>
+
+<p>Now we can write the code for the Crank-Nicolson scheme. We will use a new input parameter called $ntout$ that determines how many time steps we want to write out to memory. This way you don&rsquo;t have to re-run the code if you want to plot multiple time steps.</p>
+
+<pre><code class="language-Python">def diffusion_Crank_Nicolson(dy,ny,dt,nt,D,V,ntout):
+    Vout = [] # list for storing V arrays at certain time steps
+    V0 = V[0] # boundary condition on left side
+    V1 = V[-1] # boundary condition on right side
+    s = D*dt/dy**2  # diffusion number
+    A = diags([-0.5*s, 1+s, -0.5*s], [-1, 0, 1], shape=(ny-2, ny-2)).toarray() # create coefficient matrix
+    B1 = diags([0.5*s, 1-s, 0.5*s],[-1, 0, 1], shape=(ny-2, ny-2)).toarray()
+    for n in range(1,nt): # time is going from second time step to last
+        Vn = V
+        B = np.dot(Vn[1:-1],B1) 
+        B[0] = B[0]+0.5*s*(V0+V0)
+        B[-1] = B[-1]+0.5*s*(V1+V1)
+        V[1:-1] = np.linalg.solve(A,B)
+        if n % int(nt/float(ntout)) == 0 or n==nt-1:
+            Vout.append(V.copy()) # numpy arrays are mutable, so we need to write out a copy of V, not V itself
+    return Vout,s
+
+dt = 0.001 # grid size for time (s)
+dy = 0.001 # grid size for space (m)
+viscosity = 2*10**(-4) # kinematic viscosity of oil (m2/s)
+y_max = 0.04 # in m
+y = np.arange(0,y_max+dy,dy) 
+ny = len(y)
+nt = 1000
+plt.figure(figsize=(7,5))
+V = np.zeros((ny,)) # initial condition
+V[0] = 10
+Vout,s = diffusion_Crank_Nicolson(dy,ny,dt,nt,viscosity,V,10)
+
+for V in Vout:
+    plt.plot(y,V,'k')
+plt.xlabel('distance from wall (m)',fontsize=12)
+plt.ylabel('velocity (m/s)',fontsize=12)
+plt.axis([0,y_max,0,V[0]])
+plt.title('Crank-Nicolson scheme',fontsize=14);
+</code></pre>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_12.png" alt="drawing" style="width: 600px;"/><br/><br/></p>
+
+<h2 id="fault-scarp-diffusion">Fault scarp diffusion</h2>
+
+<p>So far we have been using a somewhat artificial (but simple) example to explore numerical methods that can be used to solve the diffusion equation. Next we look at a geomorphologic application: the evolution of a fault scarp through time. Although the idea that convex hillslopes are the result of diffusive processes go back to G. K. Gilbert, it was Culling (1960, in the paper <a href="http://www.jstor.org/stable/30059222">Analytical Theory of Erosion</a>) who first applied the mathematics of the heat equation - that was already well known to physicists at that time - to geomorphology.</p>
+
+<p>Here I used the Crank-Nicolson scheme to model a fault scarp with a vertical offset of 10 m. To compare the numerical results with the analytical solution (which comes from Culling, 1960), I created a function that was written using a Python package for symbolic math called <a href="http://sympy.org">sympy</a>. One of the advantages of sympy is that you can quickly display equations in $\LaTeX$.</p>
+
+<pre><code class="language-Python">import sympy
+from sympy import init_printing
+init_printing(use_latex=True)
+x, t, Y1, a, K = sympy.symbols('x t Y1 a K')
+Y = (1/2.0)*Y1*(sympy.erf((a-x)/(2*sympy.sqrt(K*t))) + sympy.erf((a+x)/(2*sympy.sqrt(K*t))))
+Y
+</code></pre>
+
+<p><img src="https://zsylvester.gihub.io/img/eq_1.png" alt="drawing" style="width: 350px;"/><br/><br/>
+The variables in this equation are $x$ - horizontal coordinates, $t$ - time, $a$ - value of $x$ where fault is located, $K$ - diffusion coefficient, $Y_1$ - height of fault scarp.</p>
+
+<pre><code class="language-Python">from sympy.utilities.lambdify import lambdify
+f = lambdify((x, t, Y1, a, K), Y, modules=['numpy', 'sympy']) # function for analytic solution
+dt = 2.5 # time step (years)
+dy = 0.1 # grid size for space (m)
+D = 50E-4 # diffusion coefficient in m2/yr - e.g., Fernandes and Dietrich, 1997
+h = 10 # height of fault scarp in m
+y_max = 20 # length of domain in m
+t_max = 500 # total time in years
+y = np.arange(0,y_max+dy,dy) 
+ny = len(y)
+nt = int(t_max/dt)
+V = np.zeros((ny,)) # initial condition
+V[:round(ny/2.0)] = h # initial condition
+
+Vout,s = diffusion_Crank_Nicolson(dy,ny,dt,nt,D,V,20)
+
+plt.figure(figsize=(10,5.2))
+for V in Vout:
+    plt.plot(y,V,'gray')
+
+plt.xlabel('distance (m)',fontsize=12)
+plt.ylabel('height (m)',fontsize=12)
+plt.axis([0,y_max,0,10])
+plt.title('fault scarp diffusion',fontsize=14);
+plt.plot(y,np.asarray([f(x0, t_max, h, y_max/2.0, D) for x0 in y]),'r--',linewidth=2);
+</code></pre>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_13.png" alt="drawing" style="width: 800px;"/><br/><br/>
+The numerical and analytic solutions (dashed red line) are very similar in this case (total time = 500 years). Let&rsquo;s see what happens if we let the fault scarp evolve for a longer time.</p>
+
+<pre><code class="language-Python">dt = 2.5 # time step (years)
+dy = 0.1 # grid size for space (m)
+D = 50E-4 # diffusion coefficient in m2/yr - e.g., Fernandes and Dietrich, 1997
+h = 10 # height of fault scarp in m
+y_max = 20 # length of domain in m
+t_max = 5000 # total time in years
+y = np.arange(0,y_max+dy,dy) 
+ny = len(y)
+nt = int(t_max/dt)
+V = np.zeros((ny,)) # initial condition
+V[:round(ny/2.0)] = h # initial condition
+
+Vout,s = diffusion_Crank_Nicolson(dy,ny,dt,nt,D,V,20)
+
+plt.figure(figsize=(10,5.2))
+for V in Vout:
+    plt.plot(y,V,'gray')
+
+plt.xlabel('distance (m)',fontsize=12)
+plt.ylabel('height (m)',fontsize=12)
+plt.axis([0,y_max,0,10])
+plt.title('fault scarp diffusion',fontsize=14);
+plt.plot(y,np.asarray([f(x0, t_max, h, y_max/2.0, D) for x0 in y]),'r--',linewidth=2);
+</code></pre>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_14.png" alt="drawing" style="width: 800px;"/><br/><br/>
+This doesn&rsquo;t look very good, does it? The reason for the significant mismatch between the numerical and analytic solutions is the fixed nature of the boundary conditions: we keep the elevation at 10 m on the left side and at 0 m on the right side of the domain. There are two ways of getting a correct numerical solution: we either impose boundary conditions that approximate what the system is supposed to do if the elevations were not fixed; or we extend the space domain so that the boundary conditions can be kept fixed throughout the time of interest. Let&rsquo;s do the latter; all the other parameters are the same as above.</p>
+
+<pre><code class="language-Python">dt = 2.5 # time step (years)
+dy = 0.1 # grid size for space (m)
+D = 50E-4 # diffusion coefficient in m2/yr - e.g., Fernandes and Dietrich, 1997
+h = 10 # height of fault scarp in m
+y_max = 40 # length of domain in m
+t_max = 5000 # total time in years
+y = np.arange(0,y_max+dy,dy) 
+ny = len(y)
+nt = int(t_max/dt)
+V = np.zeros((ny,)) # initial condition
+V[:round(ny/2.0)] = h # initial condition
+
+Vout,s = diffusion_Crank_Nicolson(dy,ny,dt,nt,D,V,20)
+
+plt.figure(figsize=(10,5.2))
+for V in Vout:
+    plt.plot(y,V,'gray')
+
+plt.xlabel('distance (m)',fontsize=12)
+plt.ylabel('height (m)',fontsize=12)
+plt.axis([0,y_max,0,10])
+plt.title('fault scarp diffusion',fontsize=14);
+plt.plot(y,np.asarray([f(x0, t_max, h, y_max/2.0, D) for x0 in y]),'r--',linewidth=2);
+</code></pre>
+
+<p><img src="https://zsylvester.gihub.io/img/diffusion_fig_15.png" alt="drawing" style="width: 800px;"/><br/><br/>
+Now we have a much better result. The vertical dashed lines show the extent of the domain in the previous experiment. We have also gained some insight into choosing boundary conditions and setting up the model domain. It is not uncommon that setting up the initial and boundary conditions is the most time-consuming and difficult part of running a numerical model.</p>
+
+<h2 id="further-reading">Further reading</h2>
+
+<p>R. Slingerland and L. Kump (2011) <a href="http://www.amazon.com/dp/0691145148/ref=cm_sw_r_tw_dp_iG3Wub0YJKYJK">Mathematical Modeling of Earth&rsquo;s Dynamical Systems</a></p>
+
+<p>W. E. H. Culling (1960) <a href="http://www.jstor.org/stable/30059222">Analytical Theory of Erosion</a></p>
+
+<p>L. Barba (2013) <a href="https://github.com/barbagroup/CFDPython">12 steps to Navier-Stokes</a> - an excellent introduction to computational fluid dynamics that uses IPython notebooks</p>
+
+<p>I have blogged before about the geosciency aspects of the diffusion equation over <a href="http://hinderedsettling.com/2009/11/26/hillslope-diffusion/">here</a>.</p>
+
+      </div>
+
+      <meta itemprop="wordCount" content="3207">
+      <meta itemprop="datePublished" content="2015-02-06">
+      <meta itemprop="url" content="https://zsylvester.gihub.io/post/diffusion_equation/">
+    </article>
+
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+      
+      <li class="arrow" aria-disabled="true"><a href="https://zsylvester.gihub.io/post/rivers_through_time/">&laquo; <em>Previous<span class="show-for-sr"> page</span></em>: Rivers through time, as seen in Landsat images</a></li>
+      
+      
+    </ul>
+
+    
+  </div>
+</div>
+
+    </main>
+    
+<footer>
+  <hr>
+  <div class="row">
+   <div class="column small-10 small-centered text-center">
+     <em>Do you like this, or do you have a comment? Then please follow me at <a href="http://twitter.com/">@</a> on <span class="nowrap"><i class="fa fa-twitter-square"></i> Twitter</span>!</em>
+    </div>
+  </div>
+</footer>
+
+
+    <div class="endofpage">
+    </div>
+
+    <script src="https://zsylvester.gihub.io/js/jquery.js"></script>
+    <script src="https://zsylvester.gihub.io/js/what-input.js"></script>
+    <script src="https://zsylvester.gihub.io/js/foundation.min.js"></script>
+    <script src="https://zsylvester.gihub.io/js/finite.js"></script>
+
+    
+    <script src="https://zsylvester.gihub.io/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="https://zsylvester.gihub.io/js/MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
+    
+    
+  </body>
+</html>
