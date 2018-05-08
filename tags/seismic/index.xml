@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Seismic on Zoltán Sylvester</title>
+    <link>https://zsylvester.github.io/tags/seismic/</link>
+    <description>Recent content in Seismic on Zoltán Sylvester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
+    <lastBuildDate>Mon, 18 Apr 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://zsylvester.github.io/tags/seismic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Stretching the truth: vertical exaggeration of seismic data</title>
+      <link>https://zsylvester.github.io/post/vertical_exaggeration/</link>
+      <pubDate>Mon, 18 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://zsylvester.github.io/post/vertical_exaggeration/</guid>
+      <description>If someone showed a photograph of the famous Cuernos massif (Torres del Paine National Park, Chile) like the one below, it would be - probably, hopefully - obvious to everybody that something is wrong with the picture. Our eyes and brains have seen enough mountain scenery that we intuitively know how steep is &amp;lsquo;steep&amp;rsquo; in alpine landscapes. The peaks in this photograph just look too extreme, too high if one takes into account their lateral extent.</description>
+    </item>
+    
+  </channel>
+</rss>

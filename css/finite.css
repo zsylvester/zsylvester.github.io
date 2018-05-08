@@ -129,6 +129,43 @@ pre {
     padding-left: 1em;
 }
 
+img[src$='#center']
+{
+    display: block;
+    margin: 0.7rem auto; /* you can replace the vertical '0.7rem' by
+                            whatever floats your boat, but keep the
+                            horizontal 'auto' for this to work */
+    /* whatever else styles you fancy here */
+}
+img[src$='#center400']
+{
+    display: block;
+    margin: 0.7rem auto; 
+    width: 400px;
+    /* whatever else styles you fancy here */
+}
+img[src$='#center600']
+{
+    display: block;
+    margin: 0.7rem auto; 
+    width: 600px;
+    /* whatever else styles you fancy here */
+}
+img[src$='#center700']
+{
+    display: block;
+    margin: 0.7rem auto; 
+    width: 700px;
+    /* whatever else styles you fancy here */
+}
+img[src$='#center800']
+{
+    display: block;
+    margin: 0.7rem auto; 
+    width: 800px;
+    /* whatever else styles you fancy here */
+}
+
 .hljs
 {
     /* background-color: #f2f0f0; */

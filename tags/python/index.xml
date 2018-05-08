@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Zoltán Sylvester</title>
+    <link>https://zsylvester.github.io/tags/python/</link>
+    <description>Recent content in Python on Zoltán Sylvester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
+    <lastBuildDate>Fri, 06 Feb 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://zsylvester.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Exploring the diffusion equation with Python</title>
+      <link>https://zsylvester.github.io/post/diffusion_equation/</link>
+      <pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://zsylvester.github.io/post/diffusion_equation/</guid>
+      <description>Ever since I became interested in science, I started to have a vague idea that calculus, matrix algebra, partial differential equations, and numerical methods are all fundamental to the physical sciences and engineering and they are linked in some way to each other. The emphasis here is on the word vague; I have to admit that I had no clear, detailed understanding of how these links actually work. It seems like my formal education both in math and physics stopped just short of where everything would have nicely come together.</description>
+    </item>
+    
+  </channel>
+</rss>
