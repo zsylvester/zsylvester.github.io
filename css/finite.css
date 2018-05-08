@@ -53,11 +53,18 @@ body {
 
 /* Last footer.  */
 .endofpage { 
-    /* background-image: url("/img/wave.png"); */
+    font-family: 'WorkSans', sans;
+    font-size: 0.7rem;
+    padding: 16px;
+    color: #faf8f8;
     background-color: #101730;
     height: 50px;
     background-repeat: repeat-x;
     margin-top: 3ex;
+}
+.endofpage a {
+    color: #faf8f8;
+    border: none;
 }
 
 
