@@ -31,6 +31,15 @@
     </item>
     
     <item>
+      <title>Exploring grain settling with Python</title>
+      <link>https://zsylvester.github.io/post/grain_settling/</link>
+      <pubDate>Fri, 09 Aug 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://zsylvester.github.io/post/grain_settling/</guid>
+      <description>Grain settling is one of the most important problems in sedimentology (and therefore sedimentary geology), as neither sediment transport nor deposition can be understood and modeled without knowing what is the settling velocity of a particle of a certain grain size. Very small grains, when submerged in water, have a mass small enough that they reach a terminal velocity before any turbulence develops. This is true for clay- and silt-sized particles settling in water, and for these grain size classes Stokes&amp;rsquo; Law can be used to calculate the settling velocity:</description>
+    </item>
+    
+    <item>
       <title>Stretching the truth: vertical exaggeration of seismic data</title>
       <link>https://zsylvester.github.io/post/vertical_exaggeration/</link>
       <pubDate>Mon, 18 Apr 2011 00:00:00 +0000</pubDate>
