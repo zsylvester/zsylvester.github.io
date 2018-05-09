@@ -137,6 +137,23 @@ img[src$='#center']
                             horizontal 'auto' for this to work */
     /* whatever else styles you fancy here */
 }
+
+img[src$='#center200']
+{
+    display: block;
+    margin: 0.7rem auto; 
+    width: 200px;
+    /* whatever else styles you fancy here */
+}
+
+img[src$='#center300']
+{
+    display: block;
+    margin: 0.7rem auto; 
+    width: 300px;
+    /* whatever else styles you fancy here */
+}
+
 img[src$='#center400']
 {
     display: block;
@@ -144,6 +161,7 @@ img[src$='#center400']
     width: 400px;
     /* whatever else styles you fancy here */
 }
+
 img[src$='#center600']
 {
     display: block;
@@ -151,6 +169,7 @@ img[src$='#center600']
     width: 600px;
     /* whatever else styles you fancy here */
 }
+
 img[src$='#center700']
 {
     display: block;
@@ -158,6 +177,7 @@ img[src$='#center700']
     width: 700px;
     /* whatever else styles you fancy here */
 }
+
 img[src$='#center800']
 {
     display: block;

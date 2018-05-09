@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Mon, 18 Apr 2011 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Apr 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zsylvester.github.io/tags/stratigraphy/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exploring (de)compaction with Python</title>
+      <link>https://zsylvester.github.io/post/decompaction/</link>
+      <pubDate>Wed, 12 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://zsylvester.github.io/post/decompaction/</guid>
+      <description>All clastic sediments are subject to compaction (and reduction of porosity) as the result of increasingly tighter packing of grains under a thickening overburden. Decompaction - the estimation of the decompacted thickness of a rock column - is an important part of subsidence (or geohistory) analysis. The following exercise is loosely based on the excellent basin analysis textbook by Allen &amp;amp; Allen (2013), especially their Appendix 56.
+Import stuff import numpy as np import matplotlib.</description>
+    </item>
     
     <item>
       <title>Stretching the truth: vertical exaggeration of seismic data</title>
