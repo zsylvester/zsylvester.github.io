@@ -143,6 +143,11 @@
   </url>
   
   <url>
+    <loc>https://zsylvester.github.io/post/salt_and_sediment/</loc>
+    <lastmod>2011-07-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zsylvester.github.io/post/vertical_exaggeration/</loc>
     <lastmod>2011-04-18T00:00:00+00:00</lastmod>
   </url>
@@ -266,6 +271,12 @@
   </url>
   
   <url>
+    <loc>https://zsylvester.github.io/tags/salt/</loc>
+    <lastmod>2011-07-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://zsylvester.github.io/tags/sedimentology/</loc>
     <lastmod>2017-04-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -286,6 +297,12 @@
   <url>
     <loc>https://zsylvester.github.io/tags/</loc>
     <lastmod>2015-02-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://zsylvester.github.io/tags/tectonics/</loc>
+    <lastmod>2011-07-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
