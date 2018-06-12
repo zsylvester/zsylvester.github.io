@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zsylvester.github.io/publication/detrital_py/</loc>
+    <lastmod>2018-06-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zsylvester.github.io/publication/coriolis_and_submarine_channels/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url>
@@ -183,11 +188,6 @@
   </url>
   
   <url>
-    <loc>https://zsylvester.github.io/publication/detrital_py/</loc>
-    <lastmod>2004-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://zsylvester.github.io/publication/tarcau_ichnofauna/</loc>
     <lastmod>2001-05-01T00:00:00+00:00</lastmod>
   </url>
@@ -253,7 +253,7 @@
   
   <url>
     <loc>https://zsylvester.github.io/publication/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -313,7 +313,7 @@
   
   <url>
     <loc>https://zsylvester.github.io/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+    <lastmod>2018-06-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

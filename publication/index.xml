@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zsylvester.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>detritalPy: A Python‐based Toolset for Visualizing and Analyzing Detrital Geo‐Thermochronologic Data</title>
+      <link>https://zsylvester.github.io/publication/detrital_py/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://zsylvester.github.io/publication/detrital_py/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Latitudinal Changes in the Morphology of Submarine Channels: Reevaluating the Evidence for the Influence of the Coriolis Force</title>
@@ -261,15 +270,6 @@
       <pubDate>Fri, 01 Oct 2004 00:00:00 +0000</pubDate>
       
       <guid>https://zsylvester.github.io/publication/textural_trends/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>detritalPy: A Python‐based Toolset for Visualizing and Analyzing Detrital Geo‐Thermochronologic Data</title>
-      <link>https://zsylvester.github.io/publication/detrital_py/</link>
-      <pubDate>Fri, 01 Oct 2004 00:00:00 +0000</pubDate>
-      
-      <guid>https://zsylvester.github.io/publication/detrital_py/</guid>
       <description></description>
     </item>
     
