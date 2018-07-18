@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zsylvester.github.io/post/stratal_patterns/</loc>
+    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zsylvester.github.io/publication/detrital_py/</loc>
     <lastmod>2018-06-11T00:00:00+00:00</lastmod>
   </url>
@@ -205,7 +210,7 @@
   
   <url>
     <loc>https://zsylvester.github.io/tags/geology/</loc>
-    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -240,14 +245,20 @@
   </url>
   
   <url>
+    <loc>https://zsylvester.github.io/tags/minibasins/</loc>
+    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://zsylvester.github.io/tags/modeling/</loc>
-    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://zsylvester.github.io/post/</loc>
-    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -259,7 +270,7 @@
   
   <url>
     <loc>https://zsylvester.github.io/tags/python/</loc>
-    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -283,7 +294,7 @@
   
   <url>
     <loc>https://zsylvester.github.io/tags/sedimentology/</loc>
-    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -295,7 +306,7 @@
   
   <url>
     <loc>https://zsylvester.github.io/tags/stratigraphy/</loc>
-    <lastmod>2017-04-12T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -313,7 +324,7 @@
   
   <url>
     <loc>https://zsylvester.github.io/</loc>
-    <lastmod>2018-06-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

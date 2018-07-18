@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Wed, 12 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zsylvester.github.io/tags/geology/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Stratal patterns in salt-withdrawal minibasins</title>
+      <link>https://zsylvester.github.io/post/stratal_patterns/</link>
+      <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://zsylvester.github.io/post/stratal_patterns/</guid>
+      <description>These are animations that accompany our 2015 article on the stratigraphy of salt-withdrawal basins on the slope (Sylvester, Z., Cantelli, A., and Pirmez, C., 2015, Stratigraphic evolution of intraslope minibasins: Insights from surface-based model: AAPG Bulletin, v. 99, no. 6, p. 1099–1129).
+Convergence: Onlap: Sinusoidal input, no bypass: Sinusoidal input and bypass: Constant-to-sinusoidal input, constant subsidence, no bypass: Constant-to-sinusoidal input, constant subsidence, and bypass: Constant-to-out-of-phase sediment input: Subsidence and sediment input phases: Static fill-and-spill: Dynamic fill-and-spill: </description>
+    </item>
     
     <item>
       <title>Exploring (de)compaction with Python</title>
