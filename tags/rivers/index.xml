@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Sun, 16 Mar 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zsylvester.github.io/tags/rivers/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Does river migration slow down in high-curvature bends?</title>
+      <link>https://zsylvester.github.io/post/curvature_migration_rate/</link>
+      <pubDate>Mon, 14 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zsylvester.github.io/post/curvature_migration_rate/</guid>
+      <description>The answer, at least for seven rivers of the Amazon Basin, seems to be negative, as we try to demonstrate in a paper that was recently published in Geology. My coauthors are Paul Durkin, at the University of Manitoba, and Jake Covault, at the Bureau of Economic Geology, The University of Texas at Austin. In this blog post, I try to provide a bit more background to our paper.</description>
+    </item>
     
     <item>
       <title>Rivers through time, as seen in Landsat images</title>
