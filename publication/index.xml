@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Mon, 11 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 06 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zsylvester.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>High curvatures drive river meandering</title>
+      <link>https://zsylvester.github.io/publication/curvature_and_migration_rate/</link>
+      <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://zsylvester.github.io/publication/curvature_and_migration_rate/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>detritalPy: A Python‐based Toolset for Visualizing and Analyzing Detrital Geo‐Thermochronologic Data</title>
@@ -36,15 +45,6 @@
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>https://zsylvester.github.io/publication/channels_and_lobes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>High curvatures drive river meandering [preprint]</title>
-      <link>https://zsylvester.github.io/publication/curvature_and_migration_rate/</link>
-      <pubDate>Mon, 20 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://zsylvester.github.io/publication/curvature_and_migration_rate/</guid>
       <description></description>
     </item>
     
