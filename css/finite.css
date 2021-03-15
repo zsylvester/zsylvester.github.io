@@ -162,6 +162,14 @@ img[src$='#center400']
     /* whatever else styles you fancy here */
 }
 
+img[src$='#center500']
+{
+    display: block;
+    margin: 0.7rem auto; 
+    width: 500px;
+    /* whatever else styles you fancy here */
+}
+
 img[src$='#center600']
 {
     display: block;

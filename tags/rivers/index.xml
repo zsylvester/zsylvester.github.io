@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Wed, 06 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://zsylvester.github.io/tags/rivers/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Point bars and counter point bars: Why is sediment deposited on the &#39;wrong&#39; side of a meander bend?</title>
+      <link>https://zsylvester.github.io/post/counter_point_bars/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://zsylvester.github.io/post/counter_point_bars/</guid>
+      <description>The simplest definition of point bars is that they are sedimentary deposits forming on the inner, convex bank of river bends. [&amp;lsquo;Inner&amp;rsquo; and &amp;lsquo;convex&amp;rsquo; bank means that, looking toward the river, the bank is curving around you.] Amadeus W. Grabau, an early &amp;lsquo;influencer&amp;rsquo; in stratigraphy and sedimentary geology, published a beautiful drawing of how meanders grow, point bars evolve, and oxbow lakes form, more than a hundred years ago:</description>
+    </item>
     
     <item>
       <title>Does river migration slow down in high-curvature bends?</title>
