@@ -7,8 +7,50 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Mon, 04 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Meandering streamflows across landscapes and scales: a review and discussion</title>
+      <link>https://zsylvester.github.io/publication/meandering_book_intro/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/publication/meandering_book_intro/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Turbidite correlation for paleoseismology</title>
+      <link>https://zsylvester.github.io/publication/turbidite_paleoseismology/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/publication/turbidite_paleoseismology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fluvial-style migration controls autogenic aggradation in submarine channels: Joshua Channel, eastern Gulf of Mexico</title>
+      <link>https://zsylvester.github.io/publication/joshua_channel/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/publication/joshua_channel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>The impact of post-cutoff bend curvature on channel kinematics in meandering rivers: an example from the Trinity River, Texas, USA</title>
+      <link>https://zsylvester.github.io/publication/trinity_cutoffs/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/publication/trinity_cutoffs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Stratigraphy in space and time: A reproducible approach to analysis and visualization</title>
+      <link>https://zsylvester.github.io/publication/stratigraphy_space_time/</link>
+      <pubDate>Mon, 05 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/publication/stratigraphy_space_time/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automated multi-well stratigraphic correlation and model building using relative geologic time</title>
+      <link>https://zsylvester.github.io/publication/chronolog/</link>
+      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/publication/chronolog/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Channel trajectories control deep-water stratigraphic architecture</title>
       <link>https://zsylvester.github.io/publication/channel_trajectories/</link>
