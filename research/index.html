@@ -59,15 +59,35 @@
 <div class="row">
   <div class="column small-12 medium-10 large-8">
     <h1>Research</h1>
-    My primary research interests are in clastic sedimentology and stratigraphy. However, stratigraphy is essentially what evolving depositional landscapes leave behind; therefore, I think there is a lot of opportunity in using geomorphologic insight to better understand stratigraphy. This is especially true when the quality and amount of available remote sensing data (satellite imagery, LIDAR, multibeam bathymetry, drone imagery) are increasing every day. In addition to the increasing importance of these methods and data types, I continue to use seismic reflection data in stratigraphic and geomorphologic studies; and a significant part of my work involves building and exploring simple reduced-complexity models of clastic sedimentary systems. 
-
-    <br><br>
-    <h2>The geomorphology and stratigraphy of meandering channels</h2>
-    During the last few years, I have spent significant time working on the morphology and stratigraphy of meandering / sinuous channels. The focus was initially on submarine channels and largely based on three-dimensional seismic data and simple kinematic modeling. However, I think that development of sinuosity in submarine channels shares similarities with meandering rivers, and a lot remains to be learned from trying to apply our knowledge of fluvial systems in the submarine realm. In addition, there are many simple aspects of fluvial meandering models that may be well known to geomorphologists but have been not fully explored yet in terms of impact on stratigraphy. 
+    <h2>Stratigraphic correlation</h2>
+    Correlating stratigraphic signals (e.g., geophysical well logs) is a fundamental task in sedimentology and stratigraphy, both in industry and academia. 
+    We have developed a Python package called 'ChronoLog' that relies on 3D optimization of a large number of pairwise stratigraphic correlations to build a chronostratigraphic 
+    framework that is consistent in three dimensions. The pairwise correlations us the dynamic time warping (DTW) algorithm. In collaboration with USGS scientists, we have 
+    also applied the DTW approach to testing whether turbidites along the Cascadia subduction zone - potential records of megathrust earthquakes - can be correlated over large distances.
     <br /><br />
     Publications: 
+    <a class="button pub-link hollow" href="https://zsylvester.github.io/publication/chronolog/">Basin Research</a>
+    <a class="button pub-link hollow" href="https://zsylvester.github.io/publication/turbidite_paleoseismology/">GSA Bulletin</a>
+    <br><br>
+    <h2>The geomorphology and stratigraphy of meandering channels</h2>
+    During the last few years, our group has spent significant time working on the morphology and stratigraphy of meandering / sinuous channels. 
+    The focus was initially on submarine channels and largely based on three-dimensional seismic data and simple kinematic modeling. 
+    However, I think that development of sinuosity in submarine channels shares similarities with meandering rivers, and a lot remains to be learned 
+    from trying to apply our knowledge of fluvial systems in the submarine realm. In addition, there are many simple aspects of fluvial meandering 
+    models that may be well known to geomorphologists but have been not fully explored yet in terms of impact on stratigraphy.
+    <br />
+    We have also explored the idea that the curvature of meandering channels may be a good predictor of migration rate, contrary to the common belief that
+    the relationship between the two is higly nonlinear and noisy; and have shown that meandering rivers that are not too affected by variations in erodibility
+    may be well described by simple curvature-based models of meandering.
+    <br /><br />
+    Publications: 
+    <a class="button pub-link hollow" href="https://zsylvester.github.io/publication/joshua_channel/">Geological Society</a>
+    <a class="button pub-link hollow" href="https://zsylvester.github.io/publication/trinity_cutoffs/">Geological Society</a>
+    <a class="button pub-link hollow" href="https://zsylvester.github.io/publication/channel_trajectories/">The Depositional Record</a>
+    <a class="button pub-link hollow" href="https://zsylvester.github.io/publication/campos_giant_channels/">Geosphere</a>
+    <a class="button pub-link hollow" href="https://zsylvester.github.io/publication/counter_point_bars_gsa_bull/">GSA Bulletin</a>
+    <a class="button pub-link hollow" href="https://zsylvester.github.io/publication/curvature_and_migration_rate/">Geology</a>
     <a class="button pub-link hollow" href="https://zsylvester.github.io/publication/submarine_cutoffs/">Geology</a>
-    <a class="button pub-link hollow" href="https://zsylvester.github.io/publication/curvature_and_migration_rate/">EarthArxiv</a>
     <a class="button pub-link hollow" href="https://zsylvester.github.io/publication/channel_evolution/">SEPM</a>
     <a class="button pub-link hollow" href="https://zsylvester.github.io/publication/submarine_channel_model/">MPG</a>
 
@@ -77,7 +97,10 @@
     <br>
 
     <h2>Seismic stratigraphy of deepwater systems</h2>
-    Three-dimensional seismic reflection data has been called the "geological Hubble", and for a good reason. Marine seismic data tends to be of high quality and there is an increasing number of datasets that are becoming publicly available. During my years in the energy industry, I have developed expertise in seismic interpretation and I find that this kind of data is unparalleled when it comes to understanding the true three-dimensionality and spatial context of depositional systems. The image below is from two channel-levee systems (Fuji and Einstein) in the Eastern Gulf of Mexico (from Sylvester et al., 2012, SEPM Special Publication).
+    Three-dimensional seismic reflection data has been called the "geological Hubble", and for a good reason. Marine seismic data tends to be of high quality and there 
+    is an increasing number of datasets that are becoming publicly available. During my years in the energy industry, I have developed expertise in seismic interpretation 
+    and I find that this kind of data is unparalleled when it comes to understanding the true three-dimensionality and spatial context of depositional systems. 
+    The image below is from two channel-levee systems (Fuji and Einstein) in the Eastern Gulf of Mexico (from Sylvester et al., 2012, SEPM Special Publication).
 
     <br><br>
     Publications:
@@ -89,7 +112,10 @@
     <br>
 
     <h2>Sedimentation and tectonics</h2>
-    I have done some work on stratal patterns in salt-withdrawal minibasins in the past and I am interested in restarting some projects that focus on the impact of tectonic deformation on sedimentation. A first study is focusing on the influence of deformation on meandering patterns; but there is clearly more to do on the subject of minibasin sedimentation as well. The seismic section below is from on of the minibasins of the Brazos-Trinity system in the Gulf of Mexico; the cross section below shows the output of a simple model of the same basin (from Sylvester et al., 2015).
+    I have done some work on stratal patterns in salt-withdrawal minibasins in the past and I am interested in restarting some projects that focus on the impact of tectonic 
+    deformation on sedimentation. A first study is focusing on the influence of deformation on meandering patterns; but there is clearly more to do on the subject of minibasin 
+    sedimentation as well. The seismic section below is from on of the minibasins of the Brazos-Trinity system in the Gulf of Mexico; the cross section below shows the output 
+    of a simple model of the same basin (from Sylvester et al., 2015).
 
     <br><br>
     Publications:
