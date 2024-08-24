@@ -1,34 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Researches on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/research/</link>
     <description>Recent content in Researches on Zoltán Sylvester</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
     <lastBuildDate>Sun, 16 Mar 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://zsylvester.github.io/research/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://zsylvester.github.io/research/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Meandering</title>
       <link>https://zsylvester.github.io/research/meandering/</link>
       <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/research/meandering/</guid>
       <description>blah blah blah</description>
     </item>
-    
     <item>
       <title>Seismic stratigraphy</title>
       <link>https://zsylvester.github.io/research/seismic_strat/</link>
       <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/research/seismic_strat/</guid>
       <description>blah blah blah</description>
     </item>
-    
   </channel>
 </rss>

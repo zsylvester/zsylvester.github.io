@@ -1,34 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Meandering on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/tags/meandering/</link>
     <description>Recent content in Meandering on Zoltán Sylvester</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
     <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://zsylvester.github.io/tags/meandering/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://zsylvester.github.io/tags/meandering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Point bars and counter point bars: Why is sediment deposited on the &#39;wrong&#39; side of a meander bend?</title>
       <link>https://zsylvester.github.io/post/counter_point_bars/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/counter_point_bars/</guid>
-      <description>The simplest definition of point bars is that they are sedimentary deposits forming on the inner, convex bank of river bends. [&amp;lsquo;Inner&amp;rsquo; and &amp;lsquo;convex&amp;rsquo; bank means that, looking toward the river, the bank is curving around you.] Amadeus W. Grabau, an early &amp;lsquo;influencer&amp;rsquo; in stratigraphy and sedimentary geology, published a beautiful drawing of how meanders grow, point bars evolve, and oxbow lakes form, more than a hundred years ago:</description>
+      <description>The simplest definition of point bars is that they are sedimentary deposits forming on the inner, convex bank of river bends. [&amp;lsquo;Inner&amp;rsquo; and &amp;lsquo;convex&amp;rsquo; bank means that, looking toward the river, the bank is curving around you.] Amadeus W. Grabau, an early &amp;lsquo;influencer&amp;rsquo; in stratigraphy and sedimentary geology, published a beautiful drawing of how meanders grow, point bars evolve, and oxbow lakes form, more than a hundred years ago:&#xA;In other words, inner, convex banks in a meandering river are depositional; and outer, concave banks are erosional.</description>
     </item>
-    
     <item>
       <title>Does river migration slow down in high-curvature bends?</title>
       <link>https://zsylvester.github.io/post/curvature_migration_rate/</link>
       <pubDate>Wed, 06 Feb 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/curvature_migration_rate/</guid>
-      <description>The answer, at least for seven rivers of the Amazon Basin, seems to be negative, as we try to demonstrate in a paper that was recently published in Geology. My coauthors are Paul Durkin, at the University of Manitoba, and Jake Covault, at the Bureau of Economic Geology, The University of Texas at Austin. In this blog post, I try to provide a bit more background to our paper.</description>
+      <description>The answer, at least for seven rivers of the Amazon Basin, seems to be negative, as we try to demonstrate in a paper that was recently published in Geology. My coauthors are Paul Durkin, at the University of Manitoba, and Jake Covault, at the Bureau of Economic Geology, The University of Texas at Austin. In this blog post, I try to provide a bit more background to our paper.&#xA;Why is this an interesting result?</description>
     </item>
-    
   </channel>
 </rss>

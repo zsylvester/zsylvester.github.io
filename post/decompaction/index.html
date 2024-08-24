@@ -93,274 +93,194 @@
 </div>
 
       <div class="post-body" itemprop="articleBody">
-        
-
-<p>All clastic sediments are subject to compaction (and reduction of porosity) as the result of increasingly tighter packing of grains under a thickening overburden. Decompaction - the estimation of the decompacted thickness of a rock column - is an important part of subsidence (or geohistory) analysis. The following exercise is loosely based on the excellent basin analysis textbook by Allen &amp; Allen (2013), especially their Appendix 56.</p>
-
+        <p>All clastic sediments are subject to compaction (and reduction of porosity) as the result of increasingly tighter packing of grains under a thickening overburden. Decompaction - the estimation of the decompacted thickness of a rock column - is an important part of subsidence (or geohistory) analysis. The following exercise is loosely based on the excellent basin analysis textbook by Allen &amp; Allen (2013), especially their Appendix 56.</p>
 <h2 id="import-stuff">Import stuff</h2>
-
-<pre><code class="language-Python">import numpy as np
-import matplotlib.pyplot as plt
-import functools
-from scipy.optimize import bisect
-%matplotlib inline
-%config InlineBackend.figure_format = 'svg'
-plt.rcParams['mathtext.fontset'] = 'cm'
-</code></pre>
-
-<h2 id="posing-the-problem">Posing the problem</h2>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> functools
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> scipy.optimize <span style="color:#f92672">import</span> bisect
+</span></span><span style="display:flex;"><span><span style="color:#f92672">%</span>matplotlib inline
+</span></span><span style="display:flex;"><span><span style="color:#f92672">%</span>config InlineBackend<span style="color:#f92672">.</span>figure_format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;svg&#39;</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>rcParams[<span style="color:#e6db74">&#39;mathtext.fontset&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;cm&#39;</span>
+</span></span></code></pre></div><h2 id="posing-the-problem">Posing the problem</h2>
 <p>Given a sediment column of a certain lithology with its top at $y_1$ and its base at $y_2$, we are trying to find the thickness and average porosity of the same sediment column at a different depth (see figure below). We are going to set the new top $y_1&rsquo;$ and work towards finding the new base $y_2&rsquo;$.</p>
-
-<pre><code class="language-Python">plt.figure(figsize=(2,5))
-x = [0,1,1,0,0]
-y = [1,1,1.5,1.5,1]
-plt.text(-0.6,1.02,'$y_1$',fontsize=16)
-plt.text(-0.6,1.52,'$y_2$',fontsize=16)
-plt.text(-0.6,1.27,'$\phi$',fontsize=16)
-plt.fill(x,y,facecolor='lemonchiffon',edgecolor='k')
-x = [3,4,4,3,3]
-y = [0.5,0.5,1.15,1.15,0.5]
-plt.text(2.25,0.52,'$y_1\'$',fontsize=16)
-plt.text(2.25,1.17,'$y_2\'$',fontsize=16)
-plt.text(2.25,0.9,'$\phi\'$',fontsize=16)
-plt.fill(x,y,facecolor='lemonchiffon',edgecolor='k')
-plt.plot([1,3],[1,0.5],'k--')
-plt.plot([1,3],[1.5,1.15],'k--')
-plt.gca().invert_yaxis()
-plt.axis('off');
-</code></pre>
-
-<p><img src="https://zsylvester.github.io/img/compaction_1.png#center" alt="The problem" /></p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1.5</span>,<span style="color:#ae81ff">1.5</span>,<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#f92672">-</span><span style="color:#ae81ff">0.6</span>,<span style="color:#ae81ff">1.02</span>,<span style="color:#e6db74">&#39;$y_1$&#39;</span>,fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#f92672">-</span><span style="color:#ae81ff">0.6</span>,<span style="color:#ae81ff">1.52</span>,<span style="color:#e6db74">&#39;$y_2$&#39;</span>,fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#f92672">-</span><span style="color:#ae81ff">0.6</span>,<span style="color:#ae81ff">1.27</span>,<span style="color:#e6db74">&#39;$\phi$&#39;</span>,fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>fill(x,y,facecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lemonchiffon&#39;</span>,edgecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>x <span style="color:#f92672">=</span> [<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>]
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.5</span>,<span style="color:#ae81ff">0.5</span>,<span style="color:#ae81ff">1.15</span>,<span style="color:#ae81ff">1.15</span>,<span style="color:#ae81ff">0.5</span>]
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">2.25</span>,<span style="color:#ae81ff">0.52</span>,<span style="color:#e6db74">&#39;$y_1</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">$&#39;</span>,fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">2.25</span>,<span style="color:#ae81ff">1.17</span>,<span style="color:#e6db74">&#39;$y_2</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">$&#39;</span>,fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">2.25</span>,<span style="color:#ae81ff">0.9</span>,<span style="color:#e6db74">&#39;$\phi</span><span style="color:#ae81ff">\&#39;</span><span style="color:#e6db74">$&#39;</span>,fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">16</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>fill(x,y,facecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;lemonchiffon&#39;</span>,edgecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>],[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0.5</span>],<span style="color:#e6db74">&#39;k--&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">3</span>],[<span style="color:#ae81ff">1.5</span>,<span style="color:#ae81ff">1.15</span>],<span style="color:#e6db74">&#39;k--&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>gca()<span style="color:#f92672">.</span>invert_yaxis()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;off&#39;</span>);
+</span></span></code></pre></div><p><img src="https://zsylvester.github.io/img/compaction_1.png#center" alt="The problem"></p>
 <h2 id="porosity-decrease-with-depth">Porosity decrease with depth</h2>
-
 <p>Porosity decreases with depth, initially largely due to mechanical compaction of the sediment. The decrease in porosity is relatively large close to the seafloor, where sediment is loosely packed; the lower the porosity, the less room there is for further compaction. This decrease in porosity with depth is commonly modeled as a negative exponential function (Athy, 1930):</p>
-
 <p>$$ \phi(y) = \phi_0 e^{-\frac{y}{y_0}} $$</p>
-
 <p>where $\phi(y)$ is the porosity at depth $y$ and $y_0$ is the depth where the initial porosity $\phi_0$ was reduced by $1/e$.</p>
-
 <p>This is an empirical equation, as there is no direct physical link between depth and porosity; compaction and porosity reduction are more directly related to the increase in effective stress under a thicker overburden. Here we only address the simplest scenario with no overpressured zones. For normally pressured sediments, Athy&rsquo;s porosity-depth relationship can be expressed in a slightly different form:</p>
-
 <p>$$ \phi(y) = \phi_0 e^{-cy} $$</p>
-
 <p>where $c$ is a coefficient with the units $km^{-1}$. The idea is that $c$ is a characteristic constant for a certain lithology and it can measured if porosity values are available from different depths. Muds have higher porosities at the seafloor than sands but they compact faster than sands. The plot below show some typical curves that illustrate the exponential decrease in porosity with depth for sand and mud. The continuous lines correspond to the parameters for sand and mud in Appendix 56 of Allen &amp; Allen (2013); the dashed lines are exponential fits to data from the Ocean Drilling Program (Kominz et al., 2011).</p>
-
-<pre><code class="language-Python">c_sand = 0.27 # porosity-depth coefficient for sand (km-1)
-c_mud = 0.57 # porosity-depth coefficent for mud (km-1) 
-phi_sand_0 = 0.49 # surface porosity for sand
-phi_mud_0 = 0.63 # surface porosity for mud
-y = np.arange(0,3.01,0.01)
-
-phi_sand = phi_sand_0 * np.exp(-c_sand*y)
-phi_mud = phi_mud_0 * np.exp(-c_mud*y)
-
-plt.figure(figsize=(4,7))
-plt.plot(phi_sand,y,'gold',linewidth=2,label='sand')
-plt.plot(phi_mud,y,'brown',linewidth=2,label='mud')
-plt.xlabel('porosity')
-plt.ylabel('depth (km)')
-plt.xlim(0,0.65)
-plt.gca().invert_yaxis()
-
-c_sand = 1000/18605.0 # Kominz et al. 2011 &gt;90% sand curve
-c_mud = 1000/1671.0 # Kominz et al. 2011 &gt;90% mud curve
-phi_sand_0 = 0.407 # Kominz et al. 2011 &gt;90% sand curve
-phi_mud_0 = 0.614 # Kominz et al. 2011 &gt;90% mud curve
-phi_sand = phi_sand_0 * np.exp(-c_sand*y)
-phi_mud = phi_mud_0 * np.exp(-c_mud*y)
-plt.plot(phi_sand,y,'--',color='gold',linewidth=2,label='90% sand')
-plt.plot(phi_mud,y,'--',color='brown',linewidth=2,label='90% mud')
-plt.legend(loc=0, fontsize=10);
-</code></pre>
-
-<p><img src="https://zsylvester.github.io/img/compaction_2.png#center" alt="The problem" /></p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>c_sand <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.27</span> <span style="color:#75715e"># porosity-depth coefficient for sand (km-1)</span>
+</span></span><span style="display:flex;"><span>c_mud <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.57</span> <span style="color:#75715e"># porosity-depth coefficent for mud (km-1) </span>
+</span></span><span style="display:flex;"><span>phi_sand_0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.49</span> <span style="color:#75715e"># surface porosity for sand</span>
+</span></span><span style="display:flex;"><span>phi_mud_0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.63</span> <span style="color:#75715e"># surface porosity for mud</span>
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">3.01</span>,<span style="color:#ae81ff">0.01</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>phi_sand <span style="color:#f92672">=</span> phi_sand_0 <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>c_sand<span style="color:#f92672">*</span>y)
+</span></span><span style="display:flex;"><span>phi_mud <span style="color:#f92672">=</span> phi_mud_0 <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>c_mud<span style="color:#f92672">*</span>y)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">7</span>))
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(phi_sand,y,<span style="color:#e6db74">&#39;gold&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;sand&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(phi_mud,y,<span style="color:#e6db74">&#39;brown&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;mud&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;porosity&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;depth (km)&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlim(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.65</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>gca()<span style="color:#f92672">.</span>invert_yaxis()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>c_sand <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span><span style="color:#f92672">/</span><span style="color:#ae81ff">18605.0</span> <span style="color:#75715e"># Kominz et al. 2011 &gt;90% sand curve</span>
+</span></span><span style="display:flex;"><span>c_mud <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1671.0</span> <span style="color:#75715e"># Kominz et al. 2011 &gt;90% mud curve</span>
+</span></span><span style="display:flex;"><span>phi_sand_0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.407</span> <span style="color:#75715e"># Kominz et al. 2011 &gt;90% sand curve</span>
+</span></span><span style="display:flex;"><span>phi_mud_0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.614</span> <span style="color:#75715e"># Kominz et al. 2011 &gt;90% mud curve</span>
+</span></span><span style="display:flex;"><span>phi_sand <span style="color:#f92672">=</span> phi_sand_0 <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>c_sand<span style="color:#f92672">*</span>y)
+</span></span><span style="display:flex;"><span>phi_mud <span style="color:#f92672">=</span> phi_mud_0 <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>c_mud<span style="color:#f92672">*</span>y)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(phi_sand,y,<span style="color:#e6db74">&#39;--&#39;</span>,color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;gold&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;90</span><span style="color:#e6db74">% s</span><span style="color:#e6db74">and&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(phi_mud,y,<span style="color:#e6db74">&#39;--&#39;</span>,color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;brown&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;90% mud&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>);
+</span></span></code></pre></div><p><img src="https://zsylvester.github.io/img/compaction_2.png#center" alt="The problem"></p>
 <p>While the compaction trends for mud happen to be fairly similar in the plot above, the ones for sandy lithologies are very different. This highlights that porosity-depth curves vary significantly from one basin to another, and are strongly affected by overpressures and exhumation. Using local data and geological information is critical. As Giles et al. (1998) have put it, &ldquo;The use of default compaction curves can introduce significant errors into thermal history and pore- fluid pressure calculations, particularly where little well data are available to calibrate the model.&rdquo; To see how widely - and wildly - variable compaction trends can be, check out the review paper by Giles et al. (1998).</p>
-
 <h2 id="deriving-the-general-decompaction-equation">Deriving the general decompaction equation</h2>
-
 <p>Compacting or decompacting a column of sediment means that we have to move it along the curves in the figure above. Let&rsquo;s consider the volume of water in a small segment of the sediment column (over which porosity does not vary a lot):</p>
-
 <p>$$ dV_w = \phi dV_t $$</p>
-
 <p>As we have seen before, porosity at depth $y$ is</p>
-
 <p>$$ \phi(y) = \phi_0 e^{-cy} $$</p>
-
 <p>The first equation then becomes</p>
-
 <p>$$ dV_w = \phi_0 e^{-cy} dV_t $$</p>
-
 <p>But</p>
-
 <p>$$ dV_w = A dy_w $$</p>
-
 <p>and</p>
-
 <p>$$ dV_t = A dy_t $$</p>
-
 <p>where $y_w$ and $y_t$ are the thicknesses that the water and total volumes occupy respectively, and $A$ is the area of the column we are looking at. So the relationship is equivalent to</p>
-
 <p>$$ dy_w = \phi_0 e^{-cy} dy_t $$</p>
-
 <p>If we integrate this over the interval $y_1$ to $y_2$ we get</p>
-
 <p>$$ y_w = \int _{y1}^{y2} \phi_0 e^{-cy} dy_t $$</p>
-
 <p>Integrating this yields</p>
-
 <p>$$ y_w = \phi_0 \Bigg(\frac{1}{-c}e^{-cy_2} - \frac{1}{-c}e^{-cy_1}\Bigg) = \frac{\phi_0}{c} \big(e^{-cy_1}-e^{-cy_2}\big) $$</p>
-
 <p>As the total thickness equals the sediment thickness plus the water &ldquo;thickness&rdquo;, we get</p>
-
 <p>$$ y_s = y_t - y_w = y_2 - y_1 - y_w = y_2 - y_1 - \frac{\phi_0}{c} \big(e^{-cy_1}-e^{-cy_2}\big) $$</p>
-
 <p>The decompacted value of $y_w$ is</p>
-
 <p>$$ y_w&rsquo; = \frac{\phi_0}{c} \big(e^{-cy_1&rsquo;}-e^{-cy_2&rsquo;}\big) $$</p>
-
 <p>Now we can write the general decompaction equation:</p>
-
 <p>$$ y_2&rsquo;-y_1&rsquo; = y_s+y_w&rsquo;  $$</p>
-
 <p>That is,</p>
-
 <p>$$ y_2&rsquo;-y_1&rsquo; = y_2 - y_1 - \frac{\phi_0}{c} \big(e^{-cy_1}-e^{-cy_2}\big) + \frac{\phi_0}{c} \big(e^{-cy_1&rsquo;}-e^{-cy_2&rsquo;}\big) $$</p>
-
 <p>The average porosity at the new depth will be</p>
-
 <p>$$ \phi = \frac{Ay_w&rsquo;}{Ay_t&rsquo;} = \frac{\phi_0}{c}\frac{\big(e^{-cy_1&rsquo;}-e^{-cy_2&rsquo;}\big)}{y_2&rsquo;-y_1&rsquo;}  $$</p>
-
-<h2 id="write-code-to-compute-de-compacted-thickness">Write code to compute (de)compacted thickness</h2>
-
+<h2 id="write-code-to-compute-decompacted-thickness">Write code to compute (de)compacted thickness</h2>
 <p>The decompaction equation could be solved in the &lsquo;brute force&rsquo; way, that is, by gradually changing the value of $y_2&rsquo;$ until the right hand side (RHS) of the equation is the same as the left hand side (LHS) - see for example the Excel spreadsheet that accompanies Appendix 56 in Allen &amp; Allen (2013). However, we (and scipy) can do better than that; we will use bisection, one the simplest optimization methods to find the root of the function that we set up as RHS-LHS.</p>
-
-<pre><code class="language-Python"># compaction function - the unknown variable is y2a
-def comp_func(y2a,y1,y2,y1a,phi,c):
-    # left hand side of decompaction equation:
-    LHS = y2a - y1a
-    # right hand side of decompaction equation:
-    RHS = y2 - y1 - (phi/c)*(np.exp(-c*y1)-np.exp(-c*y2)) + (phi/c)*(np.exp(-c*y1a)-np.exp(-c*y2a))
-    return LHS - RHS
-</code></pre>
-
-<p>Now we can do the calculations; here we set the initial depths of a sandstone column $y_1,y_2$ to 2 and 3 kilometers, and we estimate the new thickness and porosity assuming that the column is brought to the surface ($y_1&rsquo;=0$).</p>
-
-<pre><code class="language-Python">c_sand = 0.27 # porosity-depth coefficient for sand (km-1)
-phi_sand = 0.49 # surface porosity for sand
-y1 = 2.0 # top depth in km
-y2 = 3.0 # base depth in km
-y1a = 0.0 # new top depth in km
-</code></pre>
-
-<p>One issue we need to address is that &lsquo;comp_func&rsquo; six input parameters, but the scipy &lsquo;bisect&rsquo; function only takes one parameter. We create a partial function &lsquo;comp_func_1&rsquo; in which the only variable is &lsquo;y2a&rsquo;, the rest are treated as constants:</p>
-
-<pre><code class="language-Python">comp_func_1 = functools.partial(comp_func, y1=y1, y2=y2, y1a=y1a, phi=phi_sand, c=c_sand)
-y2a = bisect(comp_func_1,y1a,y1a+3*(y2-y1)) # use bisection to find new base depth
-phi = (phi_sand/c_sand)*(np.exp(-c_sand*y1)-np.exp(-c_sand*y2))/(y2-y1) # initial average porosity
-phia = (phi_sand/c_sand)*(np.exp(-c_sand*y1a)-np.exp(-c_sand*y2a))/(y2a-y1a) # new average porosity
-
-print('new base depth: '+str(round(y2a,2))+' km')
-print('initial thickness: '+str(round(y2-y1,2))+' km')
-print('new thickness: '+str(round(y2a-y1a,2))+' km')
-print('initial porosity: '+str(round(phi,3)))
-print('new porosity: '+str(round(phia,3)))
-</code></pre>
-
-<h2 id="write-code-to-de-compact-stratigraphic-column-with-multiple-layers">Write code to (de)compact stratigraphic column with multiple layers</h2>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#75715e"># compaction function - the unknown variable is y2a</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">comp_func</span>(y2a,y1,y2,y1a,phi,c):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># left hand side of decompaction equation:</span>
+</span></span><span style="display:flex;"><span>    LHS <span style="color:#f92672">=</span> y2a <span style="color:#f92672">-</span> y1a
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># right hand side of decompaction equation:</span>
+</span></span><span style="display:flex;"><span>    RHS <span style="color:#f92672">=</span> y2 <span style="color:#f92672">-</span> y1 <span style="color:#f92672">-</span> (phi<span style="color:#f92672">/</span>c)<span style="color:#f92672">*</span>(np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>c<span style="color:#f92672">*</span>y1)<span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>c<span style="color:#f92672">*</span>y2)) <span style="color:#f92672">+</span> (phi<span style="color:#f92672">/</span>c)<span style="color:#f92672">*</span>(np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>c<span style="color:#f92672">*</span>y1a)<span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>c<span style="color:#f92672">*</span>y2a))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> LHS <span style="color:#f92672">-</span> RHS
+</span></span></code></pre></div><p>Now we can do the calculations; here we set the initial depths of a sandstone column $y_1,y_2$ to 2 and 3 kilometers, and we estimate the new thickness and porosity assuming that the column is brought to the surface ($y_1&rsquo;=0$).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>c_sand <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.27</span> <span style="color:#75715e"># porosity-depth coefficient for sand (km-1)</span>
+</span></span><span style="display:flex;"><span>phi_sand <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.49</span> <span style="color:#75715e"># surface porosity for sand</span>
+</span></span><span style="display:flex;"><span>y1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.0</span> <span style="color:#75715e"># top depth in km</span>
+</span></span><span style="display:flex;"><span>y2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.0</span> <span style="color:#75715e"># base depth in km</span>
+</span></span><span style="display:flex;"><span>y1a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span> <span style="color:#75715e"># new top depth in km</span>
+</span></span></code></pre></div><p>One issue we need to address is that &lsquo;comp_func&rsquo; six input parameters, but the scipy &lsquo;bisect&rsquo; function only takes one parameter. We create a partial function &lsquo;comp_func_1&rsquo; in which the only variable is &lsquo;y2a&rsquo;, the rest are treated as constants:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>comp_func_1 <span style="color:#f92672">=</span> functools<span style="color:#f92672">.</span>partial(comp_func, y1<span style="color:#f92672">=</span>y1, y2<span style="color:#f92672">=</span>y2, y1a<span style="color:#f92672">=</span>y1a, phi<span style="color:#f92672">=</span>phi_sand, c<span style="color:#f92672">=</span>c_sand)
+</span></span><span style="display:flex;"><span>y2a <span style="color:#f92672">=</span> bisect(comp_func_1,y1a,y1a<span style="color:#f92672">+</span><span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>(y2<span style="color:#f92672">-</span>y1)) <span style="color:#75715e"># use bisection to find new base depth</span>
+</span></span><span style="display:flex;"><span>phi <span style="color:#f92672">=</span> (phi_sand<span style="color:#f92672">/</span>c_sand)<span style="color:#f92672">*</span>(np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>c_sand<span style="color:#f92672">*</span>y1)<span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>c_sand<span style="color:#f92672">*</span>y2))<span style="color:#f92672">/</span>(y2<span style="color:#f92672">-</span>y1) <span style="color:#75715e"># initial average porosity</span>
+</span></span><span style="display:flex;"><span>phia <span style="color:#f92672">=</span> (phi_sand<span style="color:#f92672">/</span>c_sand)<span style="color:#f92672">*</span>(np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>c_sand<span style="color:#f92672">*</span>y1a)<span style="color:#f92672">-</span>np<span style="color:#f92672">.</span>exp(<span style="color:#f92672">-</span>c_sand<span style="color:#f92672">*</span>y2a))<span style="color:#f92672">/</span>(y2a<span style="color:#f92672">-</span>y1a) <span style="color:#75715e"># new average porosity</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;new base depth: &#39;</span><span style="color:#f92672">+</span>str(round(y2a,<span style="color:#ae81ff">2</span>))<span style="color:#f92672">+</span><span style="color:#e6db74">&#39; km&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;initial thickness: &#39;</span><span style="color:#f92672">+</span>str(round(y2<span style="color:#f92672">-</span>y1,<span style="color:#ae81ff">2</span>))<span style="color:#f92672">+</span><span style="color:#e6db74">&#39; km&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;new thickness: &#39;</span><span style="color:#f92672">+</span>str(round(y2a<span style="color:#f92672">-</span>y1a,<span style="color:#ae81ff">2</span>))<span style="color:#f92672">+</span><span style="color:#e6db74">&#39; km&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;initial porosity: &#39;</span><span style="color:#f92672">+</span>str(round(phi,<span style="color:#ae81ff">3</span>)))
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#39;new porosity: &#39;</span><span style="color:#f92672">+</span>str(round(phia,<span style="color:#ae81ff">3</span>)))
+</span></span></code></pre></div><h2 id="write-code-to-decompact-stratigraphic-column-with-multiple-layers">Write code to (de)compact stratigraphic column with multiple layers</h2>
 <p>Next we write a function that does the depth calculation for more than one layer in a sedimentary column:</p>
-
-<pre><code class="language-Python">def decompact(tops,lith,new_top,phi_sand,phi_mud,c_sand,c_mud):
-    tops_new = [] # list for decompacted tops
-    tops_new.append(new_top) # starting value
-    for i in range(len(tops)-1):
-        if lith[i] == 0:
-            phi = phi_mud; c = c_mud
-        if lith[i] == 1:
-            phi = phi_sand; c = c_sand
-        comp_func_1 = functools.partial(comp_func,y1=tops[i],y2=tops[i+1],y1a=tops_new[-1],phi=phi,c=c)
-        base_new_a = tops_new[-1]+tops[i+1]-tops[i]
-        base_new = bisect(comp_func_1, base_new_a, 4*base_new_a) # bisection
-        tops_new.append(base_new)
-    return tops_new
-</code></pre>
-
-<p>Let&rsquo;s use this function to decompact a simple stratigraphic column that consists of 5 alternating layers of sand and mud.</p>
-
-<pre><code class="language-Python">tops = np.array([1.0,1.1,1.15,1.3,1.5,2.0])
-lith = np.array([0,1,0,1,0]) # lithology labels: 0 = mud, 1 = sand
-phi_sand_0 = 0.49 # surface porosity for sand
-phi_mud_0 = 0.63 # surface porosity for mud
-c_sand = 0.27 # porosity-depth coefficient for sand (km-1)
-c_mud = 0.57 # porosity-depth coefficent for mud (km-1) 
-tops_new = decompact(tops,lith,0.0,phi_sand_0,phi_mud_0,c_sand,c_mud) # compute new tops
-</code></pre>
-
-<p>Plot the results:</p>
-
-<pre><code class="language-Python">def plot_decompaction(tops,tops_new):
-    for i in range(len(tops)-1):
-        x = [0,1,1,0]
-        y = [tops[i], tops[i], tops[i+1], tops[i+1]]
-        if lith[i] == 0:
-            color = 'xkcd:umber'
-        if lith[i] == 1:
-            color = 'lemonchiffon'
-        plt.fill(x,y,facecolor=color,edgecolor='k')
-        x = np.array([2,3,3,2])
-        y = np.array([tops_new[i], tops_new[i], tops_new[i+1], tops_new[i+1]])
-        if lith[i] == 0:
-            color = 'xkcd:umber'
-        if lith[i] == 1:
-            color = 'lemonchiffon'
-        plt.fill(x,y,facecolor=color,edgecolor='k')
-    plt.gca().invert_yaxis()
-    plt.tick_params(axis='x',which='both',bottom='off',top='off',labelbottom='off')
-    plt.ylabel('depth (km)')
-    for i in range(len(tops)):
-        plt.plot([1,2],[tops[i],tops_new[i]],'k--',linewidth=0.7)
-    
-plot_decompaction(tops,tops_new)
-plt.text(0.2,0.95,'compacted')
-plt.text(2.15,-0.05,'decompacted')
-plt.ylim(2.1,-0.2);
-</code></pre>
-
-<p><img src="https://zsylvester.github.io/img/compaction_3.png#center" alt="The problem" /></p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">decompact</span>(tops,lith,new_top,phi_sand,phi_mud,c_sand,c_mud):
+</span></span><span style="display:flex;"><span>    tops_new <span style="color:#f92672">=</span> [] <span style="color:#75715e"># list for decompacted tops</span>
+</span></span><span style="display:flex;"><span>    tops_new<span style="color:#f92672">.</span>append(new_top) <span style="color:#75715e"># starting value</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(tops)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> lith[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            phi <span style="color:#f92672">=</span> phi_mud; c <span style="color:#f92672">=</span> c_mud
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> lith[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>            phi <span style="color:#f92672">=</span> phi_sand; c <span style="color:#f92672">=</span> c_sand
+</span></span><span style="display:flex;"><span>        comp_func_1 <span style="color:#f92672">=</span> functools<span style="color:#f92672">.</span>partial(comp_func,y1<span style="color:#f92672">=</span>tops[i],y2<span style="color:#f92672">=</span>tops[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>],y1a<span style="color:#f92672">=</span>tops_new[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>],phi<span style="color:#f92672">=</span>phi,c<span style="color:#f92672">=</span>c)
+</span></span><span style="display:flex;"><span>        base_new_a <span style="color:#f92672">=</span> tops_new[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span>tops[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span>tops[i]
+</span></span><span style="display:flex;"><span>        base_new <span style="color:#f92672">=</span> bisect(comp_func_1, base_new_a, <span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>base_new_a) <span style="color:#75715e"># bisection</span>
+</span></span><span style="display:flex;"><span>        tops_new<span style="color:#f92672">.</span>append(base_new)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> tops_new
+</span></span></code></pre></div><p>Let&rsquo;s use this function to decompact a simple stratigraphic column that consists of 5 alternating layers of sand and mud.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>tops <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1.0</span>,<span style="color:#ae81ff">1.1</span>,<span style="color:#ae81ff">1.15</span>,<span style="color:#ae81ff">1.3</span>,<span style="color:#ae81ff">1.5</span>,<span style="color:#ae81ff">2.0</span>])
+</span></span><span style="display:flex;"><span>lith <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># lithology labels: 0 = mud, 1 = sand</span>
+</span></span><span style="display:flex;"><span>phi_sand_0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.49</span> <span style="color:#75715e"># surface porosity for sand</span>
+</span></span><span style="display:flex;"><span>phi_mud_0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.63</span> <span style="color:#75715e"># surface porosity for mud</span>
+</span></span><span style="display:flex;"><span>c_sand <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.27</span> <span style="color:#75715e"># porosity-depth coefficient for sand (km-1)</span>
+</span></span><span style="display:flex;"><span>c_mud <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.57</span> <span style="color:#75715e"># porosity-depth coefficent for mud (km-1) </span>
+</span></span><span style="display:flex;"><span>tops_new <span style="color:#f92672">=</span> decompact(tops,lith,<span style="color:#ae81ff">0.0</span>,phi_sand_0,phi_mud_0,c_sand,c_mud) <span style="color:#75715e"># compute new tops</span>
+</span></span></code></pre></div><p>Plot the results:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plot_decompaction</span>(tops,tops_new):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(tops)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        y <span style="color:#f92672">=</span> [tops[i], tops[i], tops[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>], tops[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> lith[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xkcd:umber&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> lith[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>            color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;lemonchiffon&#39;</span>
+</span></span><span style="display:flex;"><span>        plt<span style="color:#f92672">.</span>fill(x,y,facecolor<span style="color:#f92672">=</span>color,edgecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>        x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>        y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([tops_new[i], tops_new[i], tops_new[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>], tops_new[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]])
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> lith[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xkcd:umber&#39;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> lith[i] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>            color <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;lemonchiffon&#39;</span>
+</span></span><span style="display:flex;"><span>        plt<span style="color:#f92672">.</span>fill(x,y,facecolor<span style="color:#f92672">=</span>color,edgecolor<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>gca()<span style="color:#f92672">.</span>invert_yaxis()
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>tick_params(axis<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;x&#39;</span>,which<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;both&#39;</span>,bottom<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;off&#39;</span>,top<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;off&#39;</span>,labelbottom<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;off&#39;</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;depth (km)&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(tops)):
+</span></span><span style="display:flex;"><span>        plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>],[tops[i],tops_new[i]],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.7</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>plot_decompaction(tops,tops_new)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.2</span>,<span style="color:#ae81ff">0.95</span>,<span style="color:#e6db74">&#39;compacted&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">2.15</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">0.05</span>,<span style="color:#e6db74">&#39;decompacted&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylim(<span style="color:#ae81ff">2.1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">0.2</span>);
+</span></span></code></pre></div><p><img src="https://zsylvester.github.io/img/compaction_3.png#center" alt="The problem"></p>
 <p>Now let&rsquo;s see what happens if we use the 90% mud and 90% sand curves from Komminz et al. (2011).</p>
-
-<pre><code class="language-Python">tops = np.array([1.0,1.1,1.15,1.3,1.5,2.0])
-lith = np.array([0,1,0,1,0]) # lithology labels: 0 = mud, 1 = sand
-c_sand = 1000/18605.0 # Kominz et al. 2011 &gt;90% sand curve
-c_mud = 1000/1671.0 # Kominz et al. 2011 &gt;90% mud curve
-phi_sand_0 = 0.407 # Kominz et al. 2011 &gt;90% sand curve
-phi_mud_0 = 0.614 # Kominz et al. 2011 &gt;90% mud curve
-tops_new = decompact(tops,lith,0.0,phi_sand_0,phi_mud_0,c_sand,c_mud) # compute new tops
-
-plot_decompaction(tops,tops_new)
-plt.text(0.2,0.95,'compacted')
-plt.text(2.15,-0.05,'decompacted')
-plt.ylim(2.1,-0.2);
-</code></pre>
-
-<p><img src="https://zsylvester.github.io/img/compaction_4.png#center" alt="The problem" /></p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>tops <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1.0</span>,<span style="color:#ae81ff">1.1</span>,<span style="color:#ae81ff">1.15</span>,<span style="color:#ae81ff">1.3</span>,<span style="color:#ae81ff">1.5</span>,<span style="color:#ae81ff">2.0</span>])
+</span></span><span style="display:flex;"><span>lith <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>]) <span style="color:#75715e"># lithology labels: 0 = mud, 1 = sand</span>
+</span></span><span style="display:flex;"><span>c_sand <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span><span style="color:#f92672">/</span><span style="color:#ae81ff">18605.0</span> <span style="color:#75715e"># Kominz et al. 2011 &gt;90% sand curve</span>
+</span></span><span style="display:flex;"><span>c_mud <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1671.0</span> <span style="color:#75715e"># Kominz et al. 2011 &gt;90% mud curve</span>
+</span></span><span style="display:flex;"><span>phi_sand_0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.407</span> <span style="color:#75715e"># Kominz et al. 2011 &gt;90% sand curve</span>
+</span></span><span style="display:flex;"><span>phi_mud_0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.614</span> <span style="color:#75715e"># Kominz et al. 2011 &gt;90% mud curve</span>
+</span></span><span style="display:flex;"><span>tops_new <span style="color:#f92672">=</span> decompact(tops,lith,<span style="color:#ae81ff">0.0</span>,phi_sand_0,phi_mud_0,c_sand,c_mud) <span style="color:#75715e"># compute new tops</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plot_decompaction(tops,tops_new)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.2</span>,<span style="color:#ae81ff">0.95</span>,<span style="color:#e6db74">&#39;compacted&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">2.15</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">0.05</span>,<span style="color:#e6db74">&#39;decompacted&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylim(<span style="color:#ae81ff">2.1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">0.2</span>);
+</span></span></code></pre></div><p><img src="https://zsylvester.github.io/img/compaction_4.png#center" alt="The problem"></p>
 <p>Quite predictably, the main difference is that the sand layers have decompacted less in this case.</p>
-
 <p>That&rsquo;s it for now. It is not that hard to modify the code above for more than two lithologies. Happy (de)compacting!</p>
-
 <h2 id="references">References</h2>
-
 <p>Allen, P. A., and Allen, J. R. (2013) Basin Analysis: Principles and Application to Petroleum Play Assessment, Wiley-Blackwell.</p>
-
 <p>Athy, L.F. (1930) Density, porosity and compaction of sedimentary rocks. American Association Petroleum Geologists Bulletin, v. 14, p. 1–24.</p>
-
 <p>Giles, M.R., Indrelid, S.L., and James, D.M.D., 1998, Compaction — the great unknown in basin modelling: Geological Society London Special Publications, v. 141, no. 1, p. 15–43, doi: 10.1144/gsl.sp.1998.141.01.02.</p>
-
 <p>Kominz, M.A., Patterson, K., and Odette, D., 2011, Lithology Dependence of Porosity In Slope and Deep Marine Sediments: Journal of Sedimentary Research, v. 81, no. 10, p. 730–742, doi: 10.2110/jsr.2011.60.</p>
 
       </div>

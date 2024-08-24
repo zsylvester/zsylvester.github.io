@@ -1,71 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/tags/python/</link>
     <description>Recent content in Python on Zoltán Sylvester</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
     <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://zsylvester.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://zsylvester.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Point bars and counter point bars: Why is sediment deposited on the &#39;wrong&#39; side of a meander bend?</title>
       <link>https://zsylvester.github.io/post/counter_point_bars/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/counter_point_bars/</guid>
-      <description>The simplest definition of point bars is that they are sedimentary deposits forming on the inner, convex bank of river bends. [&amp;lsquo;Inner&amp;rsquo; and &amp;lsquo;convex&amp;rsquo; bank means that, looking toward the river, the bank is curving around you.] Amadeus W. Grabau, an early &amp;lsquo;influencer&amp;rsquo; in stratigraphy and sedimentary geology, published a beautiful drawing of how meanders grow, point bars evolve, and oxbow lakes form, more than a hundred years ago:</description>
+      <description>The simplest definition of point bars is that they are sedimentary deposits forming on the inner, convex bank of river bends. [&amp;lsquo;Inner&amp;rsquo; and &amp;lsquo;convex&amp;rsquo; bank means that, looking toward the river, the bank is curving around you.] Amadeus W. Grabau, an early &amp;lsquo;influencer&amp;rsquo; in stratigraphy and sedimentary geology, published a beautiful drawing of how meanders grow, point bars evolve, and oxbow lakes form, more than a hundred years ago:&#xA;In other words, inner, convex banks in a meandering river are depositional; and outer, concave banks are erosional.</description>
     </item>
-    
     <item>
       <title>Does river migration slow down in high-curvature bends?</title>
       <link>https://zsylvester.github.io/post/curvature_migration_rate/</link>
       <pubDate>Wed, 06 Feb 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/curvature_migration_rate/</guid>
-      <description>The answer, at least for seven rivers of the Amazon Basin, seems to be negative, as we try to demonstrate in a paper that was recently published in Geology. My coauthors are Paul Durkin, at the University of Manitoba, and Jake Covault, at the Bureau of Economic Geology, The University of Texas at Austin. In this blog post, I try to provide a bit more background to our paper.</description>
+      <description>The answer, at least for seven rivers of the Amazon Basin, seems to be negative, as we try to demonstrate in a paper that was recently published in Geology. My coauthors are Paul Durkin, at the University of Manitoba, and Jake Covault, at the Bureau of Economic Geology, The University of Texas at Austin. In this blog post, I try to provide a bit more background to our paper.&#xA;Why is this an interesting result?</description>
     </item>
-    
     <item>
       <title>Stratal patterns in salt-withdrawal minibasins</title>
       <link>https://zsylvester.github.io/post/stratal_patterns/</link>
       <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/stratal_patterns/</guid>
       <description>These are animations that accompany our 2015 article on the stratigraphy of salt-withdrawal basins on the slope (Sylvester, Z., Cantelli, A., and Pirmez, C., 2015, Stratigraphic evolution of intraslope minibasins: Insights from surface-based model: AAPG Bulletin, v. 99, no. 6, p. 1099–1129). We have used a simple model that investigates the interplay between subsidence and sedimentation and helps in the understanding of how stratal termination patterns relate to variations in sediment input and basin subsidence.</description>
     </item>
-    
     <item>
       <title>Exploring (de)compaction with Python</title>
       <link>https://zsylvester.github.io/post/decompaction/</link>
       <pubDate>Wed, 12 Apr 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/decompaction/</guid>
-      <description>All clastic sediments are subject to compaction (and reduction of porosity) as the result of increasingly tighter packing of grains under a thickening overburden. Decompaction - the estimation of the decompacted thickness of a rock column - is an important part of subsidence (or geohistory) analysis. The following exercise is loosely based on the excellent basin analysis textbook by Allen &amp;amp; Allen (2013), especially their Appendix 56.
-Import stuff import numpy as np import matplotlib.</description>
+      <description>All clastic sediments are subject to compaction (and reduction of porosity) as the result of increasingly tighter packing of grains under a thickening overburden. Decompaction - the estimation of the decompacted thickness of a rock column - is an important part of subsidence (or geohistory) analysis. The following exercise is loosely based on the excellent basin analysis textbook by Allen &amp;amp; Allen (2013), especially their Appendix 56.&#xA;Import stuff import numpy as np import matplotlib.</description>
     </item>
-    
     <item>
       <title>Exploring the diffusion equation with Python</title>
       <link>https://zsylvester.github.io/post/diffusion_equation/</link>
       <pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/diffusion_equation/</guid>
       <description>Ever since I became interested in science, I started to have a vague idea that calculus, matrix algebra, partial differential equations, and numerical methods are all fundamental to the physical sciences and engineering and they are linked in some way to each other. The emphasis here is on the word vague; I have to admit that I had no clear, detailed understanding of how these links actually work. It seems like my formal education both in math and physics stopped just short of where everything would have nicely come together.</description>
     </item>
-    
     <item>
       <title>Exploring grain settling with Python</title>
       <link>https://zsylvester.github.io/post/grain_settling/</link>
       <pubDate>Fri, 09 Aug 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/grain_settling/</guid>
       <description>Grain settling is one of the most important problems in sedimentology (and therefore sedimentary geology), as neither sediment transport nor deposition can be understood and modeled without knowing what is the settling velocity of a particle of a certain grain size. Very small grains, when submerged in water, have a mass small enough that they reach a terminal velocity before any turbulence develops. This is true for clay- and silt-sized particles settling in water, and for these grain size classes Stokes&amp;rsquo; Law can be used to calculate the settling velocity:</description>
     </item>
-    
   </channel>
 </rss>

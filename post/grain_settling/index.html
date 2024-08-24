@@ -89,228 +89,183 @@
 </div>
 
       <div class="post-body" itemprop="articleBody">
-        
-
-<p>Grain settling is one of the most important problems in sedimentology (and therefore sedimentary geology), as neither sediment transport nor deposition can be understood and modeled without knowing what is the settling velocity of a particle of a certain grain size. Very small grains, when submerged in water, have a mass small enough that they reach a terminal velocity before any turbulence develops. This is true for clay- and silt-sized particles settling in water, and for these grain size classes Stokes&rsquo; Law can be used to calculate the settling velocity:</p>
-
+        <p>Grain settling is one of the most important problems in sedimentology (and therefore sedimentary geology), as neither sediment transport nor deposition can be understood and modeled without knowing what is the settling velocity of a particle of a certain grain size. Very small grains, when submerged in water, have a mass small enough that they reach a terminal velocity before any turbulence develops. This is true for clay- and silt-sized particles settling in water, and for these grain size classes Stokes&rsquo; Law can be used to calculate the settling velocity:</p>
 <p>$$w = \frac{RgD^2}{C_1\nu}$$</p>
-
 <p>where $R$ = specific submerged gravity, $g$ = gravitational acceleration, $D$ is the particle diameter, $C_1$ is a constant with a theoretical value of 18, and $\nu$ is the kinematic viscosity.</p>
-
 <p>For grain sizes coarser than silt, a category that clearly includes a lot of sediment and rock types of great interest to geologists, things get more complicated. The reason for this is the development of a separation wake behind the falling grain; the appearance of this wake results in turbulence and large pressure differences between the front and back of the particle. For large grains - pebbles, cobbles - this effect is so strong that viscous forces become insignificant and turbulent drag dominates; the settling velocity can be estimated using the empirical equation</p>
-
 <p>$$w = \sqrt{\frac{4RgD}{3C_2}}$$</p>
-
 <p>The important point is that, for larger grains, the settling velocity increases more slowly, with the square root of the grain size, as opposed to the square of particle diameter, as in Stokes&rsquo; Law.</p>
-
 <p>Sand grains are small enough that viscous forces still play an important role in their subaqueous settling behavior, but large enough that the departure from Stokes&rsquo; Law is significant and wake turbulence cannot be ignored. There are several empirical - and fairly complicated - equations that try to bridge this gap; here I focus on the simplest one, published in 2004 in the Journal of Sedimentary Research (Ferguson and Church, 2004):</p>
-
 <p>$$w = \frac{RgD^2}{C_1\nu+\sqrt{0.75C_2RgD^3}}$$</p>
-
 <p>At small values of D, the left term in the denominator is much larger than the one containing the third power of D, and the equation is equivalent of Stokes&rsquo; Law. At large values of D, the second term dominates and the settling velocity converges to the solution of the turbulent drag equation.</p>
-
 <p>But the point of this blog post is not to give a summary of the Ferguson and Church paper; what I am interested in is to write some simple code and plot settling velocity against grain size to better understand these relationships through exploring them graphically. So what follows is a series of Python code snippets, directly followed by the plots that you can generate if you run the code yourself. I have done this using the IPython notebook, a very nice tool that allows and promotes note taking, coding, and plotting within one document. I am not going to get into details of Python programming and the usage of IPython notebook, but you can check them out for example <a href="http://ipython.org/notebook.html">here</a>. (Note that the IPython notebook has been  replaced by the <a href="http://jupyter.org">Jupyter</a> notebook.)</p>
-
 <p>This notebook is <a href="https://github.com/zsylvester/notebooks/blob/master/grain_settling.ipynb">available on Github</a>.</p>
-
 <p>First we have to implement the three equations as Python functions:</p>
-
-<pre><code class="language-Python">from math import pi
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-%matplotlib inline
-%config InlineBackend.figure_format = 'svg' 
-
-rop = 2650.0 # density of particle in kg/m3
-rof = 1000.0 # density of fluid in kg/m3
-visc = 1.002*1E-3 #8.9*1E-4 # dynamic viscosity in Pa*s (N*s/m^2)
-C1 = 18 # constant in Ferguson-Church equation
-C2 = 1 # constant in Ferguson-Church equation, valid for natural sand grains
-
-def v_stokes(rop,rof,d,visc,C1):
-        R = (rop-rof)/rof # submerged specific gravity
-        w = R*9.81*(d**2)/(C1*visc/rof)
-        return w
-
-def v_turbulent(rop,rof,d,visc,C2):
-        R = (rop-rof)/rof 
-        w = (4*R*9.81*d/(3*C2))**0.5
-        return w
-
-def v_ferg(rop,rof,d,visc,C1,C2):
-        R = (rop-rof)/rof 
-        w = (R*9.81*d**2)/(C1*visc/rof+(0.75*C2*R*9.81*d**3)**0.5)
-        return w
-</code></pre>
-
-<p>Let&rsquo;s plot these equations for a range of particle diameters:</p>
-
-<pre><code class="language-Python">d = np.arange(0,0.0005,0.000001)
-ws = v_stokes(rop,rof,d,visc,C1)
-wt = v_turbulent(rop,rof,d,visc,C2)
-wf = v_ferg(rop,rof,d,visc,C1,C2)
-
-plt.figure(figsize=(8,6))
-sns.set_style(&quot;white&quot;)
-sns.set_style(&quot;ticks&quot;)
-plt.plot(d*1000,ws,label='Stokes',linewidth=3)
-plt.plot(d*1000,wt,label='Turbulent',linewidth=3)
-plt.plot(d*1000,wf,label='Ferguson-Church',linewidth=3)
-plt.plot([0.25, 0.25],[0, 0.15],'k--',linewidth=0.5)
-plt.plot([0.25/2.0, 0.25/2.0],[0, 0.15],'k--',linewidth=0.5)
-plt.plot([0.25/4.0, 0.25/4.0],[0, 0.15],'k--',linewidth=0.5)
-plt.text(0.36, 0.11, 'medium sand', fontsize=10)
-plt.text(0.16, 0.11, 'fine sand', fontsize=10)
-plt.text(0.075, 0.11, 'v. fine', fontsize=10)
-plt.text(0.08, 0.105, 'sand', fontsize=10)
-plt.text(0.01, 0.11, 'silt and', fontsize=10)
-plt.text(0.019, 0.105, 'clay', fontsize=10)
-plt.legend(loc=4, fontsize=10)
-plt.xlabel('grain diameter (mm)',fontsize=12)
-plt.ylabel('settling velocity (m/s)',fontsize=12)
-plt.axis([0,0.5,0,0.15])
-
-D = [0.068, 0.081, 0.096, 0.115, 0.136, 0.273, 0.386, 0.55, 0.77, 1.09, 2.18, 4.36]
-w = [0.00425, 0.0060, 0.0075, 0.0110, 0.0139, 0.0388, 0.0551, 0.0729, 0.0930, 0.141, 0.209, 0.307]
-err = [0.00009, 0.0001, 0.0001, 0.0002, 0.0001, 0.0002, 0.0005, 0.0010, 0.0016, 0.002, 0.002, 0.003]
-plt.plot(D,w,'ko',markersize=8);
-</code></pre>
-
-<p><img src="https://zsylvester.github.io/img/settling_1.png" alt="plot" /></p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> pi
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+</span></span><span style="display:flex;"><span><span style="color:#f92672">%</span>matplotlib inline
+</span></span><span style="display:flex;"><span><span style="color:#f92672">%</span>config InlineBackend<span style="color:#f92672">.</span>figure_format <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;svg&#39;</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rop <span style="color:#f92672">=</span> <span style="color:#ae81ff">2650.0</span> <span style="color:#75715e"># density of particle in kg/m3</span>
+</span></span><span style="display:flex;"><span>rof <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000.0</span> <span style="color:#75715e"># density of fluid in kg/m3</span>
+</span></span><span style="display:flex;"><span>visc <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.002</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1E-3</span> <span style="color:#75715e">#8.9*1E-4 # dynamic viscosity in Pa*s (N*s/m^2)</span>
+</span></span><span style="display:flex;"><span>C1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span> <span style="color:#75715e"># constant in Ferguson-Church equation</span>
+</span></span><span style="display:flex;"><span>C2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e"># constant in Ferguson-Church equation, valid for natural sand grains</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">v_stokes</span>(rop,rof,d,visc,C1):
+</span></span><span style="display:flex;"><span>        R <span style="color:#f92672">=</span> (rop<span style="color:#f92672">-</span>rof)<span style="color:#f92672">/</span>rof <span style="color:#75715e"># submerged specific gravity</span>
+</span></span><span style="display:flex;"><span>        w <span style="color:#f92672">=</span> R<span style="color:#f92672">*</span><span style="color:#ae81ff">9.81</span><span style="color:#f92672">*</span>(d<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">/</span>(C1<span style="color:#f92672">*</span>visc<span style="color:#f92672">/</span>rof)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> w
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">v_turbulent</span>(rop,rof,d,visc,C2):
+</span></span><span style="display:flex;"><span>        R <span style="color:#f92672">=</span> (rop<span style="color:#f92672">-</span>rof)<span style="color:#f92672">/</span>rof 
+</span></span><span style="display:flex;"><span>        w <span style="color:#f92672">=</span> (<span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>R<span style="color:#f92672">*</span><span style="color:#ae81ff">9.81</span><span style="color:#f92672">*</span>d<span style="color:#f92672">/</span>(<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>C2))<span style="color:#f92672">**</span><span style="color:#ae81ff">0.5</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> w
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">v_ferg</span>(rop,rof,d,visc,C1,C2):
+</span></span><span style="display:flex;"><span>        R <span style="color:#f92672">=</span> (rop<span style="color:#f92672">-</span>rof)<span style="color:#f92672">/</span>rof 
+</span></span><span style="display:flex;"><span>        w <span style="color:#f92672">=</span> (R<span style="color:#f92672">*</span><span style="color:#ae81ff">9.81</span><span style="color:#f92672">*</span>d<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">/</span>(C1<span style="color:#f92672">*</span>visc<span style="color:#f92672">/</span>rof<span style="color:#f92672">+</span>(<span style="color:#ae81ff">0.75</span><span style="color:#f92672">*</span>C2<span style="color:#f92672">*</span>R<span style="color:#f92672">*</span><span style="color:#ae81ff">9.81</span><span style="color:#f92672">*</span>d<span style="color:#f92672">**</span><span style="color:#ae81ff">3</span>)<span style="color:#f92672">**</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> w
+</span></span></code></pre></div><p>Let&rsquo;s plot these equations for a range of particle diameters:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>d <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.0005</span>,<span style="color:#ae81ff">0.000001</span>)
+</span></span><span style="display:flex;"><span>ws <span style="color:#f92672">=</span> v_stokes(rop,rof,d,visc,C1)
+</span></span><span style="display:flex;"><span>wt <span style="color:#f92672">=</span> v_turbulent(rop,rof,d,visc,C2)
+</span></span><span style="display:flex;"><span>wf <span style="color:#f92672">=</span> v_ferg(rop,rof,d,visc,C1,C2)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>set_style(<span style="color:#e6db74">&#34;white&#34;</span>)
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>set_style(<span style="color:#e6db74">&#34;ticks&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(d<span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>,ws,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Stokes&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(d<span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>,wt,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Turbulent&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(d<span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>,wf,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Ferguson-Church&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">0.25</span>, <span style="color:#ae81ff">0.25</span>],[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.15</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">0.25</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2.0</span>, <span style="color:#ae81ff">0.25</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2.0</span>],[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.15</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">0.25</span><span style="color:#f92672">/</span><span style="color:#ae81ff">4.0</span>, <span style="color:#ae81ff">0.25</span><span style="color:#f92672">/</span><span style="color:#ae81ff">4.0</span>],[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.15</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.36</span>, <span style="color:#ae81ff">0.11</span>, <span style="color:#e6db74">&#39;medium sand&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.16</span>, <span style="color:#ae81ff">0.11</span>, <span style="color:#e6db74">&#39;fine sand&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.075</span>, <span style="color:#ae81ff">0.11</span>, <span style="color:#e6db74">&#39;v. fine&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.08</span>, <span style="color:#ae81ff">0.105</span>, <span style="color:#e6db74">&#39;sand&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.01</span>, <span style="color:#ae81ff">0.11</span>, <span style="color:#e6db74">&#39;silt and&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.019</span>, <span style="color:#ae81ff">0.105</span>, <span style="color:#e6db74">&#39;clay&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;grain diameter (mm)&#39;</span>,fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;settling velocity (m/s)&#39;</span>,fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>axis([<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.5</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.15</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>D <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.068</span>, <span style="color:#ae81ff">0.081</span>, <span style="color:#ae81ff">0.096</span>, <span style="color:#ae81ff">0.115</span>, <span style="color:#ae81ff">0.136</span>, <span style="color:#ae81ff">0.273</span>, <span style="color:#ae81ff">0.386</span>, <span style="color:#ae81ff">0.55</span>, <span style="color:#ae81ff">0.77</span>, <span style="color:#ae81ff">1.09</span>, <span style="color:#ae81ff">2.18</span>, <span style="color:#ae81ff">4.36</span>]
+</span></span><span style="display:flex;"><span>w <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.00425</span>, <span style="color:#ae81ff">0.0060</span>, <span style="color:#ae81ff">0.0075</span>, <span style="color:#ae81ff">0.0110</span>, <span style="color:#ae81ff">0.0139</span>, <span style="color:#ae81ff">0.0388</span>, <span style="color:#ae81ff">0.0551</span>, <span style="color:#ae81ff">0.0729</span>, <span style="color:#ae81ff">0.0930</span>, <span style="color:#ae81ff">0.141</span>, <span style="color:#ae81ff">0.209</span>, <span style="color:#ae81ff">0.307</span>]
+</span></span><span style="display:flex;"><span>err <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.00009</span>, <span style="color:#ae81ff">0.0001</span>, <span style="color:#ae81ff">0.0001</span>, <span style="color:#ae81ff">0.0002</span>, <span style="color:#ae81ff">0.0001</span>, <span style="color:#ae81ff">0.0002</span>, <span style="color:#ae81ff">0.0005</span>, <span style="color:#ae81ff">0.0010</span>, <span style="color:#ae81ff">0.0016</span>, <span style="color:#ae81ff">0.002</span>, <span style="color:#ae81ff">0.002</span>, <span style="color:#ae81ff">0.003</span>]
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(D,w,<span style="color:#e6db74">&#39;ko&#39;</span>,markersize<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>);
+</span></span></code></pre></div><p><img src="https://zsylvester.github.io/img/settling_1.png" alt="plot"></p>
 <p>The black dots are data points from settling experiments performed with natural river sands (Table 2 in Ferguson and Church, 2004). It is obvious that the departure from Stokes&rsquo; Law is already significant for very fine sand and Stokes settling is completely inadequate for describing the settling of medium sand.</p>
-
 <p>This plot only captures particle sizes finer than medium sand; let&rsquo;s see what happens as we move to coarser sediment.</p>
-
-<pre><code class="language-Python">d = np.arange(0,0.01,0.00001)
-ws = v_stokes(rop,rof,d,visc,C1)
-wt = v_turbulent(rop,rof,d,visc,C2)
-wf = v_ferg(rop,rof,d,visc,C1,C2)
-plt.figure(figsize=(8,6))
-plt.plot(d*1000,ws,label='Stokes',linewidth=3)
-plt.plot(d*1000,wt,label='Turbulent',linewidth=3)
-plt.plot(d*1000,wf,label='Ferguson-Church',linewidth=3)
-plt.plot([0.25, 0.25],[0, 2],'k--',linewidth=0.5)
-plt.plot([0.5, 0.5],[0, 2],'k--',linewidth=0.5)
-plt.text(0.33, 1.0, 'medium sand', fontsize=10, rotation='vertical')
-plt.text(0.09, 1.15, 'fine sand, silt and clay', fontsize=10, rotation='vertical')
-plt.plot([1, 1],[0, 2],'k--',linewidth=0.5)
-plt.text(0.7, 1.0, 'coarse sand', fontsize=10, rotation='vertical')
-plt.plot([2, 2],[0, 2],'k--',linewidth=0.5)
-plt.text(1.5, 1.0, 'very coarse sand', fontsize=10, rotation='vertical')
-plt.plot([4, 4],[0, 2],'k--',linewidth=0.5)
-plt.text(3, 1.0, 'granules', fontsize=10, rotation='vertical')
-plt.text(4.5, 1.0, 'pebbles', fontsize=10, rotation='vertical')
-plt.legend(loc=1, fontsize=10)
-plt.xlabel('grain diameter (mm)',fontsize=12)
-plt.ylabel('settling velocity (m/s)',fontsize=12)
-plt.axis([0,5,0,2]);
-</code></pre>
-
-<p><img src="https://zsylvester.github.io/img/settling_2.png" alt="plot" /></p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>d <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.01</span>,<span style="color:#ae81ff">0.00001</span>)
+</span></span><span style="display:flex;"><span>ws <span style="color:#f92672">=</span> v_stokes(rop,rof,d,visc,C1)
+</span></span><span style="display:flex;"><span>wt <span style="color:#f92672">=</span> v_turbulent(rop,rof,d,visc,C2)
+</span></span><span style="display:flex;"><span>wf <span style="color:#f92672">=</span> v_ferg(rop,rof,d,visc,C1,C2)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(d<span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>,ws,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Stokes&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(d<span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>,wt,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Turbulent&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(d<span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>,wf,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Ferguson-Church&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">0.25</span>, <span style="color:#ae81ff">0.25</span>],[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.5</span>],[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.33</span>, <span style="color:#ae81ff">1.0</span>, <span style="color:#e6db74">&#39;medium sand&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.09</span>, <span style="color:#ae81ff">1.15</span>, <span style="color:#e6db74">&#39;fine sand, silt and clay&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>],[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.7</span>, <span style="color:#ae81ff">1.0</span>, <span style="color:#e6db74">&#39;coarse sand&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>],[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">1.5</span>, <span style="color:#ae81ff">1.0</span>, <span style="color:#e6db74">&#39;very coarse sand&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>],[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1.0</span>, <span style="color:#e6db74">&#39;granules&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">4.5</span>, <span style="color:#ae81ff">1.0</span>, <span style="color:#e6db74">&#39;pebbles&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;grain diameter (mm)&#39;</span>,fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;settling velocity (m/s)&#39;</span>,fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>axis([<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>]);
+</span></span></code></pre></div><p><img src="https://zsylvester.github.io/img/settling_2.png" alt="plot"></p>
 <p>A log-log plot is much better for looking at a wide spectrum of grain sizes.</p>
-
-<pre><code class="language-Python">d = np.arange(0,0.01,0.00001)
-ws = v_stokes(rop,rof,d,visc,C1)
-wt = v_turbulent(rop,rof,d,visc,C2)
-wf = v_ferg(rop,rof,d,visc,C1,C2)
-plt.figure(figsize=(8,6))
-plt.loglog(d*1000,ws,label='Stokes',linewidth=3)
-plt.loglog(d*1000,wt,label='Turbulent',linewidth=3)
-plt.loglog(d*1000,wf,label='Ferguson-Church',linewidth=3)
-plt.plot([1.0/64, 1.0/64],[0.00001, 10],'k--',linewidth=0.5)
-plt.text(0.012, 0.0007, 'fine silt', fontsize=10, rotation='vertical')
-plt.plot([1.0/32, 1.0/32],[0.00001, 10],'k--',linewidth=0.5)
-plt.text(0.17/8, 0.0007, 'medium silt', fontsize=10, rotation='vertical')
-plt.plot([1.0/16, 1.0/16],[0.00001, 10],'k--',linewidth=0.5)
-plt.text(0.17/4, 0.0007, 'coarse silt', fontsize=10, rotation='vertical')
-plt.plot([1.0/8, 1.0/8],[0.00001, 10],'k--',linewidth=0.5)
-plt.text(0.17/2, 0.001, 'very fine sand', fontsize=10, rotation='vertical')
-plt.plot([0.25, 0.25],[0.00001, 10],'k--',linewidth=0.5)
-plt.text(0.17, 0.001, 'fine sand', fontsize=10, rotation='vertical')
-plt.plot([0.5, 0.5],[0.00001, 10],'k--',linewidth=0.5)
-plt.text(0.33, 0.001, 'medium sand', fontsize=10, rotation='vertical')
-plt.plot([1, 1],[0.00001, 10],'k--',linewidth=0.5)
-plt.text(0.7, 0.001, 'coarse sand', fontsize=10, rotation='vertical')
-plt.plot([2, 2],[0.00001, 10],'k--',linewidth=0.5)
-plt.text(1.3, 0.001, 'very coarse sand', fontsize=10, rotation='vertical')
-plt.plot([4, 4],[0.00001, 10],'k--',linewidth=0.5)
-plt.text(2.7, 0.001, 'granules', fontsize=10, rotation='vertical')
-plt.text(6, 0.001, 'pebbles', fontsize=10, rotation='vertical')
-plt.legend(loc=2, fontsize=10)
-plt.xlabel('grain diameter (mm)', fontsize=12)
-plt.ylabel('settling velocity (m/s)', fontsize=12)
-plt.axis([0,10,0,10])
-plt.plot(D,w,'o',color=[0.0, 0.0, 0.0], markersize=8);
-</code></pre>
-
-<p><img src="https://zsylvester.github.io/img/settling_3.png" alt="plot" /></p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>d <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.01</span>,<span style="color:#ae81ff">0.00001</span>)
+</span></span><span style="display:flex;"><span>ws <span style="color:#f92672">=</span> v_stokes(rop,rof,d,visc,C1)
+</span></span><span style="display:flex;"><span>wt <span style="color:#f92672">=</span> v_turbulent(rop,rof,d,visc,C2)
+</span></span><span style="display:flex;"><span>wf <span style="color:#f92672">=</span> v_ferg(rop,rof,d,visc,C1,C2)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>loglog(d<span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>,ws,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Stokes&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>loglog(d<span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>,wt,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Turbulent&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>loglog(d<span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>,wf,label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Ferguson-Church&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">64</span>, <span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">64</span>],[<span style="color:#ae81ff">0.00001</span>, <span style="color:#ae81ff">10</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.012</span>, <span style="color:#ae81ff">0.0007</span>, <span style="color:#e6db74">&#39;fine silt&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">32</span>, <span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">32</span>],[<span style="color:#ae81ff">0.00001</span>, <span style="color:#ae81ff">10</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.17</span><span style="color:#f92672">/</span><span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">0.0007</span>, <span style="color:#e6db74">&#39;medium silt&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">16</span>],[<span style="color:#ae81ff">0.00001</span>, <span style="color:#ae81ff">10</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.17</span><span style="color:#f92672">/</span><span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0.0007</span>, <span style="color:#e6db74">&#39;coarse silt&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span><span style="color:#ae81ff">8</span>],[<span style="color:#ae81ff">0.00001</span>, <span style="color:#ae81ff">10</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.17</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0.001</span>, <span style="color:#e6db74">&#39;very fine sand&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">0.25</span>, <span style="color:#ae81ff">0.25</span>],[<span style="color:#ae81ff">0.00001</span>, <span style="color:#ae81ff">10</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.17</span>, <span style="color:#ae81ff">0.001</span>, <span style="color:#e6db74">&#39;fine sand&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0.5</span>],[<span style="color:#ae81ff">0.00001</span>, <span style="color:#ae81ff">10</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.33</span>, <span style="color:#ae81ff">0.001</span>, <span style="color:#e6db74">&#39;medium sand&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>],[<span style="color:#ae81ff">0.00001</span>, <span style="color:#ae81ff">10</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">0.7</span>, <span style="color:#ae81ff">0.001</span>, <span style="color:#e6db74">&#39;coarse sand&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>],[<span style="color:#ae81ff">0.00001</span>, <span style="color:#ae81ff">10</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">1.3</span>, <span style="color:#ae81ff">0.001</span>, <span style="color:#e6db74">&#39;very coarse sand&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot([<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">4</span>],[<span style="color:#ae81ff">0.00001</span>, <span style="color:#ae81ff">10</span>],<span style="color:#e6db74">&#39;k--&#39;</span>,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">2.7</span>, <span style="color:#ae81ff">0.001</span>, <span style="color:#e6db74">&#39;granules&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">0.001</span>, <span style="color:#e6db74">&#39;pebbles&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>, rotation<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;vertical&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;grain diameter (mm)&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;settling velocity (m/s)&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>axis([<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">10</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>plot(D,w,<span style="color:#e6db74">&#39;o&#39;</span>,color<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.0</span>], markersize<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>);
+</span></span></code></pre></div><p><img src="https://zsylvester.github.io/img/settling_3.png" alt="plot"></p>
 <p>This plot shows how neither Stokes&rsquo; Law, nor the velocity based on turbulent drag are valid for calculating settling velocities of sand-size grains in water, whereas the Ferguson-Church equation provides a good fit for natural river sand.</p>
-
 <p>Grain settling is a special case of the more general problem of flow past a sphere. The analysis and plots above are all dimensional, that is, you can quickly check by looking at the plots what is the approximate settling velocity of very fine sand. That is great, but you would have to generate a new plot - and potentially do a new experiment - if you wanted to look at the behavior of particles in some other fluid than water. A more general treatment of the problem involves dimensionless variables; in this case these variables are the Reynolds number and the drag coefficient. The classic diagram for flow past a sphere is a plot of the drag coefficient against the Reynolds number. I will try to reproduce this plot, using settling velocities that come from the three equations above.</p>
-
 <p>At terminal settling velocity, the drag force equals the gravitational force acting on the grain:</p>
-
 <p>$$F_d = F_g$$</p>
-
 <p>We also know that the gravitational force is given by the submerged weight of the grain:</p>
-
 <p>$$F_g = (\rho_p-\rho_f)\frac{4}{3}\pi r^3g$$</p>
-
 <p>The drag coefficient is essentially a dimensionless version of the drag force:</p>
-
 <p>$$C_d = \frac{F_d}{\frac{\rho_fw^2}{2}A} =\frac{F_d}{\rho_fw^2\pi\frac{d^2}{8}}$$</p>
-
 <p>At terminal settling velocity, the particle Reynolds number is</p>
-
 <p>$$Re = \frac{\rho_fwd}{\mu}$$</p>
-
 <p>Using these relationships it is possible to generate the plot of drag coefficient vs. Reynolds number:</p>
-
-<pre><code class="language-Python">d = np.arange(0.000001,0.3,0.00001)
-C2 = 0.4 # this constant is 0.4 for spheres, 1 for natural grains
-ws = v_stokes(rop,rof,d,visc,C1)
-wt = v_turbulent(rop,rof,d,visc,C2)
-wf = v_ferg(rop,rof,d,visc,C1,C2)
-Fd = (rop-rof)*4/3*pi*((d/2)**3)*9.81 # drag force
-Cds = Fd/(rof*ws**2*pi*(d**2)/8) # drag coefficient
-Cdt = Fd/(rof*wt**2*pi*(d**2)/8)
-Cdf = Fd/(rof*wf**2*pi*(d**2)/8)
-Res = rof*ws*d/visc # particle Reynolds number
-Ret = rof*wt*d/visc
-Ref = rof*wf*d/visc
-plt.figure(figsize=(8,6))
-plt.loglog(Res,Cds,linewidth=3, label='Stokes')
-plt.loglog(Ret,Cdt,linewidth=3, label='Turbulent')
-plt.loglog(Ref,Cdf,linewidth=3, label='Ferguson-Church')
-# data digitized from Southard textbook, figure 2-2:
-Re_exp = [0.04857,0.10055,0.12383,0.15332,0.25681,0.3343,0.62599,0.77049,0.94788,1.05956,1.62605,2.13654,2.55138,3.18268,4.46959,4.92143,8.02479,12.28672,14.97393,21.33792,28.3517,34.55246,57.57204,78.3929,96.88149,159.92596,227.64082,287.31738,375.98547,516.14355,607.03827,695.8316,861.51953,1147.26099,1194.43213,1513.70166,1939.70557,2511.91235,2461.13232,3106.32397,3845.99561,4974.59424,6471.96875,8135.45166,8910.81543,11949.91309,17118.62109,21620.08203,28407.60352,36064.10156,46949.58594,62746.32422,80926.54688,97655.00781,122041.875,157301.8125,206817.7188,266273,346423.5938,302216.5938,335862.5313,346202,391121.5938,460256.375,575194.4375,729407.625]
-Cd_exp = [479.30811,247.18175,199.24072,170.60068,112.62481,80.21341,45.37168,39.89885,34.56996,28.01445,18.88166,13.80322,12.9089,11.41266,8.35254,7.08445,5.59686,3.92277,3.53845,2.75253,2.48307,1.99905,1.49187,1.27743,1.1592,0.89056,0.7368,0.75983,0.64756,0.56107,0.61246,0.5939,0.49308,0.39722,0.48327,0.46639,0.42725,0.37951,0.43157,0.43157,0.40364,0.3854,0.40577,0.41649,0.46173,0.41013,0.42295,0.43854,0.44086,0.4714,0.45225,0.47362,0.45682,0.49104,0.46639,0.42725,0.42725,0.40171,0.31214,0.32189,0.20053,0.16249,0.10658,0.09175,0.09417,0.10601]
-plt.loglog(Re_exp, Cd_exp, 'o', color = [0.0, 0.0, 0.0], markersize=6)
-
-# Reynolds number for golf ball:
-rof_air = 1.2041 # density of air at 20 degrees C
-u = 50 # velocity of golf ball (m/s)
-d = 0.043 # diameter of golf ball (m)
-visc_air = 1.983e-5 # dynamic viscosity of air at 20 degrees C
-Re = rof_air*u*d/visc_air
-plt.loglog([Re, Re], [0.4, 2], 'k--')
-plt.text(3e4,2.5,'$Re$ for golf ball',fontsize=13)
-plt.legend(loc=1, fontsize=10)
-plt.axis([1e-2,1e6,1e-2,1e4])
-plt.xlabel('particle Reynolds number ($Re$)', fontsize=12)
-plt.ylabel('drag coefficient ($C_d$)', fontsize=12);
-</code></pre>
-
-<p><img src="https://zsylvester.github.io/img/settling_4.png" alt="plot" /></p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>d <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>arange(<span style="color:#ae81ff">0.000001</span>,<span style="color:#ae81ff">0.3</span>,<span style="color:#ae81ff">0.00001</span>)
+</span></span><span style="display:flex;"><span>C2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.4</span> <span style="color:#75715e"># this constant is 0.4 for spheres, 1 for natural grains</span>
+</span></span><span style="display:flex;"><span>ws <span style="color:#f92672">=</span> v_stokes(rop,rof,d,visc,C1)
+</span></span><span style="display:flex;"><span>wt <span style="color:#f92672">=</span> v_turbulent(rop,rof,d,visc,C2)
+</span></span><span style="display:flex;"><span>wf <span style="color:#f92672">=</span> v_ferg(rop,rof,d,visc,C1,C2)
+</span></span><span style="display:flex;"><span>Fd <span style="color:#f92672">=</span> (rop<span style="color:#f92672">-</span>rof)<span style="color:#f92672">*</span><span style="color:#ae81ff">4</span><span style="color:#f92672">/</span><span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>pi<span style="color:#f92672">*</span>((d<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">**</span><span style="color:#ae81ff">3</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">9.81</span> <span style="color:#75715e"># drag force</span>
+</span></span><span style="display:flex;"><span>Cds <span style="color:#f92672">=</span> Fd<span style="color:#f92672">/</span>(rof<span style="color:#f92672">*</span>ws<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>pi<span style="color:#f92672">*</span>(d<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">8</span>) <span style="color:#75715e"># drag coefficient</span>
+</span></span><span style="display:flex;"><span>Cdt <span style="color:#f92672">=</span> Fd<span style="color:#f92672">/</span>(rof<span style="color:#f92672">*</span>wt<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>pi<span style="color:#f92672">*</span>(d<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span>Cdf <span style="color:#f92672">=</span> Fd<span style="color:#f92672">/</span>(rof<span style="color:#f92672">*</span>wf<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>pi<span style="color:#f92672">*</span>(d<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span>Res <span style="color:#f92672">=</span> rof<span style="color:#f92672">*</span>ws<span style="color:#f92672">*</span>d<span style="color:#f92672">/</span>visc <span style="color:#75715e"># particle Reynolds number</span>
+</span></span><span style="display:flex;"><span>Ret <span style="color:#f92672">=</span> rof<span style="color:#f92672">*</span>wt<span style="color:#f92672">*</span>d<span style="color:#f92672">/</span>visc
+</span></span><span style="display:flex;"><span>Ref <span style="color:#f92672">=</span> rof<span style="color:#f92672">*</span>wf<span style="color:#f92672">*</span>d<span style="color:#f92672">/</span>visc
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>loglog(Res,Cds,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Stokes&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>loglog(Ret,Cdt,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Turbulent&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>loglog(Ref,Cdf,linewidth<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>, label<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Ferguson-Church&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># data digitized from Southard textbook, figure 2-2:</span>
+</span></span><span style="display:flex;"><span>Re_exp <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.04857</span>,<span style="color:#ae81ff">0.10055</span>,<span style="color:#ae81ff">0.12383</span>,<span style="color:#ae81ff">0.15332</span>,<span style="color:#ae81ff">0.25681</span>,<span style="color:#ae81ff">0.3343</span>,<span style="color:#ae81ff">0.62599</span>,<span style="color:#ae81ff">0.77049</span>,<span style="color:#ae81ff">0.94788</span>,<span style="color:#ae81ff">1.05956</span>,<span style="color:#ae81ff">1.62605</span>,<span style="color:#ae81ff">2.13654</span>,<span style="color:#ae81ff">2.55138</span>,<span style="color:#ae81ff">3.18268</span>,<span style="color:#ae81ff">4.46959</span>,<span style="color:#ae81ff">4.92143</span>,<span style="color:#ae81ff">8.02479</span>,<span style="color:#ae81ff">12.28672</span>,<span style="color:#ae81ff">14.97393</span>,<span style="color:#ae81ff">21.33792</span>,<span style="color:#ae81ff">28.3517</span>,<span style="color:#ae81ff">34.55246</span>,<span style="color:#ae81ff">57.57204</span>,<span style="color:#ae81ff">78.3929</span>,<span style="color:#ae81ff">96.88149</span>,<span style="color:#ae81ff">159.92596</span>,<span style="color:#ae81ff">227.64082</span>,<span style="color:#ae81ff">287.31738</span>,<span style="color:#ae81ff">375.98547</span>,<span style="color:#ae81ff">516.14355</span>,<span style="color:#ae81ff">607.03827</span>,<span style="color:#ae81ff">695.8316</span>,<span style="color:#ae81ff">861.51953</span>,<span style="color:#ae81ff">1147.26099</span>,<span style="color:#ae81ff">1194.43213</span>,<span style="color:#ae81ff">1513.70166</span>,<span style="color:#ae81ff">1939.70557</span>,<span style="color:#ae81ff">2511.91235</span>,<span style="color:#ae81ff">2461.13232</span>,<span style="color:#ae81ff">3106.32397</span>,<span style="color:#ae81ff">3845.99561</span>,<span style="color:#ae81ff">4974.59424</span>,<span style="color:#ae81ff">6471.96875</span>,<span style="color:#ae81ff">8135.45166</span>,<span style="color:#ae81ff">8910.81543</span>,<span style="color:#ae81ff">11949.91309</span>,<span style="color:#ae81ff">17118.62109</span>,<span style="color:#ae81ff">21620.08203</span>,<span style="color:#ae81ff">28407.60352</span>,<span style="color:#ae81ff">36064.10156</span>,<span style="color:#ae81ff">46949.58594</span>,<span style="color:#ae81ff">62746.32422</span>,<span style="color:#ae81ff">80926.54688</span>,<span style="color:#ae81ff">97655.00781</span>,<span style="color:#ae81ff">122041.875</span>,<span style="color:#ae81ff">157301.8125</span>,<span style="color:#ae81ff">206817.7188</span>,<span style="color:#ae81ff">266273</span>,<span style="color:#ae81ff">346423.5938</span>,<span style="color:#ae81ff">302216.5938</span>,<span style="color:#ae81ff">335862.5313</span>,<span style="color:#ae81ff">346202</span>,<span style="color:#ae81ff">391121.5938</span>,<span style="color:#ae81ff">460256.375</span>,<span style="color:#ae81ff">575194.4375</span>,<span style="color:#ae81ff">729407.625</span>]
+</span></span><span style="display:flex;"><span>Cd_exp <span style="color:#f92672">=</span> [<span style="color:#ae81ff">479.30811</span>,<span style="color:#ae81ff">247.18175</span>,<span style="color:#ae81ff">199.24072</span>,<span style="color:#ae81ff">170.60068</span>,<span style="color:#ae81ff">112.62481</span>,<span style="color:#ae81ff">80.21341</span>,<span style="color:#ae81ff">45.37168</span>,<span style="color:#ae81ff">39.89885</span>,<span style="color:#ae81ff">34.56996</span>,<span style="color:#ae81ff">28.01445</span>,<span style="color:#ae81ff">18.88166</span>,<span style="color:#ae81ff">13.80322</span>,<span style="color:#ae81ff">12.9089</span>,<span style="color:#ae81ff">11.41266</span>,<span style="color:#ae81ff">8.35254</span>,<span style="color:#ae81ff">7.08445</span>,<span style="color:#ae81ff">5.59686</span>,<span style="color:#ae81ff">3.92277</span>,<span style="color:#ae81ff">3.53845</span>,<span style="color:#ae81ff">2.75253</span>,<span style="color:#ae81ff">2.48307</span>,<span style="color:#ae81ff">1.99905</span>,<span style="color:#ae81ff">1.49187</span>,<span style="color:#ae81ff">1.27743</span>,<span style="color:#ae81ff">1.1592</span>,<span style="color:#ae81ff">0.89056</span>,<span style="color:#ae81ff">0.7368</span>,<span style="color:#ae81ff">0.75983</span>,<span style="color:#ae81ff">0.64756</span>,<span style="color:#ae81ff">0.56107</span>,<span style="color:#ae81ff">0.61246</span>,<span style="color:#ae81ff">0.5939</span>,<span style="color:#ae81ff">0.49308</span>,<span style="color:#ae81ff">0.39722</span>,<span style="color:#ae81ff">0.48327</span>,<span style="color:#ae81ff">0.46639</span>,<span style="color:#ae81ff">0.42725</span>,<span style="color:#ae81ff">0.37951</span>,<span style="color:#ae81ff">0.43157</span>,<span style="color:#ae81ff">0.43157</span>,<span style="color:#ae81ff">0.40364</span>,<span style="color:#ae81ff">0.3854</span>,<span style="color:#ae81ff">0.40577</span>,<span style="color:#ae81ff">0.41649</span>,<span style="color:#ae81ff">0.46173</span>,<span style="color:#ae81ff">0.41013</span>,<span style="color:#ae81ff">0.42295</span>,<span style="color:#ae81ff">0.43854</span>,<span style="color:#ae81ff">0.44086</span>,<span style="color:#ae81ff">0.4714</span>,<span style="color:#ae81ff">0.45225</span>,<span style="color:#ae81ff">0.47362</span>,<span style="color:#ae81ff">0.45682</span>,<span style="color:#ae81ff">0.49104</span>,<span style="color:#ae81ff">0.46639</span>,<span style="color:#ae81ff">0.42725</span>,<span style="color:#ae81ff">0.42725</span>,<span style="color:#ae81ff">0.40171</span>,<span style="color:#ae81ff">0.31214</span>,<span style="color:#ae81ff">0.32189</span>,<span style="color:#ae81ff">0.20053</span>,<span style="color:#ae81ff">0.16249</span>,<span style="color:#ae81ff">0.10658</span>,<span style="color:#ae81ff">0.09175</span>,<span style="color:#ae81ff">0.09417</span>,<span style="color:#ae81ff">0.10601</span>]
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>loglog(Re_exp, Cd_exp, <span style="color:#e6db74">&#39;o&#39;</span>, color <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.0</span>, <span style="color:#ae81ff">0.0</span>], markersize<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reynolds number for golf ball:</span>
+</span></span><span style="display:flex;"><span>rof_air <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.2041</span> <span style="color:#75715e"># density of air at 20 degrees C</span>
+</span></span><span style="display:flex;"><span>u <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span> <span style="color:#75715e"># velocity of golf ball (m/s)</span>
+</span></span><span style="display:flex;"><span>d <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.043</span> <span style="color:#75715e"># diameter of golf ball (m)</span>
+</span></span><span style="display:flex;"><span>visc_air <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.983e-5</span> <span style="color:#75715e"># dynamic viscosity of air at 20 degrees C</span>
+</span></span><span style="display:flex;"><span>Re <span style="color:#f92672">=</span> rof_air<span style="color:#f92672">*</span>u<span style="color:#f92672">*</span>d<span style="color:#f92672">/</span>visc_air
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>loglog([Re, Re], [<span style="color:#ae81ff">0.4</span>, <span style="color:#ae81ff">2</span>], <span style="color:#e6db74">&#39;k--&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>text(<span style="color:#ae81ff">3e4</span>,<span style="color:#ae81ff">2.5</span>,<span style="color:#e6db74">&#39;$Re$ for golf ball&#39;</span>,fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">13</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>legend(loc<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>axis([<span style="color:#ae81ff">1e-2</span>,<span style="color:#ae81ff">1e6</span>,<span style="color:#ae81ff">1e-2</span>,<span style="color:#ae81ff">1e4</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;particle Reynolds number ($Re$)&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;drag coefficient ($C_d$)&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">12</span>);
+</span></span></code></pre></div><p><img src="https://zsylvester.github.io/img/settling_4.png" alt="plot"></p>
 <p>The black dots are experimental data points digitized from the  <a href="http://ocw.mit.edu/courses/earth-atmospheric-and-planetary-sciences/12-110-sedimentary-geology-spring-2007/index.htm">excellent textbook by John Southard</a>, available through MIT Open Courseware. As turbulence becomes dominant at larger Reynolds numbers, the drag coefficient converges to a constant value (which is equal to C2 in the equations above). Note however the departure of the experimental data from this ideal horizontal line: at high Reynolds numbers there is a sudden drop in drag coefficient as the laminar boundary layer becomes turbulent and the flow separation around the particle is delayed, that is, pushed toward the back; the separation wake becomes smaller and the turbulent drag decreases. Golf balls are not big enough to reach this point without some additional &lsquo;help&rsquo;; this help comes from the dimples on the surface of the ball that make the boundary layer turbulent and reduce the wake.</p>
-
 <h2 id="references">References</h2>
-
 <p>Ferguson, R. and Church, M. (2004) A simple universal equation for grain settling velocity. Journal of Sedimentary Research 74, 933–937, <a href="http://dx.doi.org/10.1306/051204740933">http://dx.doi.org/10.1306/051204740933</a>.</p>
 
       </div>

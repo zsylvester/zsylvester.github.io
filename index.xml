@@ -1,458 +1,370 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/</link>
     <description>Recent content on Zoltán Sylvester</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://zsylvester.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 04 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zsylvester.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Channel trajectories control deep-water stratigraphic architecture</title>
+      <link>https://zsylvester.github.io/publication/channel_trajectories/</link>
+      <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/publication/channel_trajectories/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Giant meandering channel evolution, Campos deep-water salt basin, Brazil</title>
+      <link>https://zsylvester.github.io/publication/campos_giant_channels/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/publication/campos_giant_channels/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Point bars and counter point bars: Why is sediment deposited on the &#39;wrong&#39; side of a meander bend?</title>
       <link>https://zsylvester.github.io/post/counter_point_bars/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/counter_point_bars/</guid>
-      <description>The simplest definition of point bars is that they are sedimentary deposits forming on the inner, convex bank of river bends. [&amp;lsquo;Inner&amp;rsquo; and &amp;lsquo;convex&amp;rsquo; bank means that, looking toward the river, the bank is curving around you.] Amadeus W. Grabau, an early &amp;lsquo;influencer&amp;rsquo; in stratigraphy and sedimentary geology, published a beautiful drawing of how meanders grow, point bars evolve, and oxbow lakes form, more than a hundred years ago:</description>
+      <description>The simplest definition of point bars is that they are sedimentary deposits forming on the inner, convex bank of river bends. [&amp;lsquo;Inner&amp;rsquo; and &amp;lsquo;convex&amp;rsquo; bank means that, looking toward the river, the bank is curving around you.] Amadeus W. Grabau, an early &amp;lsquo;influencer&amp;rsquo; in stratigraphy and sedimentary geology, published a beautiful drawing of how meanders grow, point bars evolve, and oxbow lakes form, more than a hundred years ago:&#xA;In other words, inner, convex banks in a meandering river are depositional; and outer, concave banks are erosional.</description>
     </item>
-    
     <item>
       <title>Autogenic translation and counter point bar deposition in meandering rivers</title>
       <link>https://zsylvester.github.io/publication/counter_point_bars_gsa_bull/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/counter_point_bars_gsa_bull/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Evaluating the relationship between meander‐bend curvature, sediment supply, and migration rates</title>
       <link>https://zsylvester.github.io/publication/donovan_et_al_jgr/</link>
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/donovan_et_al_jgr/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>The stratigraphic evolution of a submarine channel: Linking seafloor dynamics to depositional products</title>
       <link>https://zsylvester.github.io/publication/chile_channel/</link>
       <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/chile_channel/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>How do basin margins record long-term tectonic and climatic changes?</title>
       <link>https://zsylvester.github.io/publication/zhang_et_al_geology/</link>
       <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/zhang_et_al_geology/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Grain-Size and Discharge Controls on Submarine-Fan Depositional Patterns From Forward Stratigraphic Models</title>
       <link>https://zsylvester.github.io/publication/grain_size_dionisos/</link>
       <pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/grain_size_dionisos/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Submarine channels ‘swept’ downstream after bend cutoff in salt basins</title>
       <link>https://zsylvester.github.io/publication/campos_translation/</link>
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/campos_translation/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Conversion of tectonic and climatic forcings into records of sediment supply and provenance</title>
       <link>https://zsylvester.github.io/publication/sed_supply_and_provenance/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/sed_supply_and_provenance/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Does river migration slow down in high-curvature bends?</title>
       <link>https://zsylvester.github.io/post/curvature_migration_rate/</link>
       <pubDate>Wed, 06 Feb 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/curvature_migration_rate/</guid>
-      <description>The answer, at least for seven rivers of the Amazon Basin, seems to be negative, as we try to demonstrate in a paper that was recently published in Geology. My coauthors are Paul Durkin, at the University of Manitoba, and Jake Covault, at the Bureau of Economic Geology, The University of Texas at Austin. In this blog post, I try to provide a bit more background to our paper.</description>
+      <description>The answer, at least for seven rivers of the Amazon Basin, seems to be negative, as we try to demonstrate in a paper that was recently published in Geology. My coauthors are Paul Durkin, at the University of Manitoba, and Jake Covault, at the Bureau of Economic Geology, The University of Texas at Austin. In this blog post, I try to provide a bit more background to our paper.&#xA;Why is this an interesting result?</description>
     </item>
-    
     <item>
       <title>High curvatures drive river meandering</title>
       <link>https://zsylvester.github.io/publication/curvature_and_migration_rate/</link>
       <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/curvature_and_migration_rate/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Stratal patterns in salt-withdrawal minibasins</title>
       <link>https://zsylvester.github.io/post/stratal_patterns/</link>
       <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/stratal_patterns/</guid>
       <description>These are animations that accompany our 2015 article on the stratigraphy of salt-withdrawal basins on the slope (Sylvester, Z., Cantelli, A., and Pirmez, C., 2015, Stratigraphic evolution of intraslope minibasins: Insights from surface-based model: AAPG Bulletin, v. 99, no. 6, p. 1099–1129). We have used a simple model that investigates the interplay between subsidence and sedimentation and helps in the understanding of how stratal termination patterns relate to variations in sediment input and basin subsidence.</description>
     </item>
-    
     <item>
       <title>detritalPy: A Python‐based Toolset for Visualizing and Analyzing Detrital Geo‐Thermochronologic Data</title>
       <link>https://zsylvester.github.io/publication/detrital_py/</link>
       <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/detrital_py/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Slope-fan depositional architecture from high-resolution forward stratigraphic models</title>
       <link>https://zsylvester.github.io/publication/slope_fans_dionisos/</link>
       <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/slope_fans_dionisos/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Latitudinal Changes in the Morphology of Submarine Channels: Reevaluating the Evidence for the Influence of the Coriolis Force</title>
       <link>https://zsylvester.github.io/publication/coriolis_and_submarine_channels/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/coriolis_and_submarine_channels/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Submarine Fans and Their Channels, Levees, and Lobes</title>
       <link>https://zsylvester.github.io/publication/channels_and_lobes/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/channels_and_lobes/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Cyclic steps and related supercritical bedforms: Building blocks of deep-water depositional systems, western North America</title>
       <link>https://zsylvester.github.io/publication/cyclic_steps/</link>
       <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/cyclic_steps/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Sediment partitioning, continental slopes and base‐of‐slope systems</title>
       <link>https://zsylvester.github.io/publication/sediment_partitioning/</link>
       <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/sediment_partitioning/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Exploring (de)compaction with Python</title>
       <link>https://zsylvester.github.io/post/decompaction/</link>
       <pubDate>Wed, 12 Apr 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/decompaction/</guid>
-      <description>All clastic sediments are subject to compaction (and reduction of porosity) as the result of increasingly tighter packing of grains under a thickening overburden. Decompaction - the estimation of the decompacted thickness of a rock column - is an important part of subsidence (or geohistory) analysis. The following exercise is loosely based on the excellent basin analysis textbook by Allen &amp;amp; Allen (2013), especially their Appendix 56.
-Import stuff import numpy as np import matplotlib.</description>
+      <description>All clastic sediments are subject to compaction (and reduction of porosity) as the result of increasingly tighter packing of grains under a thickening overburden. Decompaction - the estimation of the decompacted thickness of a rock column - is an important part of subsidence (or geohistory) analysis. The following exercise is loosely based on the excellent basin analysis textbook by Allen &amp;amp; Allen (2013), especially their Appendix 56.&#xA;Import stuff import numpy as np import matplotlib.</description>
     </item>
-    
     <item>
       <title>Facies architecture of submarine channel deposits on the western Niger Delta slope: Implications for grain‐size and density stratification in turbidity currents</title>
       <link>https://zsylvester.github.io/publication/nigeria_facies/</link>
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/nigeria_facies/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>High-resolution, millennial-scale patterns of bed compensation on a sand-rich intraslope submarine fan, western Niger Delta slope</title>
       <link>https://zsylvester.github.io/publication/nigeria_compensation/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/nigeria_compensation/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Three-Dimensional Numerical Modeling of Eustatic Control On Continental-Margin Sand Distribution</title>
       <link>https://zsylvester.github.io/publication/dionisos_modeling/</link>
       <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/dionisos_modeling/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Development of cutoff-related knickpoints during early evolution of submarine channels</title>
       <link>https://zsylvester.github.io/publication/submarine_cutoffs/</link>
       <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/submarine_cutoffs/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>The stratigraphic record of submarine-channel evolution</title>
       <link>https://zsylvester.github.io/publication/channel_evolution/</link>
       <pubDate>Sun, 04 Sep 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/channel_evolution/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>A new approach for conditioning process-based geologic models to well data</title>
       <link>https://zsylvester.github.io/publication/conditioning/</link>
       <pubDate>Sun, 01 May 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/conditioning/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Rapid Adjustment of Submarine Channel Architecture To Changes In Sediment Supply</title>
       <link>https://zsylvester.github.io/publication/nigeria_rapid_adjustment/</link>
       <pubDate>Tue, 01 Dec 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/nigeria_rapid_adjustment/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Stratigraphic rule-based reservoir modeling</title>
       <link>https://zsylvester.github.io/publication/rule_based_modeling/</link>
       <pubDate>Tue, 01 Dec 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/rule_based_modeling/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Stratigraphic evolution of intraslope minibasins: Insights from surface-based model</title>
       <link>https://zsylvester.github.io/publication/minibasins/</link>
       <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/minibasins/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Exploring the diffusion equation with Python</title>
       <link>https://zsylvester.github.io/post/diffusion_equation/</link>
       <pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/diffusion_equation/</guid>
       <description>Ever since I became interested in science, I started to have a vague idea that calculus, matrix algebra, partial differential equations, and numerical methods are all fundamental to the physical sciences and engineering and they are linked in some way to each other. The emphasis here is on the word vague; I have to admit that I had no clear, detailed understanding of how these links actually work. It seems like my formal education both in math and physics stopped just short of where everything would have nicely come together.</description>
     </item>
-    
     <item>
       <title>Key Future Directions For Research On Turbidity Currents and Their Deposits</title>
       <link>https://zsylvester.github.io/publication/future_directions/</link>
       <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/future_directions/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Detecting baffle mudstones using microfossils: an integrated working example from the Cardamom Field, Block 427 Garden Banks, Gulf of Mexico</title>
       <link>https://zsylvester.github.io/publication/mudstone_baffles/</link>
       <pubDate>Sat, 01 Nov 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/mudstone_baffles/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Meandering</title>
       <link>https://zsylvester.github.io/research/meandering/</link>
       <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/research/meandering/</guid>
       <description>blah blah blah</description>
     </item>
-    
     <item>
       <title>Rivers through time, as seen in Landsat images</title>
       <link>https://zsylvester.github.io/post/rivers_through_time/</link>
       <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/rivers_through_time/</guid>
       <description>Thanks to the Landsat program and Google Earth Engine, it is possible now to explore how the surface of the Earth has been changing through the last thirty years or so. Besides the obvious issues of interest, like changes in vegetation, the spread of cities, and the melting of glaciers, it is also possible to look at how rivers change their courses through time. You have probably already seen the images of the migrating Ucayali River in Peru, for example here.</description>
     </item>
-    
     <item>
       <title>Seismic stratigraphy</title>
       <link>https://zsylvester.github.io/research/seismic_strat/</link>
       <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/research/seismic_strat/</guid>
       <description>blah blah blah</description>
     </item>
-    
     <item>
       <title>Exploring grain settling with Python</title>
       <link>https://zsylvester.github.io/post/grain_settling/</link>
       <pubDate>Fri, 09 Aug 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/grain_settling/</guid>
       <description>Grain settling is one of the most important problems in sedimentology (and therefore sedimentary geology), as neither sediment transport nor deposition can be understood and modeled without knowing what is the settling velocity of a particle of a certain grain size. Very small grains, when submerged in water, have a mass small enough that they reach a terminal velocity before any turbulence develops. This is true for clay- and silt-sized particles settling in water, and for these grain size classes Stokes&amp;rsquo; Law can be used to calculate the settling velocity:</description>
     </item>
-    
     <item>
       <title>Global (latitudinal) variation in submarine channel sinuosity: Comment</title>
       <link>https://zsylvester.github.io/publication/coriolis_comment/</link>
       <pubDate>Wed, 01 May 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/coriolis_comment/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>3-D Numerical Simulation of Turbidity Currents in Submarine Canyons off the Niger Delta</title>
       <link>https://zsylvester.github.io/publication/nigeria_channel_simulation/</link>
       <pubDate>Sun, 01 Jul 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/nigeria_channel_simulation/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Three-dimensional numerical simulation of turbidity currents in a submarine channel on the seafloor of the Niger Delta slope</title>
       <link>https://zsylvester.github.io/publication/nigeria_channel_simulation_2/</link>
       <pubDate>Wed, 16 May 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/nigeria_channel_simulation_2/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Pleistocene Seascape Evolution Above a “Simple” Stepped Slope—Western Niger Delta</title>
       <link>https://zsylvester.github.io/publication/stepped_slope/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/stepped_slope/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Seismic Stratigraphy of a Shelf-Edge Delta and Linked Submarine Channels in the Northeastern Gulf of Mexico</title>
       <link>https://zsylvester.github.io/publication/fuji_einstein/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/fuji_einstein/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Stratigraphic Response to Evolving Geomorphology in a Submarine Apron Perched on the Upper Niger Delta Slope</title>
       <link>https://zsylvester.github.io/publication/nigeria_fan/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/nigeria_fan/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Salt and sediment: a brief history of ideas</title>
       <link>https://zsylvester.github.io/post/salt_and_sediment/</link>
       <pubDate>Sat, 16 Jul 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/salt_and_sediment/</guid>
       <description>Salty weirdness Salt is a weird kind of rock. At first sight, it behaves like most other rocks: if you pick up a piece, it is hard, it is heavy, and it breaks if hit with a hammer. But put it under stress for thousands of years, and salt will behave like a fluid: relatively small forces can cause it to flow toward less stressful surroundings. This often means it will try to find its way to the surface.</description>
     </item>
-    
     <item>
       <title>Stretching the truth: vertical exaggeration of seismic data</title>
       <link>https://zsylvester.github.io/post/vertical_exaggeration/</link>
       <pubDate>Mon, 18 Apr 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/vertical_exaggeration/</guid>
       <description>If someone showed a photograph of the famous Cuernos massif (Torres del Paine National Park, Chile) like the one below, it would be - probably, hopefully - obvious to everybody that something is wrong with the picture. Our eyes and brains have seen enough mountain scenery that we intuitively know how steep is &amp;lsquo;steep&amp;rsquo; in alpine landscapes. The peaks in this photograph just look too extreme, too high if one takes into account their lateral extent.</description>
     </item>
-    
     <item>
       <title>A model of submarine channel-levee evolution based on channel trajectories: Implications for stratigraphic architecture</title>
       <link>https://zsylvester.github.io/publication/submarine_channel_model/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/submarine_channel_model/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Turbidite channel architecture: Recognizing and quantifying the distribution of channel-base drapes using core and dipmeter data</title>
       <link>https://zsylvester.github.io/publication/shale_drapes/</link>
       <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/shale_drapes/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Architecture of a Deep-water Levee Avulsion, Silla Ojo Mesa, Parque Nacional Torres del Paine, Chile</title>
       <link>https://zsylvester.github.io/publication/silla_ojo/</link>
       <pubDate>Tue, 01 Jan 2008 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/silla_ojo/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Turbidite bed thickness distributions: methods and pitfalls of analysis and modelling</title>
       <link>https://zsylvester.github.io/publication/bed_thicknesses/</link>
       <pubDate>Wed, 01 Aug 2007 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/bed_thicknesses/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Migration–aggradation history and 3-D seismic geomorphology of submarine channels in the Pleistocene Benin-major Canyon, western Niger Delta slope</title>
       <link>https://zsylvester.github.io/publication/benin/</link>
       <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/benin/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Textural trends in turbidites and slurry beds from the Oligocene flysch of the East Carpathians, Romania</title>
       <link>https://zsylvester.github.io/publication/textural_trends/</link>
       <pubDate>Fri, 01 Oct 2004 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/textural_trends/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>A diverse deep‐marine Ichnofauna from the Eocene Tarcau sandstone of the Eastern Carpathians, Romania</title>
       <link>https://zsylvester.github.io/publication/tarcau_ichnofauna/</link>
       <pubDate>Tue, 01 May 2001 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/publication/tarcau_ichnofauna/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

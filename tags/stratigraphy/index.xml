@@ -1,44 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Stratigraphy on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/tags/stratigraphy/</link>
     <description>Recent content in Stratigraphy on Zoltán Sylvester</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
     <lastBuildDate>Wed, 18 Jul 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://zsylvester.github.io/tags/stratigraphy/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://zsylvester.github.io/tags/stratigraphy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Stratal patterns in salt-withdrawal minibasins</title>
       <link>https://zsylvester.github.io/post/stratal_patterns/</link>
       <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/stratal_patterns/</guid>
       <description>These are animations that accompany our 2015 article on the stratigraphy of salt-withdrawal basins on the slope (Sylvester, Z., Cantelli, A., and Pirmez, C., 2015, Stratigraphic evolution of intraslope minibasins: Insights from surface-based model: AAPG Bulletin, v. 99, no. 6, p. 1099–1129). We have used a simple model that investigates the interplay between subsidence and sedimentation and helps in the understanding of how stratal termination patterns relate to variations in sediment input and basin subsidence.</description>
     </item>
-    
     <item>
       <title>Exploring (de)compaction with Python</title>
       <link>https://zsylvester.github.io/post/decompaction/</link>
       <pubDate>Wed, 12 Apr 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/decompaction/</guid>
-      <description>All clastic sediments are subject to compaction (and reduction of porosity) as the result of increasingly tighter packing of grains under a thickening overburden. Decompaction - the estimation of the decompacted thickness of a rock column - is an important part of subsidence (or geohistory) analysis. The following exercise is loosely based on the excellent basin analysis textbook by Allen &amp;amp; Allen (2013), especially their Appendix 56.
-Import stuff import numpy as np import matplotlib.</description>
+      <description>All clastic sediments are subject to compaction (and reduction of porosity) as the result of increasingly tighter packing of grains under a thickening overburden. Decompaction - the estimation of the decompacted thickness of a rock column - is an important part of subsidence (or geohistory) analysis. The following exercise is loosely based on the excellent basin analysis textbook by Allen &amp;amp; Allen (2013), especially their Appendix 56.&#xA;Import stuff import numpy as np import matplotlib.</description>
     </item>
-    
     <item>
       <title>Stretching the truth: vertical exaggeration of seismic data</title>
       <link>https://zsylvester.github.io/post/vertical_exaggeration/</link>
       <pubDate>Mon, 18 Apr 2011 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/vertical_exaggeration/</guid>
       <description>If someone showed a photograph of the famous Cuernos massif (Torres del Paine National Park, Chile) like the one below, it would be - probably, hopefully - obvious to everybody that something is wrong with the picture. Our eyes and brains have seen enough mountain scenery that we intuitively know how steep is &amp;lsquo;steep&amp;rsquo; in alpine landscapes. The peaks in this photograph just look too extreme, too high if one takes into account their lateral extent.</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,25 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gis on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/tags/gis/</link>
     <description>Recent content in Gis on Zoltán Sylvester</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
     <lastBuildDate>Sun, 16 Mar 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://zsylvester.github.io/tags/gis/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://zsylvester.github.io/tags/gis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rivers through time, as seen in Landsat images</title>
       <link>https://zsylvester.github.io/post/rivers_through_time/</link>
       <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
-      
       <guid>https://zsylvester.github.io/post/rivers_through_time/</guid>
       <description>Thanks to the Landsat program and Google Earth Engine, it is possible now to explore how the surface of the Earth has been changing through the last thirty years or so. Besides the obvious issues of interest, like changes in vegetation, the spread of cities, and the melting of glaciers, it is also possible to look at how rivers change their courses through time. You have probably already seen the images of the migrating Ucayali River in Peru, for example here.</description>
     </item>
-    
   </channel>
 </rss>

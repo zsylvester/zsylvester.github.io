@@ -90,34 +90,21 @@
 
       <div class="post-body" itemprop="articleBody">
         <p>If someone showed a photograph of the famous Cuernos massif (Torres del Paine National Park, Chile) like the one below, it would be - probably, hopefully - obvious to everybody that something is wrong with the picture. Our eyes and brains have seen enough mountain scenery that we intuitively know how steep is &lsquo;steep&rsquo; in alpine landscapes. The peaks in this photograph just look too extreme, too high if one takes into account their lateral extent.</p>
-
-<p><img src="https://zsylvester.github.io/img/cuernos_vert_exag.jpg#center600" alt="Cuernos, exaggerated" /></p>
-
+<p><img src="https://zsylvester.github.io/img/cuernos_vert_exag.jpg#center600" alt="Cuernos, exaggerated"></p>
 <p>For comparison, here is the original shot:</p>
-
-<p><img src="https://zsylvester.github.io/img/cuernos_1.jpg#center600" alt="Cuernos" /></p>
-
-<p>Yet this kind of vertical stretching of images is the rule rather than the exception when displaying seismic sections, both on computer screens and in scientific papers. There are two main reasons for this: first, subsurface geometries are often more obvious when vertically stretched and slopes are larger than in real life. Second, more often than not, we have no precise knowledge of the actual vertical scale. Raw seismic reflection data is recorded in time: we are measuring how long it takes before a seismic wave propagates down to a discontinuity and comes back to the surface. This time measure is called &lsquo;two-way traveltime&rsquo;; in order to convert it to depth, knowledge of the velocity of sound through the rocks is needed:
+<p><img src="https://zsylvester.github.io/img/cuernos_1.jpg#center600" alt="Cuernos"></p>
+<p>Yet this kind of vertical stretching of images is the rule rather than the exception when displaying seismic sections, both on computer screens and in scientific papers. There are two main reasons for this: first, subsurface geometries are often more obvious when vertically stretched and slopes are larger than in real life. Second, more often than not, we have no precise knowledge of the actual vertical scale. Raw seismic reflection data is recorded in time: we are measuring how long it takes before a seismic wave propagates down to a discontinuity and comes back to the surface. This time measure is called &rsquo;two-way traveltime&rsquo;; in order to convert it to depth, knowledge of the velocity of sound through the rocks is needed:
 $$ d = v * twt / 2, $$
 where $d$ is depth, $v$ is seismic velocity, and $twt$ is two-way traveltime.</p>
-
 <p>The problem is that the velocity of the wave varies as it goes deeper (usually increases with depth as rocks become &lsquo;harder&rsquo;); and, unless we are looking at perfect layercake stratigraphy (not that common!), it also changes laterally. So, if we want to look at the actual geological structures, without distortions due to varying velocities, we need to do a depth conversion and we need a &lsquo;velocity model&rsquo; that roughly describes the spatial distribution of velocities. Precise velocity measurements often come from wells where depth is well known; less precise estimates can be backed out from the seismic recordings themselves, but the solution is often non-unique and multiple iterations are necessary to build a good velocity- and depth model. As a result, seismic reflection data is often interpreted with two-way traveltime on the vertical axis, without depth conversion; and not knowing the true vertical scale makes it easier to use vertical exaggeration with vengeance. 
 A recent paper, published in Marine and Petroleum Geology, shows that vertical exaggeration of seismic data is indeed very common (see chart below). Simon Stewart of Heriot-Watt University has looked through 1437 papers published between 2006-2010 and found that 75% of the papers show seismic displays with vertical exaggeration of a factor larger than 2. Only 12% are shown with roughly equal horizontal and vertical scales.</p>
-
-<p><img src="https://zsylvester.github.io/img/vertical_exaggeration_data.png#center600" alt="Vertical exaggeration data" /></p>
-
+<p><img src="https://zsylvester.github.io/img/vertical_exaggeration_data.png#center600" alt="Vertical exaggeration data"></p>
 <p>One of the effects of vertical exaggeration is the strong steepening of dips. A 10 degree slope at a vertical exaggeration of 10 becomes an almost vertical drop of 60 degrees; it is hard not to think of these exaggerated slopes as steep slopes, even though they are not that abrupt in reality. Depositional geometries often have very small dips and significant vertical exaggeration is needed to illustrate the overall shapes.</p>
-
 <p>The paper suggests that published seismic sections should be labeled with an estimate of the vertical exaggeration, in addition to the usual horizontal and vertical scales [I am guilty myself of not doing this as it should be done]. Even better, one can go further and create several versions of the figure with different vertical exaggerations. The cross section of a submarine lobe deposit below is a fine example of such a display. Showing only the version that was exaggerated vertically 25 times would suggest that this is a deposit at the base of a steep slope; the 1:1 figure at the top brings us back to reality and clearly shows that this morphology and stratigraphy are both extremely flat.</p>
-
-<p><img src="https://zsylvester.github.io/img/deptuck_example.png#center600" alt="Submarine lobe from Corsica" /></p>
-
+<p><img src="https://zsylvester.github.io/img/deptuck_example.png#center600" alt="Submarine lobe from Corsica"></p>
 <p>To see more about scales and vertical exaggeration in geology, check out <a href="http://all-geo.org/highlyallochthonous/2011/04/not-to-scale/">this recent post at Highly Allochthonous</a>; and the <a href="http://www.agilegeoscience.com/journal/2011/4/7/the-scales-of-geoscience.html">nice illustrations</a> that Matt has put together over at Agile*.</p>
-
 <p>References</p>
-
 <p>Deptuck, M., Piper, D., Savoye, B., &amp; Gervais, A. (2008). Dimensions and architecture of late Pleistocene submarine lobes off the northern margin of East Corsica Sedimentology, 55 (4), 869-898 DOI: 10.1111/j.1365-3091.2007.00926.x</p>
-
 <p>Stewart, S. (2011). Vertical exaggeration of reflection seismic data in geoscience publications 2006–2010 Marine and Petroleum Geology, 28 (5), 959-965 DOI: 10.1016/j.marpetgeo.2010.10.003</p>
 
       </div>
