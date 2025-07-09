@@ -232,7 +232,7 @@ Given a sediment column of a certain lithology with its top at $y_1$ and its bas
 <p>$$ \phi(y) = \phi_0 e^{-cy} $$</p>
 <p>where $c$ is a coefficient with the units $km^{-1}$. The idea is that $c$ is a characteristic constant for a certain lithology and it can measured if porosity values are available from different depths. Muds have higher porosities at the seafloor than sands but they compact faster than sands. The plot below show some typical curves that illustrate the exponential decrease in porosity with depth for sand and mud. The continuous lines correspond to the parameters for sand and mud in Appendix 56 of Allen &amp; Allen (2013); the dashed lines are exponential fits to data from the Ocean Drilling Program (Kominz et al., 2011).</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>c_sand = <span style="color:#099">0.27</span> <span style="color:#aaa;font-style:italic"># porosity-depth coefficient for sand (km-1)</span>
-</span></span><span style="display:flex;"><span>c_mud = <span style="color:#099">0.57</span> <span style="color:#aaa;font-style:italic"># porosity-depth coefficent for mud (km-1) </span>
+</span></span><span style="display:flex;"><span>c_mud = <span style="color:#099">0.57</span> <span style="color:#aaa;font-style:italic"># porosity-depth coefficent for mud (km-1)</span>
 </span></span><span style="display:flex;"><span>phi_sand_0 = <span style="color:#099">0.49</span> <span style="color:#aaa;font-style:italic"># surface porosity for sand</span>
 </span></span><span style="display:flex;"><span>phi_mud_0 = <span style="color:#099">0.63</span> <span style="color:#aaa;font-style:italic"># surface porosity for mud</span>
 </span></span><span style="display:flex;"><span>y = np.arange(<span style="color:#099">0</span>,<span style="color:#099">3.01</span>,<span style="color:#099">0.01</span>)
@@ -290,11 +290,11 @@ Given a sediment column of a certain lithology with its top at $y_1$ and its bas
 <p>The decompaction equation could be solved in the &lsquo;brute force&rsquo; way, that is, by gradually changing the value of $y_2&rsquo;$ until the right hand side (RHS) of the equation is the same as the left hand side (LHS) - see for example the Excel spreadsheet that accompanies Appendix 56 in Allen &amp; Allen (2013). However, we (and scipy) can do better than that; we will use bisection, one the simplest optimization methods to find the root of the function that we set up as RHS-LHS.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># compaction function - the unknown variable is y2a</span>
 </span></span><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">comp_func</span>(y2a,y1,y2,y1a,phi,c):
-</span></span><span style="display:flex;"><span>    <span style="color:#aaa;font-style:italic"># left hand side of decompaction equation:</span>
-</span></span><span style="display:flex;"><span>    LHS = y2a - y1a
-</span></span><span style="display:flex;"><span>    <span style="color:#aaa;font-style:italic"># right hand side of decompaction equation:</span>
-</span></span><span style="display:flex;"><span>    RHS = y2 - y1 - (phi/c)*(np.exp(-c*y1)-np.exp(-c*y2)) + (phi/c)*(np.exp(-c*y1a)-np.exp(-c*y2a))
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> LHS - RHS
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># left hand side of decompaction equation:</span>
+</span></span><span style="display:flex;"><span>LHS = y2a - y1a
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># right hand side of decompaction equation:</span>
+</span></span><span style="display:flex;"><span>RHS = y2 - y1 - (phi/c)*(np.exp(-c*y1)-np.exp(-c*y2)) + (phi/c)*(np.exp(-c*y1a)-np.exp(-c*y2a))
+</span></span><span style="display:flex;"><span><span style="color:#00a">return</span> LHS - RHS
 </span></span></code></pre></div><p>Now we can do the calculations; here we set the initial depths of a sandstone column $y_1,y_2$ to 2 and 3 kilometers, and we estimate the new thickness and porosity assuming that the column is brought to the surface ($y_1&rsquo;=0$).</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>c_sand = <span style="color:#099">0.27</span> <span style="color:#aaa;font-style:italic"># porosity-depth coefficient for sand (km-1)</span>
 </span></span><span style="display:flex;"><span>phi_sand = <span style="color:#099">0.49</span> <span style="color:#aaa;font-style:italic"># surface porosity for sand</span>
@@ -315,49 +315,49 @@ Given a sediment column of a certain lithology with its top at $y_1$ and its bas
 </span></span></code></pre></div><h2 id="write-code-to-decompact-stratigraphic-column-with-multiple-layers">Write code to (de)compact stratigraphic column with multiple layers</h2>
 <p>Next we write a function that does the depth calculation for more than one layer in a sedimentary column:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">decompact</span>(tops,lith,new_top,phi_sand,phi_mud,c_sand,c_mud):
-</span></span><span style="display:flex;"><span>    tops_new = [] <span style="color:#aaa;font-style:italic"># list for decompacted tops</span>
-</span></span><span style="display:flex;"><span>    tops_new.append(new_top) <span style="color:#aaa;font-style:italic"># starting value</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(tops)-<span style="color:#099">1</span>):
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> lith[i] == <span style="color:#099">0</span>:
-</span></span><span style="display:flex;"><span>            phi = phi_mud; c = c_mud
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> lith[i] == <span style="color:#099">1</span>:
-</span></span><span style="display:flex;"><span>            phi = phi_sand; c = c_sand
-</span></span><span style="display:flex;"><span>        comp_func_1 = functools.partial(comp_func,y1=tops[i],y2=tops[i+<span style="color:#099">1</span>],y1a=tops_new[-<span style="color:#099">1</span>],phi=phi,c=c)
-</span></span><span style="display:flex;"><span>        base_new_a = tops_new[-<span style="color:#099">1</span>]+tops[i+<span style="color:#099">1</span>]-tops[i]
-</span></span><span style="display:flex;"><span>        base_new = bisect(comp_func_1, base_new_a, <span style="color:#099">4</span>*base_new_a) <span style="color:#aaa;font-style:italic"># bisection</span>
-</span></span><span style="display:flex;"><span>        tops_new.append(base_new)
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> tops_new
+</span></span><span style="display:flex;"><span>tops_new = [] <span style="color:#aaa;font-style:italic"># list for decompacted tops</span>
+</span></span><span style="display:flex;"><span>tops_new.append(new_top) <span style="color:#aaa;font-style:italic"># starting value</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(tops)-<span style="color:#099">1</span>):
+</span></span><span style="display:flex;"><span><span style="color:#00a">if</span> lith[i] == <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>phi = phi_mud; c = c_mud
+</span></span><span style="display:flex;"><span><span style="color:#00a">if</span> lith[i] == <span style="color:#099">1</span>:
+</span></span><span style="display:flex;"><span>phi = phi_sand; c = c_sand
+</span></span><span style="display:flex;"><span>comp_func_1 = functools.partial(comp_func,y1=tops[i],y2=tops[i+<span style="color:#099">1</span>],y1a=tops_new[-<span style="color:#099">1</span>],phi=phi,c=c)
+</span></span><span style="display:flex;"><span>base_new_a = tops_new[-<span style="color:#099">1</span>]+tops[i+<span style="color:#099">1</span>]-tops[i]
+</span></span><span style="display:flex;"><span>base_new = bisect(comp_func_1, base_new_a, <span style="color:#099">4</span>*base_new_a) <span style="color:#aaa;font-style:italic"># bisection</span>
+</span></span><span style="display:flex;"><span>tops_new.append(base_new)
+</span></span><span style="display:flex;"><span><span style="color:#00a">return</span> tops_new
 </span></span></code></pre></div><p>Let&rsquo;s use this function to decompact a simple stratigraphic column that consists of 5 alternating layers of sand and mud.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>tops = np.array([<span style="color:#099">1.0</span>,<span style="color:#099">1.1</span>,<span style="color:#099">1.15</span>,<span style="color:#099">1.3</span>,<span style="color:#099">1.5</span>,<span style="color:#099">2.0</span>])
 </span></span><span style="display:flex;"><span>lith = np.array([<span style="color:#099">0</span>,<span style="color:#099">1</span>,<span style="color:#099">0</span>,<span style="color:#099">1</span>,<span style="color:#099">0</span>]) <span style="color:#aaa;font-style:italic"># lithology labels: 0 = mud, 1 = sand</span>
 </span></span><span style="display:flex;"><span>phi_sand_0 = <span style="color:#099">0.49</span> <span style="color:#aaa;font-style:italic"># surface porosity for sand</span>
 </span></span><span style="display:flex;"><span>phi_mud_0 = <span style="color:#099">0.63</span> <span style="color:#aaa;font-style:italic"># surface porosity for mud</span>
 </span></span><span style="display:flex;"><span>c_sand = <span style="color:#099">0.27</span> <span style="color:#aaa;font-style:italic"># porosity-depth coefficient for sand (km-1)</span>
-</span></span><span style="display:flex;"><span>c_mud = <span style="color:#099">0.57</span> <span style="color:#aaa;font-style:italic"># porosity-depth coefficent for mud (km-1) </span>
+</span></span><span style="display:flex;"><span>c_mud = <span style="color:#099">0.57</span> <span style="color:#aaa;font-style:italic"># porosity-depth coefficent for mud (km-1)</span>
 </span></span><span style="display:flex;"><span>tops_new = decompact(tops,lith,<span style="color:#099">0.0</span>,phi_sand_0,phi_mud_0,c_sand,c_mud) <span style="color:#aaa;font-style:italic"># compute new tops</span>
 </span></span></code></pre></div><p>Plot the results:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">plot_decompaction</span>(tops,tops_new):
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(tops)-<span style="color:#099">1</span>):
-</span></span><span style="display:flex;"><span>        x = [<span style="color:#099">0</span>,<span style="color:#099">1</span>,<span style="color:#099">1</span>,<span style="color:#099">0</span>]
-</span></span><span style="display:flex;"><span>        y = [tops[i], tops[i], tops[i+<span style="color:#099">1</span>], tops[i+<span style="color:#099">1</span>]]
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> lith[i] == <span style="color:#099">0</span>:
-</span></span><span style="display:flex;"><span>            color = <span style="color:#a50">&#39;xkcd:umber&#39;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> lith[i] == <span style="color:#099">1</span>:
-</span></span><span style="display:flex;"><span>            color = <span style="color:#a50">&#39;lemonchiffon&#39;</span>
-</span></span><span style="display:flex;"><span>        plt.fill(x,y,facecolor=color,edgecolor=<span style="color:#a50">&#39;k&#39;</span>)
-</span></span><span style="display:flex;"><span>        x = np.array([<span style="color:#099">2</span>,<span style="color:#099">3</span>,<span style="color:#099">3</span>,<span style="color:#099">2</span>])
-</span></span><span style="display:flex;"><span>        y = np.array([tops_new[i], tops_new[i], tops_new[i+<span style="color:#099">1</span>], tops_new[i+<span style="color:#099">1</span>]])
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> lith[i] == <span style="color:#099">0</span>:
-</span></span><span style="display:flex;"><span>            color = <span style="color:#a50">&#39;xkcd:umber&#39;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> lith[i] == <span style="color:#099">1</span>:
-</span></span><span style="display:flex;"><span>            color = <span style="color:#a50">&#39;lemonchiffon&#39;</span>
-</span></span><span style="display:flex;"><span>        plt.fill(x,y,facecolor=color,edgecolor=<span style="color:#a50">&#39;k&#39;</span>)
-</span></span><span style="display:flex;"><span>    plt.gca().invert_yaxis()
-</span></span><span style="display:flex;"><span>    plt.tick_params(axis=<span style="color:#a50">&#39;x&#39;</span>,which=<span style="color:#a50">&#39;both&#39;</span>,bottom=<span style="color:#a50">&#39;off&#39;</span>,top=<span style="color:#a50">&#39;off&#39;</span>,labelbottom=<span style="color:#a50">&#39;off&#39;</span>)
-</span></span><span style="display:flex;"><span>    plt.ylabel(<span style="color:#a50">&#39;depth (km)&#39;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(tops)):
-</span></span><span style="display:flex;"><span>        plt.plot([<span style="color:#099">1</span>,<span style="color:#099">2</span>],[tops[i],tops_new[i]],<span style="color:#a50">&#39;k--&#39;</span>,linewidth=<span style="color:#099">0.7</span>)
-</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(tops)-<span style="color:#099">1</span>):
+</span></span><span style="display:flex;"><span>x = [<span style="color:#099">0</span>,<span style="color:#099">1</span>,<span style="color:#099">1</span>,<span style="color:#099">0</span>]
+</span></span><span style="display:flex;"><span>y = [tops[i], tops[i], tops[i+<span style="color:#099">1</span>], tops[i+<span style="color:#099">1</span>]]
+</span></span><span style="display:flex;"><span><span style="color:#00a">if</span> lith[i] == <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>color = <span style="color:#a50">&#39;xkcd:umber&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">if</span> lith[i] == <span style="color:#099">1</span>:
+</span></span><span style="display:flex;"><span>color = <span style="color:#a50">&#39;lemonchiffon&#39;</span>
+</span></span><span style="display:flex;"><span>plt.fill(x,y,facecolor=color,edgecolor=<span style="color:#a50">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>x = np.array([<span style="color:#099">2</span>,<span style="color:#099">3</span>,<span style="color:#099">3</span>,<span style="color:#099">2</span>])
+</span></span><span style="display:flex;"><span>y = np.array([tops_new[i], tops_new[i], tops_new[i+<span style="color:#099">1</span>], tops_new[i+<span style="color:#099">1</span>]])
+</span></span><span style="display:flex;"><span><span style="color:#00a">if</span> lith[i] == <span style="color:#099">0</span>:
+</span></span><span style="display:flex;"><span>color = <span style="color:#a50">&#39;xkcd:umber&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">if</span> lith[i] == <span style="color:#099">1</span>:
+</span></span><span style="display:flex;"><span>color = <span style="color:#a50">&#39;lemonchiffon&#39;</span>
+</span></span><span style="display:flex;"><span>plt.fill(x,y,facecolor=color,edgecolor=<span style="color:#a50">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>plt.gca().invert_yaxis()
+</span></span><span style="display:flex;"><span>plt.tick_params(axis=<span style="color:#a50">&#39;x&#39;</span>,which=<span style="color:#a50">&#39;both&#39;</span>,bottom=<span style="color:#a50">&#39;off&#39;</span>,top=<span style="color:#a50">&#39;off&#39;</span>,labelbottom=<span style="color:#a50">&#39;off&#39;</span>)
+</span></span><span style="display:flex;"><span>plt.ylabel(<span style="color:#a50">&#39;depth (km)&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#0aa">len</span>(tops)):
+</span></span><span style="display:flex;"><span>plt.plot([<span style="color:#099">1</span>,<span style="color:#099">2</span>],[tops[i],tops_new[i]],<span style="color:#a50">&#39;k--&#39;</span>,linewidth=<span style="color:#099">0.7</span>)
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>plot_decompaction(tops,tops_new)
 </span></span><span style="display:flex;"><span>plt.text(<span style="color:#099">0.2</span>,<span style="color:#099">0.95</span>,<span style="color:#a50">&#39;compacted&#39;</span>)
 </span></span><span style="display:flex;"><span>plt.text(<span style="color:#099">2.15</span>,-<span style="color:#099">0.05</span>,<span style="color:#a50">&#39;decompacted&#39;</span>)

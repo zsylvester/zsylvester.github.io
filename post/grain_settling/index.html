@@ -189,7 +189,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#00a">import</span> <span style="color:#0aa;text-decoration:underline">matplotlib.pyplot</span> <span style="color:#00a">as</span> <span style="color:#0aa;text-decoration:underline">plt</span>
 </span></span><span style="display:flex;"><span><span style="color:#00a">import</span> <span style="color:#0aa;text-decoration:underline">seaborn</span> <span style="color:#00a">as</span> <span style="color:#0aa;text-decoration:underline">sns</span>
 </span></span><span style="display:flex;"><span>%matplotlib inline
-</span></span><span style="display:flex;"><span>%config InlineBackend.figure_format = <span style="color:#a50">&#39;svg&#39;</span> 
+</span></span><span style="display:flex;"><span>%config InlineBackend.figure_format = <span style="color:#a50">&#39;svg&#39;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>rop = <span style="color:#099">2650.0</span> <span style="color:#aaa;font-style:italic"># density of particle in kg/m3</span>
 </span></span><span style="display:flex;"><span>rof = <span style="color:#099">1000.0</span> <span style="color:#aaa;font-style:italic"># density of fluid in kg/m3</span>
@@ -198,19 +198,19 @@
 </span></span><span style="display:flex;"><span>C2 = <span style="color:#099">1</span> <span style="color:#aaa;font-style:italic"># constant in Ferguson-Church equation, valid for natural sand grains</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">v_stokes</span>(rop,rof,d,visc,C1):
-</span></span><span style="display:flex;"><span>        R = (rop-rof)/rof <span style="color:#aaa;font-style:italic"># submerged specific gravity</span>
-</span></span><span style="display:flex;"><span>        w = R*<span style="color:#099">9.81</span>*(d**<span style="color:#099">2</span>)/(C1*visc/rof)
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> w
+</span></span><span style="display:flex;"><span>R = (rop-rof)/rof <span style="color:#aaa;font-style:italic"># submerged specific gravity</span>
+</span></span><span style="display:flex;"><span>w = R*<span style="color:#099">9.81</span>*(d**<span style="color:#099">2</span>)/(C1*visc/rof)
+</span></span><span style="display:flex;"><span><span style="color:#00a">return</span> w
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">v_turbulent</span>(rop,rof,d,visc,C2):
-</span></span><span style="display:flex;"><span>        R = (rop-rof)/rof 
-</span></span><span style="display:flex;"><span>        w = (<span style="color:#099">4</span>*R*<span style="color:#099">9.81</span>*d/(<span style="color:#099">3</span>*C2))**<span style="color:#099">0.5</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> w
+</span></span><span style="display:flex;"><span>R = (rop-rof)/rof
+</span></span><span style="display:flex;"><span>w = (<span style="color:#099">4</span>*R*<span style="color:#099">9.81</span>*d/(<span style="color:#099">3</span>*C2))**<span style="color:#099">0.5</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">return</span> w
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">v_ferg</span>(rop,rof,d,visc,C1,C2):
-</span></span><span style="display:flex;"><span>        R = (rop-rof)/rof 
-</span></span><span style="display:flex;"><span>        w = (R*<span style="color:#099">9.81</span>*d**<span style="color:#099">2</span>)/(C1*visc/rof+(<span style="color:#099">0.75</span>*C2*R*<span style="color:#099">9.81</span>*d**<span style="color:#099">3</span>)**<span style="color:#099">0.5</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">return</span> w
+</span></span><span style="display:flex;"><span>R = (rop-rof)/rof
+</span></span><span style="display:flex;"><span>w = (R*<span style="color:#099">9.81</span>*d**<span style="color:#099">2</span>)/(C1*visc/rof+(<span style="color:#099">0.75</span>*C2*R*<span style="color:#099">9.81</span>*d**<span style="color:#099">3</span>)**<span style="color:#099">0.5</span>)
+</span></span><span style="display:flex;"><span><span style="color:#00a">return</span> w
 </span></span></code></pre></div><p>Let&rsquo;s plot these equations for a range of particle diameters:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>d = np.arange(<span style="color:#099">0</span>,<span style="color:#099">0.0005</span>,<span style="color:#099">0.000001</span>)
 </span></span><span style="display:flex;"><span>ws = v_stokes(rop,rof,d,visc,C1)

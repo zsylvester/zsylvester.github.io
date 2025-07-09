@@ -243,37 +243,37 @@
 </span></span><span style="display:flex;"><span>t_max = <span style="color:#099">1</span> <span style="color:#aaa;font-style:italic"># total time in s</span>
 </span></span><span style="display:flex;"><span>V0 = <span style="color:#099">10</span> <span style="color:#aaa;font-style:italic"># velocity in m/s</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># function to calculate velocity profiles based on a finite difference approximation to the 1D diffusion equation and the </span>
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># function to calculate velocity profiles based on a finite difference approximation to the 1D diffusion equation and the</span>
 </span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># FTCS (forward-in-time, centered-in-space) scheme:</span>
 </span></span><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">diffusion_FTCS</span>(dt,dy,t_max,y_max,viscosity,V0):
-</span></span><span style="display:flex;"><span>    <span style="color:#aaa;font-style:italic"># diffusion number (has to be less than 0.5 for the solution to be stable):</span>
-</span></span><span style="display:flex;"><span>    s = viscosity*dt/dy**<span style="color:#099">2</span> 
-</span></span><span style="display:flex;"><span>    y = np.arange(<span style="color:#099">0</span>,y_max+dy,dy) 
-</span></span><span style="display:flex;"><span>    t = np.arange(<span style="color:#099">0</span>,t_max+dt,dt)
-</span></span><span style="display:flex;"><span>    r = <span style="color:#0aa">len</span>(t)
-</span></span><span style="display:flex;"><span>    c = <span style="color:#0aa">len</span>(y)
-</span></span><span style="display:flex;"><span>    V = np.zeros([r,c])
-</span></span><span style="display:flex;"><span>    V[:,<span style="color:#099">0</span>] = V0
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> n <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">0</span>,r-<span style="color:#099">1</span>): <span style="color:#aaa;font-style:italic"># time</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">for</span> j <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">1</span>,c-<span style="color:#099">1</span>): <span style="color:#aaa;font-style:italic"># space</span>
-</span></span><span style="display:flex;"><span>            V[n+<span style="color:#099">1</span>,j] = V[n,j] + s*(V[n,j-<span style="color:#099">1</span>] - <span style="color:#099">2</span>*V[n,j] + V[n,j+<span style="color:#099">1</span>]) 
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> y,V,r,s
+</span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># diffusion number (has to be less than 0.5 for the solution to be stable):</span>
+</span></span><span style="display:flex;"><span>s = viscosity*dt/dy**<span style="color:#099">2</span>
+</span></span><span style="display:flex;"><span>y = np.arange(<span style="color:#099">0</span>,y_max+dy,dy)
+</span></span><span style="display:flex;"><span>t = np.arange(<span style="color:#099">0</span>,t_max+dt,dt)
+</span></span><span style="display:flex;"><span>r = <span style="color:#0aa">len</span>(t)
+</span></span><span style="display:flex;"><span>c = <span style="color:#0aa">len</span>(y)
+</span></span><span style="display:flex;"><span>V = np.zeros([r,c])
+</span></span><span style="display:flex;"><span>V[:,<span style="color:#099">0</span>] = V0
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> n <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">0</span>,r-<span style="color:#099">1</span>): <span style="color:#aaa;font-style:italic"># time</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> j <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">1</span>,c-<span style="color:#099">1</span>): <span style="color:#aaa;font-style:italic"># space</span>
+</span></span><span style="display:flex;"><span>V[n+<span style="color:#099">1</span>,j] = V[n,j] + s*(V[n,j-<span style="color:#099">1</span>] - <span style="color:#099">2</span>*V[n,j] + V[n,j+<span style="color:#099">1</span>])
+</span></span><span style="display:flex;"><span><span style="color:#00a">return</span> y,V,r,s
 </span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># note that this can be written without the for-loop in space, but it is easier to read it this way</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#00a">from</span> <span style="color:#0aa;text-decoration:underline">scipy.special</span> <span style="color:#00a">import</span> erfc
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#aaa;font-style:italic"># function to calculate velocity profiles using the analytic solution:</span>
 </span></span><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">diffusion_analytic</span>(t,h,V0,dy,viscosity):
-</span></span><span style="display:flex;"><span>    y = np.arange(<span style="color:#099">0</span>,h+dy,dy)
-</span></span><span style="display:flex;"><span>    eta1 = h/(<span style="color:#099">2</span>*(t*viscosity)**<span style="color:#099">0.5</span>)
-</span></span><span style="display:flex;"><span>    eta = y/(<span style="color:#099">2</span>*(t*viscosity)**<span style="color:#099">0.5</span>)
-</span></span><span style="display:flex;"><span>    sum1 = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>    sum2 = <span style="color:#099">0</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> n <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">0</span>,<span style="color:#099">1000</span>):
-</span></span><span style="display:flex;"><span>        sum1 = sum1 + erfc(<span style="color:#099">2</span>*n*eta1+eta)
-</span></span><span style="display:flex;"><span>        sum2 = sum2 + erfc(<span style="color:#099">2</span>*(n+<span style="color:#099">1</span>)*eta1-eta)
-</span></span><span style="display:flex;"><span>    V_analytic = V0*(sum1-sum2)
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> V_analytic
+</span></span><span style="display:flex;"><span>y = np.arange(<span style="color:#099">0</span>,h+dy,dy)
+</span></span><span style="display:flex;"><span>eta1 = h/(<span style="color:#099">2</span>*(t*viscosity)**<span style="color:#099">0.5</span>)
+</span></span><span style="display:flex;"><span>eta = y/(<span style="color:#099">2</span>*(t*viscosity)**<span style="color:#099">0.5</span>)
+</span></span><span style="display:flex;"><span>sum1 = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span>sum2 = <span style="color:#099">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> n <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">0</span>,<span style="color:#099">1000</span>):
+</span></span><span style="display:flex;"><span>sum1 = sum1 + erfc(<span style="color:#099">2</span>*n*eta1+eta)
+</span></span><span style="display:flex;"><span>sum2 = sum2 + erfc(<span style="color:#099">2</span>*(n+<span style="color:#099">1</span>)*eta1-eta)
+</span></span><span style="display:flex;"><span>V_analytic = V0*(sum1-sum2)
+</span></span><span style="display:flex;"><span><span style="color:#00a">return</span> V_analytic
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>y,V,r,s = diffusion_FTCS(dt,dy,t_max,y_max,viscosity,V0)
 </span></span><span style="display:flex;"><span>
@@ -281,11 +281,11 @@
 </span></span><span style="display:flex;"><span>plt.figure(figsize=(<span style="color:#099">7</span>,<span style="color:#099">5</span>))
 </span></span><span style="display:flex;"><span>plot_times = np.arange(<span style="color:#099">0.2</span>,<span style="color:#099">1.0</span>,<span style="color:#099">0.1</span>)
 </span></span><span style="display:flex;"><span><span style="color:#00a">for</span> t <span style="color:#00a">in</span> plot_times:
-</span></span><span style="display:flex;"><span>    plt.plot(y,V[t/dt,:],<span style="color:#a50">&#39;Gray&#39;</span>,label=<span style="color:#a50">&#39;numerical&#39;</span>)
-</span></span><span style="display:flex;"><span>    V_analytic = diffusion_analytic(t,<span style="color:#099">0.04</span>,<span style="color:#099">10</span>,dy,viscosity)
-</span></span><span style="display:flex;"><span>    plt.plot(y,V_analytic,<span style="color:#a50">&#39;ok&#39;</span>,label=<span style="color:#a50">&#39;analytic&#39;</span>,markersize=<span style="color:#099">3</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">if</span> t==<span style="color:#099">0.2</span>:
-</span></span><span style="display:flex;"><span>        plt.legend(fontsize=<span style="color:#099">12</span>)
+</span></span><span style="display:flex;"><span>plt.plot(y,V[t/dt,:],<span style="color:#a50">&#39;Gray&#39;</span>,label=<span style="color:#a50">&#39;numerical&#39;</span>)
+</span></span><span style="display:flex;"><span>V_analytic = diffusion_analytic(t,<span style="color:#099">0.04</span>,<span style="color:#099">10</span>,dy,viscosity)
+</span></span><span style="display:flex;"><span>plt.plot(y,V_analytic,<span style="color:#a50">&#39;ok&#39;</span>,label=<span style="color:#a50">&#39;analytic&#39;</span>,markersize=<span style="color:#099">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#00a">if</span> t==<span style="color:#099">0.2</span>:
+</span></span><span style="display:flex;"><span>plt.legend(fontsize=<span style="color:#099">12</span>)
 </span></span><span style="display:flex;"><span>plt.xlabel(<span style="color:#a50">&#39;distance from wall (m)&#39;</span>,fontsize=<span style="color:#099">12</span>)
 </span></span><span style="display:flex;"><span>plt.ylabel(<span style="color:#a50">&#39;velocity (m/s)&#39;</span>,fontsize=<span style="color:#099">12</span>)
 </span></span><span style="display:flex;"><span>plt.axis([<span style="color:#099">0</span>,y_max,<span style="color:#099">0</span>,V0])
@@ -339,12 +339,12 @@
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>plt.figure(figsize=(<span style="color:#099">6</span>,<span style="color:#099">3</span>))
 </span></span><span style="display:flex;"><span>plt.plot([<span style="color:#099">0</span>,<span style="color:#099">4</span>,<span style="color:#099">4</span>,<span style="color:#099">0</span>],[<span style="color:#099">0</span>,<span style="color:#099">0</span>,<span style="color:#099">1</span>,<span style="color:#099">1</span>],<span style="color:#a50">&#39;k&#39;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">0</span>,<span style="color:#099">4</span>):
-</span></span><span style="display:flex;"><span>    plt.plot([i,i],[<span style="color:#099">0</span>,<span style="color:#099">1</span>],<span style="color:#a50">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>plt.plot([i,i],[<span style="color:#099">0</span>,<span style="color:#099">1</span>],<span style="color:#a50">&#39;k&#39;</span>)
 </span></span><span style="display:flex;"><span>plt.plot([<span style="color:#099">0</span>,<span style="color:#099">1</span>,<span style="color:#099">2</span>,<span style="color:#099">3</span>,<span style="color:#099">4</span>,<span style="color:#099">0</span>,<span style="color:#099">4</span>],[<span style="color:#099">0</span>,<span style="color:#099">0</span>,<span style="color:#099">0</span>,<span style="color:#099">0</span>,<span style="color:#099">0</span>,<span style="color:#099">1</span>,<span style="color:#099">1</span>],<span style="color:#a50">&#39;ko&#39;</span>,markersize=<span style="color:#099">10</span>)
 </span></span><span style="display:flex;"><span>plt.plot([<span style="color:#099">1</span>,<span style="color:#099">2</span>,<span style="color:#099">3</span>],[<span style="color:#099">1</span>,<span style="color:#099">1</span>,<span style="color:#099">1</span>],<span style="color:#a50">&#39;ro&#39;</span>,markersize=<span style="color:#099">10</span>)
 </span></span><span style="display:flex;"><span><span style="color:#00a">for</span> i <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">0</span>,<span style="color:#099">5</span>):
-</span></span><span style="display:flex;"><span>    plt.text(i+<span style="color:#099">0.1</span>,<span style="color:#099">0.1</span>,<span style="color:#a50">&#39;T[0,&#39;</span>+<span style="color:#0aa">str</span>(i)+<span style="color:#a50">&#39;]&#39;</span>)
-</span></span><span style="display:flex;"><span>    plt.text(i+<span style="color:#099">0.1</span>,<span style="color:#099">1.1</span>,<span style="color:#a50">&#39;T[1,&#39;</span>+<span style="color:#0aa">str</span>(i)+<span style="color:#a50">&#39;]&#39;</span>)
+</span></span><span style="display:flex;"><span>plt.text(i+<span style="color:#099">0.1</span>,<span style="color:#099">0.1</span>,<span style="color:#a50">&#39;T[0,&#39;</span>+<span style="color:#0aa">str</span>(i)+<span style="color:#a50">&#39;]&#39;</span>)
+</span></span><span style="display:flex;"><span>plt.text(i+<span style="color:#099">0.1</span>,<span style="color:#099">1.1</span>,<span style="color:#a50">&#39;T[1,&#39;</span>+<span style="color:#0aa">str</span>(i)+<span style="color:#a50">&#39;]&#39;</span>)
 </span></span><span style="display:flex;"><span>plt.xlabel(<span style="color:#a50">&#39;space&#39;</span>)
 </span></span><span style="display:flex;"><span>plt.ylabel(<span style="color:#a50">&#39;time&#39;</span>)
 </span></span><span style="display:flex;"><span>plt.axis(<span style="color:#a50">&#39;equal&#39;</span>)
@@ -362,22 +362,22 @@
 Now we are ready to write the code for the Laasonen scheme. One important difference relative to what I did in the explicit scheme example is that in this case we only keep the last two versions of the velocity distribution in memory, as opposed to preallocating the full array of $nt \times ny$ size as we did before. This difference is not a significant time saver for simple problems like this but once you start dealing with more complicated tasks and code it is not possible and/or practical to keep the results of all time steps in memory.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#00a">from</span> <span style="color:#0aa;text-decoration:underline">scipy.sparse</span> <span style="color:#00a">import</span> diags
 </span></span><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">diffusion_Laasonen</span>(dt,dy,t_max,y_max,viscosity,V0,V1):
-</span></span><span style="display:flex;"><span>    s = viscosity*dt/dy**<span style="color:#099">2</span>  <span style="color:#aaa;font-style:italic"># diffusion number</span>
-</span></span><span style="display:flex;"><span>    y = np.arange(<span style="color:#099">0</span>,y_max+dy,dy) 
-</span></span><span style="display:flex;"><span>    t = np.arange(<span style="color:#099">0</span>,t_max+dt,dt)
-</span></span><span style="display:flex;"><span>    nt = <span style="color:#0aa">len</span>(t) <span style="color:#aaa;font-style:italic"># number of time steps</span>
-</span></span><span style="display:flex;"><span>    ny = <span style="color:#0aa">len</span>(y) <span style="color:#aaa;font-style:italic"># number of dy steps</span>
-</span></span><span style="display:flex;"><span>    V = np.zeros((ny,)) <span style="color:#aaa;font-style:italic"># initial condition</span>
-</span></span><span style="display:flex;"><span>    V[<span style="color:#099">0</span>] = V0 <span style="color:#aaa;font-style:italic"># boundary condition on left side</span>
-</span></span><span style="display:flex;"><span>    V[-<span style="color:#099">1</span>] = V1 <span style="color:#aaa;font-style:italic"># boundary condition on right side</span>
-</span></span><span style="display:flex;"><span>    A = diags([-s, <span style="color:#099">1</span>+<span style="color:#099">2</span>*s, -s], [-<span style="color:#099">1</span>, <span style="color:#099">0</span>, <span style="color:#099">1</span>], shape=(ny-<span style="color:#099">2</span>, ny-<span style="color:#099">2</span>)).toarray() <span style="color:#aaa;font-style:italic"># create coefficient matrix</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> n <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(nt): <span style="color:#aaa;font-style:italic"># time is going from second time step to last</span>
-</span></span><span style="display:flex;"><span>        Vn = V <span style="color:#aaa;font-style:italic">#.copy()</span>
-</span></span><span style="display:flex;"><span>        B = Vn[<span style="color:#099">1</span>:-<span style="color:#099">1</span>] <span style="color:#aaa;font-style:italic"># create matrix of knowns on the RHS of the equation</span>
-</span></span><span style="display:flex;"><span>        B[<span style="color:#099">0</span>] = B[<span style="color:#099">0</span>]+s*V0
-</span></span><span style="display:flex;"><span>        B[-<span style="color:#099">1</span>] = B[-<span style="color:#099">1</span>]+s*V1
-</span></span><span style="display:flex;"><span>        V[<span style="color:#099">1</span>:-<span style="color:#099">1</span>] = np.linalg.solve(A,B) <span style="color:#aaa;font-style:italic"># solve the equation using numpy</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> y,t,V,s
+</span></span><span style="display:flex;"><span>s = viscosity*dt/dy**<span style="color:#099">2</span>  <span style="color:#aaa;font-style:italic"># diffusion number</span>
+</span></span><span style="display:flex;"><span>y = np.arange(<span style="color:#099">0</span>,y_max+dy,dy)
+</span></span><span style="display:flex;"><span>t = np.arange(<span style="color:#099">0</span>,t_max+dt,dt)
+</span></span><span style="display:flex;"><span>nt = <span style="color:#0aa">len</span>(t) <span style="color:#aaa;font-style:italic"># number of time steps</span>
+</span></span><span style="display:flex;"><span>ny = <span style="color:#0aa">len</span>(y) <span style="color:#aaa;font-style:italic"># number of dy steps</span>
+</span></span><span style="display:flex;"><span>V = np.zeros((ny,)) <span style="color:#aaa;font-style:italic"># initial condition</span>
+</span></span><span style="display:flex;"><span>V[<span style="color:#099">0</span>] = V0 <span style="color:#aaa;font-style:italic"># boundary condition on left side</span>
+</span></span><span style="display:flex;"><span>V[-<span style="color:#099">1</span>] = V1 <span style="color:#aaa;font-style:italic"># boundary condition on right side</span>
+</span></span><span style="display:flex;"><span>A = diags([-s, <span style="color:#099">1</span>+<span style="color:#099">2</span>*s, -s], [-<span style="color:#099">1</span>, <span style="color:#099">0</span>, <span style="color:#099">1</span>], shape=(ny-<span style="color:#099">2</span>, ny-<span style="color:#099">2</span>)).toarray() <span style="color:#aaa;font-style:italic"># create coefficient matrix</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> n <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(nt): <span style="color:#aaa;font-style:italic"># time is going from second time step to last</span>
+</span></span><span style="display:flex;"><span>Vn = V <span style="color:#aaa;font-style:italic">#.copy()</span>
+</span></span><span style="display:flex;"><span>B = Vn[<span style="color:#099">1</span>:-<span style="color:#099">1</span>] <span style="color:#aaa;font-style:italic"># create matrix of knowns on the RHS of the equation</span>
+</span></span><span style="display:flex;"><span>B[<span style="color:#099">0</span>] = B[<span style="color:#099">0</span>]+s*V0
+</span></span><span style="display:flex;"><span>B[-<span style="color:#099">1</span>] = B[-<span style="color:#099">1</span>]+s*V1
+</span></span><span style="display:flex;"><span>V[<span style="color:#099">1</span>:-<span style="color:#099">1</span>] = np.linalg.solve(A,B) <span style="color:#aaa;font-style:italic"># solve the equation using numpy</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">return</span> y,t,V,s
 </span></span></code></pre></div><p>Because this is a stable scheme, it is possible to get reasonable solutions with relatively large time steps (which was not possible with the FTCS scheme):</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>dt = <span style="color:#099">0.01</span> <span style="color:#aaa;font-style:italic"># grid size for time (s)</span>
 </span></span><span style="display:flex;"><span>dy = <span style="color:#099">0.0005</span> <span style="color:#aaa;font-style:italic"># grid size for space (m)</span>
@@ -388,8 +388,8 @@ Now we are ready to write the code for the Laasonen scheme. One important differ
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>plt.figure(figsize=(<span style="color:#099">7</span>,<span style="color:#099">5</span>))
 </span></span><span style="display:flex;"><span><span style="color:#00a">for</span> time <span style="color:#00a">in</span> np.linspace(<span style="color:#099">0</span>,<span style="color:#099">1.0</span>,<span style="color:#099">10</span>):
-</span></span><span style="display:flex;"><span>    y,t,V,s = diffusion_Laasonen(dt,dy,time,y_max,viscosity,V0,V1)
-</span></span><span style="display:flex;"><span>    plt.plot(y,V,<span style="color:#a50">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>y,t,V,s = diffusion_Laasonen(dt,dy,time,y_max,viscosity,V0,V1)
+</span></span><span style="display:flex;"><span>plt.plot(y,V,<span style="color:#a50">&#39;k&#39;</span>)
 </span></span><span style="display:flex;"><span>plt.xlabel(<span style="color:#a50">&#39;distance from wall (m)&#39;</span>,fontsize=<span style="color:#099">12</span>)
 </span></span><span style="display:flex;"><span>plt.ylabel(<span style="color:#a50">&#39;velocity (m/s)&#39;</span>,fontsize=<span style="color:#099">12</span>)
 </span></span><span style="display:flex;"><span>plt.axis([<span style="color:#099">0</span>,y_max,<span style="color:#099">0</span>,V0])
@@ -405,8 +405,8 @@ Now we are ready to write the code for the Laasonen scheme. One important differ
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>plt.figure(figsize=(<span style="color:#099">7</span>,<span style="color:#099">5</span>))
 </span></span><span style="display:flex;"><span><span style="color:#00a">for</span> time <span style="color:#00a">in</span> np.linspace(<span style="color:#099">0</span>,<span style="color:#099">1.0</span>,<span style="color:#099">10</span>):
-</span></span><span style="display:flex;"><span>    y,t,V,s = diffusion_Laasonen(dt,dy,time,y_max,viscosity,V0,V1)
-</span></span><span style="display:flex;"><span>    plt.plot(y,V,<span style="color:#a50">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>y,t,V,s = diffusion_Laasonen(dt,dy,time,y_max,viscosity,V0,V1)
+</span></span><span style="display:flex;"><span>plt.plot(y,V,<span style="color:#a50">&#39;k&#39;</span>)
 </span></span><span style="display:flex;"><span>plt.xlabel(<span style="color:#a50">&#39;distance from wall (m)&#39;</span>,fontsize=<span style="color:#099">12</span>)
 </span></span><span style="display:flex;"><span>plt.ylabel(<span style="color:#a50">&#39;velocity (m/s)&#39;</span>,fontsize=<span style="color:#099">12</span>)
 </span></span><span style="display:flex;"><span>plt.axis([<span style="color:#099">0</span>,y_max,<span style="color:#099">0</span>,V0])
@@ -443,27 +443,27 @@ Now we are ready to write the code for the Laasonen scheme. One important differ
 <p><img alt="drawing" loading="lazy" src="https://zsylvester.github.io/img/array_2.png#center700"></p>
 <p>Now we can write the code for the Crank-Nicolson scheme. We will use a new input parameter called $ntout$ that determines how many time steps we want to write out to memory. This way you don&rsquo;t have to re-run the code if you want to plot multiple time steps.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#00a">def</span> <span style="color:#0a0">diffusion_Crank_Nicolson</span>(dy,ny,dt,nt,D,V,ntout):
-</span></span><span style="display:flex;"><span>    Vout = [] <span style="color:#aaa;font-style:italic"># list for storing V arrays at certain time steps</span>
-</span></span><span style="display:flex;"><span>    V0 = V[<span style="color:#099">0</span>] <span style="color:#aaa;font-style:italic"># boundary condition on left side</span>
-</span></span><span style="display:flex;"><span>    V1 = V[-<span style="color:#099">1</span>] <span style="color:#aaa;font-style:italic"># boundary condition on right side</span>
-</span></span><span style="display:flex;"><span>    s = D*dt/dy**<span style="color:#099">2</span>  <span style="color:#aaa;font-style:italic"># diffusion number</span>
-</span></span><span style="display:flex;"><span>    A = diags([-<span style="color:#099">0.5</span>*s, <span style="color:#099">1</span>+s, -<span style="color:#099">0.5</span>*s], [-<span style="color:#099">1</span>, <span style="color:#099">0</span>, <span style="color:#099">1</span>], shape=(ny-<span style="color:#099">2</span>, ny-<span style="color:#099">2</span>)).toarray() <span style="color:#aaa;font-style:italic"># create coefficient matrix</span>
-</span></span><span style="display:flex;"><span>    B1 = diags([<span style="color:#099">0.5</span>*s, <span style="color:#099">1</span>-s, <span style="color:#099">0.5</span>*s],[-<span style="color:#099">1</span>, <span style="color:#099">0</span>, <span style="color:#099">1</span>], shape=(ny-<span style="color:#099">2</span>, ny-<span style="color:#099">2</span>)).toarray()
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">for</span> n <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">1</span>,nt): <span style="color:#aaa;font-style:italic"># time is going from second time step to last</span>
-</span></span><span style="display:flex;"><span>        Vn = V
-</span></span><span style="display:flex;"><span>        B = np.dot(Vn[<span style="color:#099">1</span>:-<span style="color:#099">1</span>],B1) 
-</span></span><span style="display:flex;"><span>        B[<span style="color:#099">0</span>] = B[<span style="color:#099">0</span>]+<span style="color:#099">0.5</span>*s*(V0+V0)
-</span></span><span style="display:flex;"><span>        B[-<span style="color:#099">1</span>] = B[-<span style="color:#099">1</span>]+<span style="color:#099">0.5</span>*s*(V1+V1)
-</span></span><span style="display:flex;"><span>        V[<span style="color:#099">1</span>:-<span style="color:#099">1</span>] = np.linalg.solve(A,B)
-</span></span><span style="display:flex;"><span>        <span style="color:#00a">if</span> n % <span style="color:#0aa">int</span>(nt/<span style="color:#0aa">float</span>(ntout)) == <span style="color:#099">0</span> <span style="color:#00a">or</span> n==nt-<span style="color:#099">1</span>:
-</span></span><span style="display:flex;"><span>            Vout.append(V.copy()) <span style="color:#aaa;font-style:italic"># numpy arrays are mutable, so we need to write out a copy of V, not V itself</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#00a">return</span> Vout,s
+</span></span><span style="display:flex;"><span>Vout = [] <span style="color:#aaa;font-style:italic"># list for storing V arrays at certain time steps</span>
+</span></span><span style="display:flex;"><span>V0 = V[<span style="color:#099">0</span>] <span style="color:#aaa;font-style:italic"># boundary condition on left side</span>
+</span></span><span style="display:flex;"><span>V1 = V[-<span style="color:#099">1</span>] <span style="color:#aaa;font-style:italic"># boundary condition on right side</span>
+</span></span><span style="display:flex;"><span>s = D*dt/dy**<span style="color:#099">2</span>  <span style="color:#aaa;font-style:italic"># diffusion number</span>
+</span></span><span style="display:flex;"><span>A = diags([-<span style="color:#099">0.5</span>*s, <span style="color:#099">1</span>+s, -<span style="color:#099">0.5</span>*s], [-<span style="color:#099">1</span>, <span style="color:#099">0</span>, <span style="color:#099">1</span>], shape=(ny-<span style="color:#099">2</span>, ny-<span style="color:#099">2</span>)).toarray() <span style="color:#aaa;font-style:italic"># create coefficient matrix</span>
+</span></span><span style="display:flex;"><span>B1 = diags([<span style="color:#099">0.5</span>*s, <span style="color:#099">1</span>-s, <span style="color:#099">0.5</span>*s],[-<span style="color:#099">1</span>, <span style="color:#099">0</span>, <span style="color:#099">1</span>], shape=(ny-<span style="color:#099">2</span>, ny-<span style="color:#099">2</span>)).toarray()
+</span></span><span style="display:flex;"><span><span style="color:#00a">for</span> n <span style="color:#00a">in</span> <span style="color:#0aa">range</span>(<span style="color:#099">1</span>,nt): <span style="color:#aaa;font-style:italic"># time is going from second time step to last</span>
+</span></span><span style="display:flex;"><span>Vn = V
+</span></span><span style="display:flex;"><span>B = np.dot(Vn[<span style="color:#099">1</span>:-<span style="color:#099">1</span>],B1)
+</span></span><span style="display:flex;"><span>B[<span style="color:#099">0</span>] = B[<span style="color:#099">0</span>]+<span style="color:#099">0.5</span>*s*(V0+V0)
+</span></span><span style="display:flex;"><span>B[-<span style="color:#099">1</span>] = B[-<span style="color:#099">1</span>]+<span style="color:#099">0.5</span>*s*(V1+V1)
+</span></span><span style="display:flex;"><span>V[<span style="color:#099">1</span>:-<span style="color:#099">1</span>] = np.linalg.solve(A,B)
+</span></span><span style="display:flex;"><span><span style="color:#00a">if</span> n % <span style="color:#0aa">int</span>(nt/<span style="color:#0aa">float</span>(ntout)) == <span style="color:#099">0</span> <span style="color:#00a">or</span> n==nt-<span style="color:#099">1</span>:
+</span></span><span style="display:flex;"><span>Vout.append(V.copy()) <span style="color:#aaa;font-style:italic"># numpy arrays are mutable, so we need to write out a copy of V, not V itself</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a">return</span> Vout,s
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>dt = <span style="color:#099">0.001</span> <span style="color:#aaa;font-style:italic"># grid size for time (s)</span>
 </span></span><span style="display:flex;"><span>dy = <span style="color:#099">0.001</span> <span style="color:#aaa;font-style:italic"># grid size for space (m)</span>
 </span></span><span style="display:flex;"><span>viscosity = <span style="color:#099">2</span>*<span style="color:#099">10</span>**(-<span style="color:#099">4</span>) <span style="color:#aaa;font-style:italic"># kinematic viscosity of oil (m2/s)</span>
 </span></span><span style="display:flex;"><span>y_max = <span style="color:#099">0.04</span> <span style="color:#aaa;font-style:italic"># in m</span>
-</span></span><span style="display:flex;"><span>y = np.arange(<span style="color:#099">0</span>,y_max+dy,dy) 
+</span></span><span style="display:flex;"><span>y = np.arange(<span style="color:#099">0</span>,y_max+dy,dy)
 </span></span><span style="display:flex;"><span>ny = <span style="color:#0aa">len</span>(y)
 </span></span><span style="display:flex;"><span>nt = <span style="color:#099">1000</span>
 </span></span><span style="display:flex;"><span>plt.figure(figsize=(<span style="color:#099">7</span>,<span style="color:#099">5</span>))
@@ -472,7 +472,7 @@ Now we are ready to write the code for the Laasonen scheme. One important differ
 </span></span><span style="display:flex;"><span>Vout,s = diffusion_Crank_Nicolson(dy,ny,dt,nt,viscosity,V,<span style="color:#099">10</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#00a">for</span> V <span style="color:#00a">in</span> Vout:
-</span></span><span style="display:flex;"><span>    plt.plot(y,V,<span style="color:#a50">&#39;k&#39;</span>)
+</span></span><span style="display:flex;"><span>plt.plot(y,V,<span style="color:#a50">&#39;k&#39;</span>)
 </span></span><span style="display:flex;"><span>plt.xlabel(<span style="color:#a50">&#39;distance from wall (m)&#39;</span>,fontsize=<span style="color:#099">12</span>)
 </span></span><span style="display:flex;"><span>plt.ylabel(<span style="color:#a50">&#39;velocity (m/s)&#39;</span>,fontsize=<span style="color:#099">12</span>)
 </span></span><span style="display:flex;"><span>plt.axis([<span style="color:#099">0</span>,y_max,<span style="color:#099">0</span>,V[<span style="color:#099">0</span>]])
@@ -497,7 +497,7 @@ Now we are ready to write the code for the Laasonen scheme. One important differ
 </span></span><span style="display:flex;"><span>h = <span style="color:#099">10</span> <span style="color:#aaa;font-style:italic"># height of fault scarp in m</span>
 </span></span><span style="display:flex;"><span>y_max = <span style="color:#099">20</span> <span style="color:#aaa;font-style:italic"># length of domain in m</span>
 </span></span><span style="display:flex;"><span>t_max = <span style="color:#099">500</span> <span style="color:#aaa;font-style:italic"># total time in years</span>
-</span></span><span style="display:flex;"><span>y = np.arange(<span style="color:#099">0</span>,y_max+dy,dy) 
+</span></span><span style="display:flex;"><span>y = np.arange(<span style="color:#099">0</span>,y_max+dy,dy)
 </span></span><span style="display:flex;"><span>ny = <span style="color:#0aa">len</span>(y)
 </span></span><span style="display:flex;"><span>nt = <span style="color:#0aa">int</span>(t_max/dt)
 </span></span><span style="display:flex;"><span>V = np.zeros((ny,)) <span style="color:#aaa;font-style:italic"># initial condition</span>
@@ -507,7 +507,7 @@ Now we are ready to write the code for the Laasonen scheme. One important differ
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>plt.figure(figsize=(<span style="color:#099">10</span>,<span style="color:#099">5.2</span>))
 </span></span><span style="display:flex;"><span><span style="color:#00a">for</span> V <span style="color:#00a">in</span> Vout:
-</span></span><span style="display:flex;"><span>    plt.plot(y,V,<span style="color:#a50">&#39;gray&#39;</span>)
+</span></span><span style="display:flex;"><span>plt.plot(y,V,<span style="color:#a50">&#39;gray&#39;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>plt.xlabel(<span style="color:#a50">&#39;distance (m)&#39;</span>,fontsize=<span style="color:#099">12</span>)
 </span></span><span style="display:flex;"><span>plt.ylabel(<span style="color:#a50">&#39;height (m)&#39;</span>,fontsize=<span style="color:#099">12</span>)
@@ -522,7 +522,7 @@ Now we are ready to write the code for the Laasonen scheme. One important differ
 </span></span><span style="display:flex;"><span>h = <span style="color:#099">10</span> <span style="color:#aaa;font-style:italic"># height of fault scarp in m</span>
 </span></span><span style="display:flex;"><span>y_max = <span style="color:#099">20</span> <span style="color:#aaa;font-style:italic"># length of domain in m</span>
 </span></span><span style="display:flex;"><span>t_max = <span style="color:#099">5000</span> <span style="color:#aaa;font-style:italic"># total time in years</span>
-</span></span><span style="display:flex;"><span>y = np.arange(<span style="color:#099">0</span>,y_max+dy,dy) 
+</span></span><span style="display:flex;"><span>y = np.arange(<span style="color:#099">0</span>,y_max+dy,dy)
 </span></span><span style="display:flex;"><span>ny = <span style="color:#0aa">len</span>(y)
 </span></span><span style="display:flex;"><span>nt = <span style="color:#0aa">int</span>(t_max/dt)
 </span></span><span style="display:flex;"><span>V = np.zeros((ny,)) <span style="color:#aaa;font-style:italic"># initial condition</span>
@@ -532,7 +532,7 @@ Now we are ready to write the code for the Laasonen scheme. One important differ
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>plt.figure(figsize=(<span style="color:#099">10</span>,<span style="color:#099">5.2</span>))
 </span></span><span style="display:flex;"><span><span style="color:#00a">for</span> V <span style="color:#00a">in</span> Vout:
-</span></span><span style="display:flex;"><span>    plt.plot(y,V,<span style="color:#a50">&#39;gray&#39;</span>)
+</span></span><span style="display:flex;"><span>plt.plot(y,V,<span style="color:#a50">&#39;gray&#39;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>plt.xlabel(<span style="color:#a50">&#39;distance (m)&#39;</span>,fontsize=<span style="color:#099">12</span>)
 </span></span><span style="display:flex;"><span>plt.ylabel(<span style="color:#a50">&#39;height (m)&#39;</span>,fontsize=<span style="color:#099">12</span>)
@@ -547,7 +547,7 @@ Now we are ready to write the code for the Laasonen scheme. One important differ
 </span></span><span style="display:flex;"><span>h = <span style="color:#099">10</span> <span style="color:#aaa;font-style:italic"># height of fault scarp in m</span>
 </span></span><span style="display:flex;"><span>y_max = <span style="color:#099">40</span> <span style="color:#aaa;font-style:italic"># length of domain in m</span>
 </span></span><span style="display:flex;"><span>t_max = <span style="color:#099">5000</span> <span style="color:#aaa;font-style:italic"># total time in years</span>
-</span></span><span style="display:flex;"><span>y = np.arange(<span style="color:#099">0</span>,y_max+dy,dy) 
+</span></span><span style="display:flex;"><span>y = np.arange(<span style="color:#099">0</span>,y_max+dy,dy)
 </span></span><span style="display:flex;"><span>ny = <span style="color:#0aa">len</span>(y)
 </span></span><span style="display:flex;"><span>nt = <span style="color:#0aa">int</span>(t_max/dt)
 </span></span><span style="display:flex;"><span>V = np.zeros((ny,)) <span style="color:#aaa;font-style:italic"># initial condition</span>
@@ -557,7 +557,7 @@ Now we are ready to write the code for the Laasonen scheme. One important differ
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>plt.figure(figsize=(<span style="color:#099">10</span>,<span style="color:#099">5.2</span>))
 </span></span><span style="display:flex;"><span><span style="color:#00a">for</span> V <span style="color:#00a">in</span> Vout:
-</span></span><span style="display:flex;"><span>    plt.plot(y,V,<span style="color:#a50">&#39;gray&#39;</span>)
+</span></span><span style="display:flex;"><span>plt.plot(y,V,<span style="color:#a50">&#39;gray&#39;</span>)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>plt.xlabel(<span style="color:#a50">&#39;distance (m)&#39;</span>,fontsize=<span style="color:#099">12</span>)
 </span></span><span style="display:flex;"><span>plt.ylabel(<span style="color:#a50">&#39;height (m)&#39;</span>,fontsize=<span style="color:#099">12</span>)
