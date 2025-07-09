@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Landsat on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/tags/landsat/</link>
     <description>Recent content in Landsat on Zoltán Sylvester</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
     <lastBuildDate>Sun, 16 Mar 2014 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/tags/landsat/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -14,7 +13,7 @@
       <link>https://zsylvester.github.io/post/rivers_through_time/</link>
       <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/post/rivers_through_time/</guid>
-      <description>Thanks to the Landsat program and Google Earth Engine, it is possible now to explore how the surface of the Earth has been changing through the last thirty years or so. Besides the obvious issues of interest, like changes in vegetation, the spread of cities, and the melting of glaciers, it is also possible to look at how rivers change their courses through time. You have probably already seen the images of the migrating Ucayali River in Peru, for example here.</description>
+      <description>&lt;p&gt;Thanks to the Landsat program and Google Earth Engine, it is possible now to explore how the surface of the Earth has been changing through the last thirty years or so. Besides the obvious issues of interest, like changes in vegetation, the spread of cities, and the melting of glaciers, it is also possible to look at how rivers change their courses through time. You have probably already seen the images of the migrating Ucayali River in Peru, for example &lt;a href=&#34;https://earthengine.google.org/#timelapse/v=-7.24496,-75.17632,10.567,latLng&amp;amp;amp;t=1.03&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. This river is changing its course with an impressive speed; many – probably most – other rivers don’t show much obvious change during the same 30-year period. What determines the meander migration rate of rivers is an interesting question in fluvial geomorphology.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

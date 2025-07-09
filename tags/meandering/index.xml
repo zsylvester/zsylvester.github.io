@@ -1,27 +1,85 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Meandering on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/tags/meandering/</link>
     <description>Recent content in Meandering on Zoltán Sylvester</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/tags/meandering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Meandering streamflows across landscapes and scales: a review and discussion</title>
+      <link>https://zsylvester.github.io/papers/meandering_book_intro/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/meandering_book_intro/</guid>
+      <description>This introductory chapter reviews the history of research on meandering streams and presents a compilation of data on meander morphology. Published in *Geological Society, London, Special Publications*, 2024.</description>
+    </item>
+    <item>
+      <title>The impact of post-cutoff bend curvature on channel kinematics in meandering rivers: an example from the Trinity River, Texas, USA</title>
+      <link>https://zsylvester.github.io/papers/trinity_cutoffs/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/trinity_cutoffs/</guid>
+      <description>This paper investigates the relationship between post-cutoff bend curvature and channel kinematics in meandering rivers using Trinity River data. Published in *Geological Society, London, Special Publications*, 2024.</description>
+    </item>
+    <item>
+      <title>Giant meandering channel evolution, Campos deep-water salt basin, Brazil</title>
+      <link>https://zsylvester.github.io/papers/campos_giant_channels/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/campos_giant_channels/</guid>
+      <description>This paper analyzes the evolution of giant meandering submarine channels in the Campos Basin, Brazil, and their interaction with salt diapirs. Published in *Geosphere*, 2021.</description>
+    </item>
+    <item>
+      <title>Autogenic translation and counter point bar deposition in meandering rivers</title>
+      <link>https://zsylvester.github.io/papers/counter_point_bars_gsa_bull/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/counter_point_bars_gsa_bull/</guid>
+      <description>This paper explores the development of counter point bars in meandering rivers through autogenic translation processes. Published in *GSA Bulletin*, 2021.</description>
+    </item>
     <item>
       <title>Point bars and counter point bars: Why is sediment deposited on the &#39;wrong&#39; side of a meander bend?</title>
       <link>https://zsylvester.github.io/post/counter_point_bars/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/post/counter_point_bars/</guid>
-      <description>The simplest definition of point bars is that they are sedimentary deposits forming on the inner, convex bank of river bends. [&amp;lsquo;Inner&amp;rsquo; and &amp;lsquo;convex&amp;rsquo; bank means that, looking toward the river, the bank is curving around you.] Amadeus W. Grabau, an early &amp;lsquo;influencer&amp;rsquo; in stratigraphy and sedimentary geology, published a beautiful drawing of how meanders grow, point bars evolve, and oxbow lakes form, more than a hundred years ago:&#xA;In other words, inner, convex banks in a meandering river are depositional; and outer, concave banks are erosional.</description>
+      <description>&lt;p&gt;The simplest definition of point bars is that they are sedimentary deposits forming on the inner, convex bank of river bends. [&amp;lsquo;Inner&amp;rsquo; and &amp;lsquo;convex&amp;rsquo; bank means that, looking toward the river, the bank is curving around you.] &lt;a href=&#34;https://en.wikipedia.org/wiki/Amadeus_William_Grabau&#34; target=&#34;_blank&#34;&gt;Amadeus W. Grabau&lt;/a&gt;, an early &amp;lsquo;influencer&amp;rsquo; in stratigraphy and sedimentary geology, published a beautiful drawing of how meanders grow, point bars evolve, and oxbow lakes form, more than a hundred years ago:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;plot&#34; loading=&#34;lazy&#34; src=&#34;https://zsylvester.github.io/img/grabau_meanders.png#center600&#34;&gt;&lt;/p&gt;
+&lt;p align=center&gt;*Diagram illustrating the development of meanders in a river. From Grabau (1920).*&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Evaluating the relationship between meander‐bend curvature, sediment supply, and migration rates</title>
+      <link>https://zsylvester.github.io/papers/donovan_et_al_jgr/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/donovan_et_al_jgr/</guid>
+      <description>Published in *Journal of Geophysical Research: Earth Surface, v. 126, e2020JF006058*, 2021.</description>
     </item>
     <item>
       <title>Does river migration slow down in high-curvature bends?</title>
       <link>https://zsylvester.github.io/post/curvature_migration_rate/</link>
       <pubDate>Wed, 06 Feb 2019 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/post/curvature_migration_rate/</guid>
-      <description>The answer, at least for seven rivers of the Amazon Basin, seems to be negative, as we try to demonstrate in a paper that was recently published in Geology. My coauthors are Paul Durkin, at the University of Manitoba, and Jake Covault, at the Bureau of Economic Geology, The University of Texas at Austin. In this blog post, I try to provide a bit more background to our paper.&#xA;Why is this an interesting result?</description>
+      <description>&lt;p&gt;The answer, at least for seven rivers of the Amazon Basin, seems to be negative, as we try to demonstrate in &lt;a href=&#34;https://pubs.geoscienceworld.org/gsa/geology/article/568705/high-curvatures-drive-river-meandering&#34; target=&#34;_blank&#34;&gt;a paper that was recently published in Geology&lt;/a&gt;. My coauthors are &lt;a href=&#34;https://scholar.google.ca/citations?user=KeTNzo0AAAAJ&amp;amp;hl=en&#34; target=&#34;_blank&#34;&gt;Paul Durkin&lt;/a&gt;, at the University of Manitoba, and &lt;a href=&#34;http://www.beg.utexas.edu/people/jacob-covault&#34; target=&#34;_blank&#34;&gt;Jake Covault&lt;/a&gt;, at the Bureau of Economic Geology, The University of Texas at Austin. In this blog post, I try to provide a bit more background to our paper.&lt;/p&gt;
+&lt;p&gt;Why is this an interesting result? After all, it makes sense that there is more outer bank erosion in sharper bends. Erosion is primarily a function of the shear stress exerted on the bank; and shear stress is high where the high-velocity core of the river gets close to the bank (because in this case flow velocity has to quickly decrease from a maximum to zero, and shear stress is a function of the rate of change in velocity). The high-velocity core gets pushed close to the bank if the centrifugal force is large; and the centrifugal force is directly proportional to curvature, 1/R (where R is the radius of curvature). In short, if we use the simplest, most pedestrian physical reasoning, we would expect that erosion, and therefore bank migration, are high in high-curvature bends. However, a lot of previous work on meandering rivers suggests that this is &lt;em&gt;not&lt;/em&gt; the case.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>High curvatures drive river meandering</title>
+      <link>https://zsylvester.github.io/papers/curvature_and_migration_rate/</link>
+      <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/curvature_and_migration_rate/</guid>
+      <description>Published in *Geology, v. 47, p. 263-266*, 2019.</description>
+    </item>
+    <item>
+      <title>Latitudinal Changes in the Morphology of Submarine Channels: Reevaluating the Evidence for the Influence of the Coriolis Force</title>
+      <link>https://zsylvester.github.io/papers/coriolis_and_submarine_channels/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/coriolis_and_submarine_channels/</guid>
+      <description>Published in *SEPM Special Publication v. 108*, 2018.</description>
+    </item>
+    <item>
+      <title>Rapid Adjustment of Submarine Channel Architecture To Changes In Sediment Supply</title>
+      <link>https://zsylvester.github.io/papers/nigeria_rapid_adjustment/</link>
+      <pubDate>Tue, 01 Dec 2015 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/nigeria_rapid_adjustment/</guid>
+      <description>Published in *Journal of Sedimentary Research v. 85, p. 729-753*, 2015.</description>
     </item>
   </channel>
 </rss>

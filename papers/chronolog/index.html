@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Automated multi-well stratigraphic correlation and model building using relative geologic time | Zoltán Sylvester</title>
+<meta name="keywords" content="sedimentology, geomorphology, stratigraphy, modeling, geology">
+<meta name="description" content="Published in *Basin Research, v. 35, p. 1961-1984*, 2023.">
+<meta name="author" content="Z. Sylvester">
+<link rel="canonical" href="https://zsylvester.github.io/papers/chronolog/">
+<link crossorigin="anonymous" href="https://zsylvester.github.io/assets/css/stylesheet.7b942a15a3e614324a1241d5fa8ab06bf3df5c36af18b25f49a0014cd7995e19.css" integrity="sha256-e5QqFaPmFDJKEkHV&#43;oqwa/PfXDavGLJfSaABTNeZXhk=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://zsylvester.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://zsylvester.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://zsylvester.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://zsylvester.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://zsylvester.github.io/papers/chronolog/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://zsylvester.github.io/papers/chronolog/">
+  <meta property="og:site_name" content="Zoltán Sylvester">
+  <meta property="og:title" content="Automated multi-well stratigraphic correlation and model building using relative geologic time">
+  <meta property="og:description" content="Published in *Basin Research, v. 35, p. 1961-1984*, 2023.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="papers">
+    <meta property="article:published_time" content="2023-05-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-05-23T00:00:00+00:00">
+    <meta property="article:tag" content="Sedimentology">
+    <meta property="article:tag" content="Geomorphology">
+    <meta property="article:tag" content="Stratigraphy">
+    <meta property="article:tag" content="Modeling">
+    <meta property="article:tag" content="Geology">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Automated multi-well stratigraphic correlation and model building using relative geologic time">
+<meta name="twitter:description" content="Published in *Basin Research, v. 35, p. 1961-1984*, 2023.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Papers",
+      "item": "https://zsylvester.github.io/papers/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Automated multi-well stratigraphic correlation and model building using relative geologic time",
+      "item": "https://zsylvester.github.io/papers/chronolog/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Automated multi-well stratigraphic correlation and model building using relative geologic time",
+  "name": "Automated multi-well stratigraphic correlation and model building using relative geologic time",
+  "description": "Published in *Basin Research, v. 35, p. 1961-1984*, 2023.",
+  "keywords": [
+    "sedimentology", "geomorphology", "stratigraphy", "modeling", "geology"
+  ],
+  "articleBody": "Abstract Stratigraphic correlation of geophysical well logs is one of the most importantand most time-consuming—tasks that applied geoscientists perform on a daily basis. Using the dynamic time warping (DTW) algorithm, automated correlation of two wells is a fairly simple task; DTW can also be used to correlate a large number of wells along a single path. However, errors accumulate along a path and loops cannot be closed. To create a three-dimensionally consistent correlation framework, we use a Python implementation of the Wheeler and Hale (2014) approach, which is based on the idea of stretching and squeezing all logs into a chronostratigraphic diagram that has relative geologic time (RGT) on its y- axis. The depth shifts needed for the RGT transformation are computed by translating the outputs of a large number of pairwise DTW correlations into a least-squares optimization problem that is solved through the conjugate gradient method. The resulting chronostratigraphic diagram provides an overview of the overall stratigraphy and its variability; and the correlation framework is significantly different from what one could get from correlating based on lithologic similarity between two logs. To create geologically intuitive well-log cross sections, we use a multi-scale blocking method that relies on the continuous wavelet transform to identify stratigraphic units of a certain scale in one well and then propagate these boundaries to all the other wells. We demonstrate the usefulness of this approach on a data set with close to 700 wells from the Permian Basin, West Texas. Linear channel bodies in the deepwater Spraberry Formation are easily detected and clearly highlighted in maps and cross sections. The methodology is robust enough for mapping subtle stratigraphic details, previously considered feasible only through manual interpretation. More importantly, it can be used to quickly build three-dimensional stratigraphic models for large segments of sedimentary basins where enough log data are available.\nCitation Z. Sylvester (2023). Automated multi-well stratigraphic correlation and model building using relative geologic time. Basin Research, v. 35, p. 1961-1984. doi: Link\n@article{sylvester2023_automated, author = {Z. Sylvester}, year = {2023}, title = {Automated multi-well stratigraphic correlation and model building using relative geologic time}, journal = {Basin Research}, url = {https://onlinelibrary.wiley.com/doi/10.1111/bre.12787}} Related material Supplementary Material ",
+  "wordCount" : "360",
+  "inLanguage": "en",
+  "datePublished": "2023-05-23T00:00:00Z",
+  "dateModified": "2023-05-23T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Z. Sylvester"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://zsylvester.github.io/papers/chronolog/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zoltán Sylvester",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://zsylvester.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{align*}", right: "\\end{align*}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+ 
+
+
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://zsylvester.github.io/" accesskey="h" title="Zoltán Sylvester">
+                <img src="https://zsylvester.github.io/favicon.ico" alt="" aria-label="logo"
+                    height="18"
+                    width="18">Zoltán Sylvester</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://zsylvester.github.io/research/" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zsylvester.github.io/papers/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zsylvester.github.io/post/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Automated multi-well stratigraphic correlation and model building using relative geologic time
+    </h1>
+    <div class="post-meta"><span title='2023-05-23 00:00:00 +0000 UTC'>May 23, 2023</span>&nbsp;&middot;&nbsp;Z. Sylvester&nbsp;&middot;&nbsp;<a href="https://onlinelibrary.wiley.com/doi/10.1111/bre.12787" rel="noopener noreferrer" target="_blank">Basin Research</a>
+
+</div>
+  </header> 
+  <div class="post-content"><h5 id="abstract">Abstract</h5>
+<p>Stratigraphic correlation of geophysical well logs is one of the most importantand most time-consuming—tasks that applied geoscientists perform on a daily basis. Using the dynamic time warping (DTW) algorithm, automated correlation of two wells is a fairly simple task; DTW can also be used to correlate a large number of wells along a single path. However, errors accumulate along a path and loops cannot be closed. To create a three-dimensionally consistent correlation framework, we use a Python implementation of the Wheeler and Hale (2014) approach, which is based on the idea of stretching and squeezing all logs into a chronostratigraphic diagram that has relative geologic time (RGT) on its y- axis. The depth shifts needed for the RGT transformation are computed by translating the outputs of a large number of pairwise DTW correlations into a least-squares optimization problem that is solved through the conjugate gradient method. The resulting chronostratigraphic diagram provides an overview of the overall stratigraphy and its variability; and the correlation framework is significantly different from what one could get from correlating based on lithologic similarity between two logs. To create geologically intuitive well-log cross sections, we use a multi-scale blocking method that relies on the continuous wavelet transform to identify stratigraphic units of a certain scale in one well and then propagate these boundaries to all the other wells. We demonstrate the usefulness of this approach on a data set with close to 700 wells from the Permian Basin, West Texas. Linear channel bodies in the deepwater Spraberry Formation are easily detected and clearly highlighted in maps and cross sections. The methodology is robust enough for mapping subtle stratigraphic details, previously considered feasible only through manual interpretation. More importantly, it can be used to quickly build three-dimensional stratigraphic models for large segments of sedimentary basins where enough log data are available.</p>
+<hr>
+<h5 id="citation">Citation</h5>
+<p>Z. Sylvester (2023). Automated multi-well stratigraphic correlation and model building using relative geologic time. <em>Basin Research, v. 35, p. 1961-1984</em>. doi: <a href="https://onlinelibrary.wiley.com/doi/10.1111/bre.12787" target="_blank">Link</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-BibTeX" data-lang="BibTeX"><span style="display:flex;"><span><span style="color:#0a0;text-decoration:underline">@article</span>{sylvester2023_automated,
+</span></span><span style="display:flex;"><span><span style="color:#1e90ff">author</span> = <span style="color:#a50">{Z. Sylvester}</span>,
+</span></span><span style="display:flex;"><span><span style="color:#1e90ff">year</span> = <span style="color:#a50">{2023}</span>,
+</span></span><span style="display:flex;"><span><span style="color:#1e90ff">title</span> = <span style="color:#a50">{Automated multi-well stratigraphic correlation and model building using relative geologic time}</span>,
+</span></span><span style="display:flex;"><span><span style="color:#1e90ff">journal</span> = <span style="color:#a50">{Basin Research}</span>,
+</span></span><span style="display:flex;"><span><span style="color:#1e90ff">url</span> = <span style="color:#a50">{https://onlinelibrary.wiley.com/doi/10.1111/bre.12787}</span>}
+</span></span></code></pre></div><hr>
+<h5 id="related-material">Related material</h5>
+<ul>
+<li><a href="https://github.com/zsylvester/chronolog_data" target="_blank">Supplementary Material</a></li>
+</ul>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://zsylvester.github.io/tags/sedimentology/">Sedimentology</a></li>
+      <li><a href="https://zsylvester.github.io/tags/geomorphology/">Geomorphology</a></li>
+      <li><a href="https://zsylvester.github.io/tags/stratigraphy/">Stratigraphy</a></li>
+      <li><a href="https://zsylvester.github.io/tags/modeling/">Modeling</a></li>
+      <li><a href="https://zsylvester.github.io/tags/geology/">Geology</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2025 Zoltán Sylvester</span> ·     
+    <span>
+    Powered by 
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">hugo</a>, <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">papermod</a>, &amp;
+        <a href="https://github.com/pmichaillat/hugo-website/" rel="noopener" target="_blank">hugo-website</a>.
+    </span>
+</footer>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

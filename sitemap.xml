@@ -2,46 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zsylvester.github.io/publication/meandering_book_intro/</loc>
+    <loc>https://zsylvester.github.io/tags/geomorphology/</loc>
     <lastmod>2024-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/</loc>
+    <loc>https://zsylvester.github.io/tags/meandering/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/papers/meandering_book_intro/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/papers/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/tags/review/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/tags/rivers/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/tags/sedimentology/</loc>
+    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/tags/</loc>
     <lastmod>2024-07-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/</loc>
     <lastmod>2024-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/turbidite_paleoseismology/</loc>
+    <loc>https://zsylvester.github.io/tags/modeling/</loc>
     <lastmod>2024-06-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/joshua_channel/</loc>
+    <loc>https://zsylvester.github.io/tags/seismic/</loc>
+    <lastmod>2024-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/tags/stratigraphy/</loc>
+    <lastmod>2024-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/tags/submarine-channels/</loc>
+    <lastmod>2024-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/papers/turbidite_paleoseismology/</loc>
+    <lastmod>2024-06-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/papers/joshua_channel/</loc>
     <lastmod>2024-06-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/publication/trinity_cutoffs/</loc>
-    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/publication/stratigraphy_space_time/</loc>
-    <lastmod>2024-02-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/publication/chronolog/</loc>
-    <lastmod>2023-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/publication/channel_trajectories/</loc>
-    <lastmod>2022-04-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/publication/campos_giant_channels/</loc>
-    <lastmod>2021-08-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/tags/geology/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/tags/geomorphology/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
+    <loc>https://zsylvester.github.io/papers/trinity_cutoffs/</loc>
+    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/papers/stratigraphy_space_time/</loc>
+    <lastmod>2024-02-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/research/</loc>
+    <lastmod>2024-01-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/papers/chronolog/</loc>
+    <lastmod>2023-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/papers/channel_trajectories/</loc>
+    <lastmod>2022-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/papers/campos_giant_channels/</loc>
+    <lastmod>2021-08-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/tags/salt-tectonics/</loc>
+    <lastmod>2021-08-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/papers/counter_point_bars_gsa_bull/</loc>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/tags/point-bars/</loc>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/tags/jupyter/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/tags/meandering/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/post/counter_point_bars/</loc>
@@ -53,100 +89,88 @@
     <loc>https://zsylvester.github.io/tags/python/</loc>
     <lastmod>2021-03-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/tags/rivers/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/tags/sedimentology/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/tags/</loc>
-    <lastmod>2021-03-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/publication/counter_point_bars_gsa_bull/</loc>
-    <lastmod>2021-03-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/publication/donovan_et_al_jgr/</loc>
+    <loc>https://zsylvester.github.io/papers/donovan_et_al_jgr/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/chile_channel/</loc>
+    <loc>https://zsylvester.github.io/papers/chile_channel/</loc>
     <lastmod>2020-07-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/zhang_et_al_geology/</loc>
+    <loc>https://zsylvester.github.io/papers/zhang_et_al_geology/</loc>
     <lastmod>2020-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/grain_size_dionisos/</loc>
+    <loc>https://zsylvester.github.io/tags/tectonics/</loc>
+    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/papers/grain_size_dionisos/</loc>
     <lastmod>2019-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/campos_translation/</loc>
+    <loc>https://zsylvester.github.io/papers/campos_translation/</loc>
     <lastmod>2019-05-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/sed_supply_and_provenance/</loc>
+    <loc>https://zsylvester.github.io/papers/sed_supply_and_provenance/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/post/curvature_migration_rate/</loc>
     <lastmod>2019-02-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/curvature_and_migration_rate/</loc>
+    <loc>https://zsylvester.github.io/papers/curvature_and_migration_rate/</loc>
     <lastmod>2019-01-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/tags/minibasins/</loc>
     <lastmod>2018-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/tags/modeling/</loc>
-    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://zsylvester.github.io/post/stratal_patterns/</loc>
     <lastmod>2018-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/tags/stratigraphy/</loc>
-    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/publication/detrital_py/</loc>
+    <loc>https://zsylvester.github.io/papers/detrital_py/</loc>
     <lastmod>2018-06-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/slope_fans_dionisos/</loc>
+    <loc>https://zsylvester.github.io/papers/slope_fans_dionisos/</loc>
     <lastmod>2018-02-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/coriolis_and_submarine_channels/</loc>
+    <loc>https://zsylvester.github.io/papers/coriolis_and_submarine_channels/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/channels_and_lobes/</loc>
+    <loc>https://zsylvester.github.io/papers/channels_and_lobes/</loc>
     <lastmod>2018-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/cyclic_steps/</loc>
+    <loc>https://zsylvester.github.io/papers/cyclic_steps/</loc>
     <lastmod>2017-11-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/sediment_partitioning/</loc>
+    <loc>https://zsylvester.github.io/papers/sediment_partitioning/</loc>
     <lastmod>2017-06-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/post/decompaction/</loc>
     <lastmod>2017-04-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/nigeria_facies/</loc>
+    <loc>https://zsylvester.github.io/papers/nigeria_facies/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/nigeria_compensation/</loc>
+    <loc>https://zsylvester.github.io/papers/nigeria_compensation/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/dionisos_modeling/</loc>
+    <loc>https://zsylvester.github.io/papers/dionisos_modeling/</loc>
     <lastmod>2016-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/submarine_cutoffs/</loc>
+    <loc>https://zsylvester.github.io/papers/submarine_cutoffs/</loc>
     <lastmod>2016-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/channel_evolution/</loc>
+    <loc>https://zsylvester.github.io/papers/channel_evolution/</loc>
     <lastmod>2016-09-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/conditioning/</loc>
+    <loc>https://zsylvester.github.io/papers/conditioning/</loc>
     <lastmod>2016-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/nigeria_rapid_adjustment/</loc>
+    <loc>https://zsylvester.github.io/papers/nigeria_rapid_adjustment/</loc>
     <lastmod>2015-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/rule_based_modeling/</loc>
+    <loc>https://zsylvester.github.io/papers/rule_based_modeling/</loc>
     <lastmod>2015-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/minibasins/</loc>
+    <loc>https://zsylvester.github.io/tags/salt/</loc>
+    <lastmod>2015-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/papers/minibasins/</loc>
     <lastmod>2015-06-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/tags/erosion/</loc>
@@ -155,10 +179,10 @@
     <loc>https://zsylvester.github.io/post/diffusion_equation/</loc>
     <lastmod>2015-02-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/future_directions/</loc>
+    <loc>https://zsylvester.github.io/papers/future_directions/</loc>
     <lastmod>2015-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/mudstone_baffles/</loc>
+    <loc>https://zsylvester.github.io/papers/mudstone_baffles/</loc>
     <lastmod>2014-11-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/tags/gis/</loc>
@@ -170,75 +194,60 @@
     <loc>https://zsylvester.github.io/tags/landsat/</loc>
     <lastmod>2014-03-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/research/meandering/</loc>
-    <lastmod>2014-03-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/research/</loc>
-    <lastmod>2014-03-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://zsylvester.github.io/post/rivers_through_time/</loc>
-    <lastmod>2014-03-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/research/seismic_strat/</loc>
     <lastmod>2014-03-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/post/grain_settling/</loc>
     <lastmod>2013-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/coriolis_comment/</loc>
+    <loc>https://zsylvester.github.io/papers/coriolis_comment/</loc>
     <lastmod>2013-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/nigeria_channel_simulation/</loc>
+    <loc>https://zsylvester.github.io/papers/nigeria_channel_simulation/</loc>
     <lastmod>2012-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/nigeria_channel_simulation_2/</loc>
+    <loc>https://zsylvester.github.io/papers/nigeria_channel_simulation_2/</loc>
     <lastmod>2012-05-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/stepped_slope/</loc>
+    <loc>https://zsylvester.github.io/papers/stepped_slope/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/fuji_einstein/</loc>
+    <loc>https://zsylvester.github.io/papers/fuji_einstein/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/nigeria_fan/</loc>
+    <loc>https://zsylvester.github.io/papers/nigeria_fan/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/tags/salt/</loc>
-    <lastmod>2011-07-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/post/salt_and_sediment/</loc>
     <lastmod>2011-07-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/tags/tectonics/</loc>
-    <lastmod>2011-07-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/tags/seismic/</loc>
-    <lastmod>2011-04-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://zsylvester.github.io/post/vertical_exaggeration/</loc>
     <lastmod>2011-04-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/submarine_channel_model/</loc>
+    <loc>https://zsylvester.github.io/papers/submarine_channel_model/</loc>
     <lastmod>2011-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/shale_drapes/</loc>
+    <loc>https://zsylvester.github.io/papers/shale_drapes/</loc>
     <lastmod>2010-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/silla_ojo/</loc>
+    <loc>https://zsylvester.github.io/papers/silla_ojo/</loc>
     <lastmod>2008-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/bed_thicknesses/</loc>
+    <loc>https://zsylvester.github.io/papers/bed_thicknesses/</loc>
     <lastmod>2007-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/benin/</loc>
+    <loc>https://zsylvester.github.io/tags/turbidites/</loc>
+    <lastmod>2007-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/papers/benin/</loc>
     <lastmod>2007-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/textural_trends/</loc>
+    <loc>https://zsylvester.github.io/papers/textural_trends/</loc>
     <lastmod>2004-10-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/publication/tarcau_ichnofauna/</loc>
+    <loc>https://zsylvester.github.io/papers/tarcau_ichnofauna/</loc>
     <lastmod>2001-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/categories/</loc>
+    <loc>https://zsylvester.github.io/archive/</loc>
   </url>
 </urlset>

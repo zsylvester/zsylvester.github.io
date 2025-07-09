@@ -1,20 +1,117 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Seismic on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/tags/seismic/</link>
     <description>Recent content in Seismic on Zoltán Sylvester</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Mon, 18 Apr 2011 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Jun 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/tags/seismic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Turbidite correlation for paleoseismology</title>
+      <link>https://zsylvester.github.io/papers/turbidite_paleoseismology/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/turbidite_paleoseismology/</guid>
+      <description>Published in *GSA Bulletin*, 2024.</description>
+    </item>
+    <item>
+      <title>Fluvial-style migration controls autogenic aggradation in submarine channels: Joshua Channel, eastern Gulf of Mexico</title>
+      <link>https://zsylvester.github.io/papers/joshua_channel/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/joshua_channel/</guid>
+      <description>Published in *Geological Society, London, Special Publications, v. 540*, 2024.</description>
+    </item>
+    <item>
+      <title>Stratigraphy in space and time: A reproducible approach to analysis and visualization</title>
+      <link>https://zsylvester.github.io/papers/stratigraphy_space_time/</link>
+      <pubDate>Mon, 05 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/stratigraphy_space_time/</guid>
+      <description>Published in *Earth Science Reviews, v. 250, 104206*, 2024.</description>
+    </item>
+    <item>
+      <title>Channel trajectories control deep-water stratigraphic architecture</title>
+      <link>https://zsylvester.github.io/papers/channel_trajectories/</link>
+      <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/channel_trajectories/</guid>
+      <description>Published in *The Depositional Record, v. 8, p. 880-894*, 2022.</description>
+    </item>
+    <item>
+      <title>Submarine channels ‘swept’ downstream after bend cutoff in salt basins</title>
+      <link>https://zsylvester.github.io/papers/campos_translation/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/campos_translation/</guid>
+      <description>Published in *The Depositional Record, v. 6, p. 259-272*, 2019.</description>
+    </item>
+    <item>
+      <title>Slope-fan depositional architecture from high-resolution forward stratigraphic models</title>
+      <link>https://zsylvester.github.io/papers/slope_fans_dionisos/</link>
+      <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/slope_fans_dionisos/</guid>
+      <description>Published in *Marine and Petroleum Geology, v. 91, p. 576-585*, 2018.</description>
+    </item>
+    <item>
+      <title>Sediment partitioning, continental slopes and base‐of‐slope systems</title>
+      <link>https://zsylvester.github.io/papers/sediment_partitioning/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/sediment_partitioning/</guid>
+      <description>Published in *Basin Research v. 29, p. 394-416*, 2017.</description>
+    </item>
+    <item>
+      <title>Facies architecture of submarine channel deposits on the western Niger Delta slope: Implications for grain‐size and density stratification in turbidity currents</title>
+      <link>https://zsylvester.github.io/papers/nigeria_facies/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/nigeria_facies/</guid>
+      <description>Published in *Journal of Geophysical Research: Earth Surface v. 122, p. 473-491*, 2017.</description>
+    </item>
+    <item>
+      <title>High-resolution, millennial-scale patterns of bed compensation on a sand-rich intraslope submarine fan, western Niger Delta slope</title>
+      <link>https://zsylvester.github.io/papers/nigeria_compensation/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/nigeria_compensation/</guid>
+      <description>Published in *GSA Bulletin v. 129, p. 23-37*, 2017.</description>
+    </item>
+    <item>
+      <title>Development of cutoff-related knickpoints during early evolution of submarine channels</title>
+      <link>https://zsylvester.github.io/papers/submarine_cutoffs/</link>
+      <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/submarine_cutoffs/</guid>
+      <description>Published in *Geology (2016) 44 (10): 835-838*, 2016.</description>
+    </item>
+    <item>
+      <title>Key Future Directions For Research On Turbidity Currents and Their Deposits</title>
+      <link>https://zsylvester.github.io/papers/future_directions/</link>
+      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/future_directions/</guid>
+      <description>Published in *Journal of Sedimentary Research v. 85, p. 153-169*, 2015.</description>
+    </item>
+    <item>
+      <title>Detecting baffle mudstones using microfossils: an integrated working example from the Cardamom Field, Block 427 Garden Banks, Gulf of Mexico</title>
+      <link>https://zsylvester.github.io/papers/mudstone_baffles/</link>
+      <pubDate>Sat, 01 Nov 2014 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/mudstone_baffles/</guid>
+      <description>Published in *Palaeogeography, palaeoclimatology, palaeoecology v. 413, p. 133-143*, 2014.</description>
+    </item>
+    <item>
+      <title>Seismic Stratigraphy of a Shelf-Edge Delta and Linked Submarine Channels in the Northeastern Gulf of Mexico</title>
+      <link>https://zsylvester.github.io/papers/fuji_einstein/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/fuji_einstein/</guid>
+      <description>Published in *SEPM Special Publication 99, p. 31–59*, 2012.</description>
+    </item>
     <item>
       <title>Stretching the truth: vertical exaggeration of seismic data</title>
       <link>https://zsylvester.github.io/post/vertical_exaggeration/</link>
       <pubDate>Mon, 18 Apr 2011 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/post/vertical_exaggeration/</guid>
-      <description>If someone showed a photograph of the famous Cuernos massif (Torres del Paine National Park, Chile) like the one below, it would be - probably, hopefully - obvious to everybody that something is wrong with the picture. Our eyes and brains have seen enough mountain scenery that we intuitively know how steep is &amp;lsquo;steep&amp;rsquo; in alpine landscapes. The peaks in this photograph just look too extreme, too high if one takes into account their lateral extent.</description>
+      <description>&lt;p&gt;If someone showed a photograph of the famous Cuernos massif (Torres del Paine National Park, Chile) like the one below, it would be - probably, hopefully - obvious to everybody that something is wrong with the picture. Our eyes and brains have seen enough mountain scenery that we intuitively know how steep is &amp;lsquo;steep&amp;rsquo; in alpine landscapes. The peaks in this photograph just look too extreme, too high if one takes into account their lateral extent.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Migration–aggradation history and 3-D seismic geomorphology of submarine channels in the Pleistocene Benin-major Canyon, western Niger Delta slope</title>
+      <link>https://zsylvester.github.io/papers/benin/</link>
+      <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/benin/</guid>
+      <description>Published in *Marine and Petroleum Geology v. 24, p. 406-433*, 2007.</description>
     </item>
   </channel>
 </rss>

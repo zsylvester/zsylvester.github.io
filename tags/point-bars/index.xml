@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Point Bars on Zoltán Sylvester</title>
+    <link>https://zsylvester.github.io/tags/point-bars/</link>
+    <description>Recent content in Point Bars on Zoltán Sylvester</description>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 May 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zsylvester.github.io/tags/point-bars/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Autogenic translation and counter point bar deposition in meandering rivers</title>
+      <link>https://zsylvester.github.io/papers/counter_point_bars_gsa_bull/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/counter_point_bars_gsa_bull/</guid>
+      <description>This paper explores the development of counter point bars in meandering rivers through autogenic translation processes. Published in *GSA Bulletin*, 2021.</description>
+    </item>
+  </channel>
+</rss>

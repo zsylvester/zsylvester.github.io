@@ -1,41 +1,281 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Geomorphology on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/tags/geomorphology/</link>
     <description>Recent content in Geomorphology on Zoltán Sylvester</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/tags/geomorphology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Meandering streamflows across landscapes and scales: a review and discussion</title>
+      <link>https://zsylvester.github.io/papers/meandering_book_intro/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/meandering_book_intro/</guid>
+      <description>This introductory chapter reviews the history of research on meandering streams and presents a compilation of data on meander morphology. Published in *Geological Society, London, Special Publications*, 2024.</description>
+    </item>
+    <item>
+      <title>Fluvial-style migration controls autogenic aggradation in submarine channels: Joshua Channel, eastern Gulf of Mexico</title>
+      <link>https://zsylvester.github.io/papers/joshua_channel/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/joshua_channel/</guid>
+      <description>Published in *Geological Society, London, Special Publications, v. 540*, 2024.</description>
+    </item>
+    <item>
+      <title>The impact of post-cutoff bend curvature on channel kinematics in meandering rivers: an example from the Trinity River, Texas, USA</title>
+      <link>https://zsylvester.github.io/papers/trinity_cutoffs/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/trinity_cutoffs/</guid>
+      <description>This paper investigates the relationship between post-cutoff bend curvature and channel kinematics in meandering rivers using Trinity River data. Published in *Geological Society, London, Special Publications*, 2024.</description>
+    </item>
+    <item>
+      <title>Stratigraphy in space and time: A reproducible approach to analysis and visualization</title>
+      <link>https://zsylvester.github.io/papers/stratigraphy_space_time/</link>
+      <pubDate>Mon, 05 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/stratigraphy_space_time/</guid>
+      <description>Published in *Earth Science Reviews, v. 250, 104206*, 2024.</description>
+    </item>
+    <item>
+      <title>Automated multi-well stratigraphic correlation and model building using relative geologic time</title>
+      <link>https://zsylvester.github.io/papers/chronolog/</link>
+      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/chronolog/</guid>
+      <description>Published in *Basin Research, v. 35, p. 1961-1984*, 2023.</description>
+    </item>
+    <item>
+      <title>Channel trajectories control deep-water stratigraphic architecture</title>
+      <link>https://zsylvester.github.io/papers/channel_trajectories/</link>
+      <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/channel_trajectories/</guid>
+      <description>Published in *The Depositional Record, v. 8, p. 880-894*, 2022.</description>
+    </item>
+    <item>
+      <title>Giant meandering channel evolution, Campos deep-water salt basin, Brazil</title>
+      <link>https://zsylvester.github.io/papers/campos_giant_channels/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/campos_giant_channels/</guid>
+      <description>This paper analyzes the evolution of giant meandering submarine channels in the Campos Basin, Brazil, and their interaction with salt diapirs. Published in *Geosphere*, 2021.</description>
+    </item>
+    <item>
+      <title>Autogenic translation and counter point bar deposition in meandering rivers</title>
+      <link>https://zsylvester.github.io/papers/counter_point_bars_gsa_bull/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/counter_point_bars_gsa_bull/</guid>
+      <description>This paper explores the development of counter point bars in meandering rivers through autogenic translation processes. Published in *GSA Bulletin*, 2021.</description>
+    </item>
     <item>
       <title>Point bars and counter point bars: Why is sediment deposited on the &#39;wrong&#39; side of a meander bend?</title>
       <link>https://zsylvester.github.io/post/counter_point_bars/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/post/counter_point_bars/</guid>
-      <description>The simplest definition of point bars is that they are sedimentary deposits forming on the inner, convex bank of river bends. [&amp;lsquo;Inner&amp;rsquo; and &amp;lsquo;convex&amp;rsquo; bank means that, looking toward the river, the bank is curving around you.] Amadeus W. Grabau, an early &amp;lsquo;influencer&amp;rsquo; in stratigraphy and sedimentary geology, published a beautiful drawing of how meanders grow, point bars evolve, and oxbow lakes form, more than a hundred years ago:&#xA;In other words, inner, convex banks in a meandering river are depositional; and outer, concave banks are erosional.</description>
+      <description>&lt;p&gt;The simplest definition of point bars is that they are sedimentary deposits forming on the inner, convex bank of river bends. [&amp;lsquo;Inner&amp;rsquo; and &amp;lsquo;convex&amp;rsquo; bank means that, looking toward the river, the bank is curving around you.] &lt;a href=&#34;https://en.wikipedia.org/wiki/Amadeus_William_Grabau&#34; target=&#34;_blank&#34;&gt;Amadeus W. Grabau&lt;/a&gt;, an early &amp;lsquo;influencer&amp;rsquo; in stratigraphy and sedimentary geology, published a beautiful drawing of how meanders grow, point bars evolve, and oxbow lakes form, more than a hundred years ago:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;plot&#34; loading=&#34;lazy&#34; src=&#34;https://zsylvester.github.io/img/grabau_meanders.png#center600&#34;&gt;&lt;/p&gt;
+&lt;p align=center&gt;*Diagram illustrating the development of meanders in a river. From Grabau (1920).*&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Evaluating the relationship between meander‐bend curvature, sediment supply, and migration rates</title>
+      <link>https://zsylvester.github.io/papers/donovan_et_al_jgr/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/donovan_et_al_jgr/</guid>
+      <description>Published in *Journal of Geophysical Research: Earth Surface, v. 126, e2020JF006058*, 2021.</description>
+    </item>
+    <item>
+      <title>The stratigraphic evolution of a submarine channel: Linking seafloor dynamics to depositional products</title>
+      <link>https://zsylvester.github.io/papers/chile_channel/</link>
+      <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/chile_channel/</guid>
+      <description>Published in *Journal of Sedimentary Research, v. 90, p. 673-686*, 2020.</description>
+    </item>
+    <item>
+      <title>Grain-Size and Discharge Controls on Submarine-Fan Depositional Patterns From Forward Stratigraphic Models</title>
+      <link>https://zsylvester.github.io/papers/grain_size_dionisos/</link>
+      <pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/grain_size_dionisos/</guid>
+      <description>Published in *Frontiers in Earth Science, v. 7:334*, 2019.</description>
+    </item>
+    <item>
+      <title>Submarine channels ‘swept’ downstream after bend cutoff in salt basins</title>
+      <link>https://zsylvester.github.io/papers/campos_translation/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/campos_translation/</guid>
+      <description>Published in *The Depositional Record, v. 6, p. 259-272*, 2019.</description>
+    </item>
+    <item>
+      <title>Conversion of tectonic and climatic forcings into records of sediment supply and provenance</title>
+      <link>https://zsylvester.github.io/papers/sed_supply_and_provenance/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/sed_supply_and_provenance/</guid>
+      <description>Published in *Scientific Reports, v. 9, p. 1-7*, 2019.</description>
     </item>
     <item>
       <title>Does river migration slow down in high-curvature bends?</title>
       <link>https://zsylvester.github.io/post/curvature_migration_rate/</link>
       <pubDate>Wed, 06 Feb 2019 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/post/curvature_migration_rate/</guid>
-      <description>The answer, at least for seven rivers of the Amazon Basin, seems to be negative, as we try to demonstrate in a paper that was recently published in Geology. My coauthors are Paul Durkin, at the University of Manitoba, and Jake Covault, at the Bureau of Economic Geology, The University of Texas at Austin. In this blog post, I try to provide a bit more background to our paper.&#xA;Why is this an interesting result?</description>
+      <description>&lt;p&gt;The answer, at least for seven rivers of the Amazon Basin, seems to be negative, as we try to demonstrate in &lt;a href=&#34;https://pubs.geoscienceworld.org/gsa/geology/article/568705/high-curvatures-drive-river-meandering&#34; target=&#34;_blank&#34;&gt;a paper that was recently published in Geology&lt;/a&gt;. My coauthors are &lt;a href=&#34;https://scholar.google.ca/citations?user=KeTNzo0AAAAJ&amp;amp;hl=en&#34; target=&#34;_blank&#34;&gt;Paul Durkin&lt;/a&gt;, at the University of Manitoba, and &lt;a href=&#34;http://www.beg.utexas.edu/people/jacob-covault&#34; target=&#34;_blank&#34;&gt;Jake Covault&lt;/a&gt;, at the Bureau of Economic Geology, The University of Texas at Austin. In this blog post, I try to provide a bit more background to our paper.&lt;/p&gt;
+&lt;p&gt;Why is this an interesting result? After all, it makes sense that there is more outer bank erosion in sharper bends. Erosion is primarily a function of the shear stress exerted on the bank; and shear stress is high where the high-velocity core of the river gets close to the bank (because in this case flow velocity has to quickly decrease from a maximum to zero, and shear stress is a function of the rate of change in velocity). The high-velocity core gets pushed close to the bank if the centrifugal force is large; and the centrifugal force is directly proportional to curvature, 1/R (where R is the radius of curvature). In short, if we use the simplest, most pedestrian physical reasoning, we would expect that erosion, and therefore bank migration, are high in high-curvature bends. However, a lot of previous work on meandering rivers suggests that this is &lt;em&gt;not&lt;/em&gt; the case.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>High curvatures drive river meandering</title>
+      <link>https://zsylvester.github.io/papers/curvature_and_migration_rate/</link>
+      <pubDate>Sun, 06 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/curvature_and_migration_rate/</guid>
+      <description>Published in *Geology, v. 47, p. 263-266*, 2019.</description>
+    </item>
+    <item>
+      <title>Slope-fan depositional architecture from high-resolution forward stratigraphic models</title>
+      <link>https://zsylvester.github.io/papers/slope_fans_dionisos/</link>
+      <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/slope_fans_dionisos/</guid>
+      <description>Published in *Marine and Petroleum Geology, v. 91, p. 576-585*, 2018.</description>
+    </item>
+    <item>
+      <title>Latitudinal Changes in the Morphology of Submarine Channels: Reevaluating the Evidence for the Influence of the Coriolis Force</title>
+      <link>https://zsylvester.github.io/papers/coriolis_and_submarine_channels/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/coriolis_and_submarine_channels/</guid>
+      <description>Published in *SEPM Special Publication v. 108*, 2018.</description>
+    </item>
+    <item>
+      <title>Submarine Fans and Their Channels, Levees, and Lobes</title>
+      <link>https://zsylvester.github.io/papers/channels_and_lobes/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/channels_and_lobes/</guid>
+      <description>Published in *In: Micallef A., Krastel S., Savini A. (eds) Submarine Geomorphology. Springer Geology, p. 273-299*, 2018.</description>
+    </item>
+    <item>
+      <title>Cyclic steps and related supercritical bedforms: Building blocks of deep-water depositional systems, western North America</title>
+      <link>https://zsylvester.github.io/papers/cyclic_steps/</link>
+      <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/cyclic_steps/</guid>
+      <description>Published in *Marine and Petroleum Geology v. 393, p. 4-20*, 2017.</description>
+    </item>
+    <item>
+      <title>Facies architecture of submarine channel deposits on the western Niger Delta slope: Implications for grain‐size and density stratification in turbidity currents</title>
+      <link>https://zsylvester.github.io/papers/nigeria_facies/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/nigeria_facies/</guid>
+      <description>Published in *Journal of Geophysical Research: Earth Surface v. 122, p. 473-491*, 2017.</description>
+    </item>
+    <item>
+      <title>High-resolution, millennial-scale patterns of bed compensation on a sand-rich intraslope submarine fan, western Niger Delta slope</title>
+      <link>https://zsylvester.github.io/papers/nigeria_compensation/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/nigeria_compensation/</guid>
+      <description>Published in *GSA Bulletin v. 129, p. 23-37*, 2017.</description>
+    </item>
+    <item>
+      <title>Development of cutoff-related knickpoints during early evolution of submarine channels</title>
+      <link>https://zsylvester.github.io/papers/submarine_cutoffs/</link>
+      <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/submarine_cutoffs/</guid>
+      <description>Published in *Geology (2016) 44 (10): 835-838*, 2016.</description>
+    </item>
+    <item>
+      <title>The stratigraphic record of submarine-channel evolution</title>
+      <link>https://zsylvester.github.io/papers/channel_evolution/</link>
+      <pubDate>Sun, 04 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/channel_evolution/</guid>
+      <description>Published in *The Sedimentary Record v. 14, p. 4-11*, 2016.</description>
+    </item>
+    <item>
+      <title>Rapid Adjustment of Submarine Channel Architecture To Changes In Sediment Supply</title>
+      <link>https://zsylvester.github.io/papers/nigeria_rapid_adjustment/</link>
+      <pubDate>Tue, 01 Dec 2015 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/nigeria_rapid_adjustment/</guid>
+      <description>Published in *Journal of Sedimentary Research v. 85, p. 729-753*, 2015.</description>
     </item>
     <item>
       <title>Exploring the diffusion equation with Python</title>
       <link>https://zsylvester.github.io/post/diffusion_equation/</link>
       <pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/post/diffusion_equation/</guid>
-      <description>Ever since I became interested in science, I started to have a vague idea that calculus, matrix algebra, partial differential equations, and numerical methods are all fundamental to the physical sciences and engineering and they are linked in some way to each other. The emphasis here is on the word vague; I have to admit that I had no clear, detailed understanding of how these links actually work. It seems like my formal education both in math and physics stopped just short of where everything would have nicely come together.</description>
+      <description>&lt;p&gt;Ever since I became interested in science, I started to have a vague idea that calculus, matrix algebra, partial differential equations, and numerical methods are all fundamental to the physical sciences and engineering and they are linked in some way to each other. The emphasis here is on the word vague; I have to admit that I had no clear, detailed understanding of how these links actually work. It seems like my formal education both in math and physics stopped just short of where everything would have nicely come together. Papers that are really important in geomorphology, sedimentology or stratigraphy seemed impossible to read as soon as they started assuming that I knew quite a bit about convective acceleration, numerical schemes, boundary conditions, and Cholesky factorization. Because I didn’t.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Key Future Directions For Research On Turbidity Currents and Their Deposits</title>
+      <link>https://zsylvester.github.io/papers/future_directions/</link>
+      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/future_directions/</guid>
+      <description>Published in *Journal of Sedimentary Research v. 85, p. 153-169*, 2015.</description>
+    </item>
+    <item>
+      <title>Detecting baffle mudstones using microfossils: an integrated working example from the Cardamom Field, Block 427 Garden Banks, Gulf of Mexico</title>
+      <link>https://zsylvester.github.io/papers/mudstone_baffles/</link>
+      <pubDate>Sat, 01 Nov 2014 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/mudstone_baffles/</guid>
+      <description>Published in *Palaeogeography, palaeoclimatology, palaeoecology v. 413, p. 133-143*, 2014.</description>
     </item>
     <item>
       <title>Rivers through time, as seen in Landsat images</title>
       <link>https://zsylvester.github.io/post/rivers_through_time/</link>
       <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/post/rivers_through_time/</guid>
-      <description>Thanks to the Landsat program and Google Earth Engine, it is possible now to explore how the surface of the Earth has been changing through the last thirty years or so. Besides the obvious issues of interest, like changes in vegetation, the spread of cities, and the melting of glaciers, it is also possible to look at how rivers change their courses through time. You have probably already seen the images of the migrating Ucayali River in Peru, for example here.</description>
+      <description>&lt;p&gt;Thanks to the Landsat program and Google Earth Engine, it is possible now to explore how the surface of the Earth has been changing through the last thirty years or so. Besides the obvious issues of interest, like changes in vegetation, the spread of cities, and the melting of glaciers, it is also possible to look at how rivers change their courses through time. You have probably already seen the images of the migrating Ucayali River in Peru, for example &lt;a href=&#34;https://earthengine.google.org/#timelapse/v=-7.24496,-75.17632,10.567,latLng&amp;amp;amp;t=1.03&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. This river is changing its course with an impressive speed; many – probably most – other rivers don’t show much obvious change during the same 30-year period. What determines the meander migration rate of rivers is an interesting question in fluvial geomorphology.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Global (latitudinal) variation in submarine channel sinuosity: Comment</title>
+      <link>https://zsylvester.github.io/papers/coriolis_comment/</link>
+      <pubDate>Wed, 01 May 2013 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/coriolis_comment/</guid>
+      <description>Published in *Geology v. 41, p. e287-e287*, 2013.</description>
+    </item>
+    <item>
+      <title>3-D Numerical Simulation of Turbidity Currents in Submarine Canyons off the Niger Delta</title>
+      <link>https://zsylvester.github.io/papers/nigeria_channel_simulation/</link>
+      <pubDate>Sun, 01 Jul 2012 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/nigeria_channel_simulation/</guid>
+      <description>Published in *Marine Geology v. 326–328, p. 55-66*, 2012.</description>
+    </item>
+    <item>
+      <title>Three-dimensional numerical simulation of turbidity currents in a submarine channel on the seafloor of the Niger Delta slope</title>
+      <link>https://zsylvester.github.io/papers/nigeria_channel_simulation_2/</link>
+      <pubDate>Wed, 16 May 2012 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/nigeria_channel_simulation_2/</guid>
+      <description>Published in *Journal of Geophysical Research v. 117, C05026*, 2012.</description>
+    </item>
+    <item>
+      <title>Seismic Stratigraphy of a Shelf-Edge Delta and Linked Submarine Channels in the Northeastern Gulf of Mexico</title>
+      <link>https://zsylvester.github.io/papers/fuji_einstein/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/fuji_einstein/</guid>
+      <description>Published in *SEPM Special Publication 99, p. 31–59*, 2012.</description>
+    </item>
+    <item>
+      <title>Stratigraphic Response to Evolving Geomorphology in a Submarine Apron Perched on the Upper Niger Delta Slope</title>
+      <link>https://zsylvester.github.io/papers/nigeria_fan/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/nigeria_fan/</guid>
+      <description>Published in *SEPM Special Publication 99, p. 145-161*, 2012.</description>
+    </item>
+    <item>
+      <title>A model of submarine channel-levee evolution based on channel trajectories: Implications for stratigraphic architecture</title>
+      <link>https://zsylvester.github.io/papers/submarine_channel_model/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/submarine_channel_model/</guid>
+      <description>Published in *Marine and Petroleum Geology 28, p. 716-727*, 2011.</description>
+    </item>
+    <item>
+      <title>Turbidite channel architecture: Recognizing and quantifying the distribution of channel-base drapes using core and dipmeter data</title>
+      <link>https://zsylvester.github.io/papers/shale_drapes/</link>
+      <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/shale_drapes/</guid>
+      <description>Published in *AAPG Memoir 92, p. 195-210*, 2010.</description>
+    </item>
+    <item>
+      <title>Architecture of a Deep-water Levee Avulsion, Silla Ojo Mesa, Parque Nacional Torres del Paine, Chile</title>
+      <link>https://zsylvester.github.io/papers/silla_ojo/</link>
+      <pubDate>Tue, 01 Jan 2008 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/silla_ojo/</guid>
+      <description>Published in *Atlas of Deep-Water Outcrops, AAPG Studies in Geology v. 56, p. 406-433*, 2008.</description>
+    </item>
+    <item>
+      <title>Migration–aggradation history and 3-D seismic geomorphology of submarine channels in the Pleistocene Benin-major Canyon, western Niger Delta slope</title>
+      <link>https://zsylvester.github.io/papers/benin/</link>
+      <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/benin/</guid>
+      <description>Published in *Marine and Petroleum Geology v. 24, p. 406-433*, 2007.</description>
     </item>
   </channel>
 </rss>

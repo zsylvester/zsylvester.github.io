@@ -1,34 +1,239 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Modeling on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/tags/modeling/</link>
     <description>Recent content in Modeling on Zoltán Sylvester</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Wed, 18 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Jun 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/tags/modeling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Turbidite correlation for paleoseismology</title>
+      <link>https://zsylvester.github.io/papers/turbidite_paleoseismology/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/turbidite_paleoseismology/</guid>
+      <description>Published in *GSA Bulletin*, 2024.</description>
+    </item>
+    <item>
+      <title>Fluvial-style migration controls autogenic aggradation in submarine channels: Joshua Channel, eastern Gulf of Mexico</title>
+      <link>https://zsylvester.github.io/papers/joshua_channel/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/joshua_channel/</guid>
+      <description>Published in *Geological Society, London, Special Publications, v. 540*, 2024.</description>
+    </item>
+    <item>
+      <title>The impact of post-cutoff bend curvature on channel kinematics in meandering rivers: an example from the Trinity River, Texas, USA</title>
+      <link>https://zsylvester.github.io/papers/trinity_cutoffs/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/trinity_cutoffs/</guid>
+      <description>This paper investigates the relationship between post-cutoff bend curvature and channel kinematics in meandering rivers using Trinity River data. Published in *Geological Society, London, Special Publications*, 2024.</description>
+    </item>
+    <item>
+      <title>Stratigraphy in space and time: A reproducible approach to analysis and visualization</title>
+      <link>https://zsylvester.github.io/papers/stratigraphy_space_time/</link>
+      <pubDate>Mon, 05 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/stratigraphy_space_time/</guid>
+      <description>Published in *Earth Science Reviews, v. 250, 104206*, 2024.</description>
+    </item>
+    <item>
+      <title>Automated multi-well stratigraphic correlation and model building using relative geologic time</title>
+      <link>https://zsylvester.github.io/papers/chronolog/</link>
+      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/chronolog/</guid>
+      <description>Published in *Basin Research, v. 35, p. 1961-1984*, 2023.</description>
+    </item>
+    <item>
+      <title>Channel trajectories control deep-water stratigraphic architecture</title>
+      <link>https://zsylvester.github.io/papers/channel_trajectories/</link>
+      <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/channel_trajectories/</guid>
+      <description>Published in *The Depositional Record, v. 8, p. 880-894*, 2022.</description>
+    </item>
+    <item>
+      <title>How do basin margins record long-term tectonic and climatic changes?</title>
+      <link>https://zsylvester.github.io/papers/zhang_et_al_geology/</link>
+      <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/zhang_et_al_geology/</guid>
+      <description>Published in *Geology, v. 48, p. 893-897*, 2020.</description>
+    </item>
+    <item>
+      <title>Grain-Size and Discharge Controls on Submarine-Fan Depositional Patterns From Forward Stratigraphic Models</title>
+      <link>https://zsylvester.github.io/papers/grain_size_dionisos/</link>
+      <pubDate>Fri, 13 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/grain_size_dionisos/</guid>
+      <description>Published in *Frontiers in Earth Science, v. 7:334*, 2019.</description>
+    </item>
+    <item>
+      <title>Submarine channels ‘swept’ downstream after bend cutoff in salt basins</title>
+      <link>https://zsylvester.github.io/papers/campos_translation/</link>
+      <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/campos_translation/</guid>
+      <description>Published in *The Depositional Record, v. 6, p. 259-272*, 2019.</description>
+    </item>
+    <item>
+      <title>Conversion of tectonic and climatic forcings into records of sediment supply and provenance</title>
+      <link>https://zsylvester.github.io/papers/sed_supply_and_provenance/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/sed_supply_and_provenance/</guid>
+      <description>Published in *Scientific Reports, v. 9, p. 1-7*, 2019.</description>
+    </item>
     <item>
       <title>Stratal patterns in salt-withdrawal minibasins</title>
       <link>https://zsylvester.github.io/post/stratal_patterns/</link>
       <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/post/stratal_patterns/</guid>
-      <description>These are animations that accompany our 2015 article on the stratigraphy of salt-withdrawal basins on the slope (Sylvester, Z., Cantelli, A., and Pirmez, C., 2015, Stratigraphic evolution of intraslope minibasins: Insights from surface-based model: AAPG Bulletin, v. 99, no. 6, p. 1099–1129). We have used a simple model that investigates the interplay between subsidence and sedimentation and helps in the understanding of how stratal termination patterns relate to variations in sediment input and basin subsidence.</description>
+      <description>&lt;p&gt;These are animations that accompany our 2015 article on the stratigraphy of salt-withdrawal basins on the slope (Sylvester, Z., Cantelli, A., and Pirmez, C., 2015, &lt;a href=&#34;http://archives.datapages.com/data/bulletns/2015/06jun/BLTN14082/BLTN14082.html&#34; target=&#34;_blank&#34;&gt;Stratigraphic evolution of intraslope minibasins: Insights from surface-based model: AAPG Bulletin, v. 99, no. 6, p. 1099–1129&lt;/a&gt;). We have used a simple model that investigates the interplay between subsidence and sedimentation and helps in the understanding of how stratal termination patterns relate to variations in sediment input and basin subsidence. Conventional sequence stratigraphy focuses on what is happening on the shelf and the shelf edge; and the origin of stratal patterns that characterize the typical &amp;lsquo;slug diagram&amp;rsquo; are not trivial to relate to the three main parameters that influence continental-margin stratigraphy: changes in sea level, sediment supply, and subsidence. Our minibasin model is simpler because (1) it only has two parameters: sediment supply and subsidence (the impact of sea level - if any - is included in the sediment supply curve); and (2) sedimentary layers are deposited horizontally during each time step. The basic idea is to investigate the geometries of a system that consists of a depression that deepens through time and sediment is deposited in it with a certain rate.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Slope-fan depositional architecture from high-resolution forward stratigraphic models</title>
+      <link>https://zsylvester.github.io/papers/slope_fans_dionisos/</link>
+      <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/slope_fans_dionisos/</guid>
+      <description>Published in *Marine and Petroleum Geology, v. 91, p. 576-585*, 2018.</description>
+    </item>
+    <item>
+      <title>Latitudinal Changes in the Morphology of Submarine Channels: Reevaluating the Evidence for the Influence of the Coriolis Force</title>
+      <link>https://zsylvester.github.io/papers/coriolis_and_submarine_channels/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/coriolis_and_submarine_channels/</guid>
+      <description>Published in *SEPM Special Publication v. 108*, 2018.</description>
+    </item>
+    <item>
+      <title>Cyclic steps and related supercritical bedforms: Building blocks of deep-water depositional systems, western North America</title>
+      <link>https://zsylvester.github.io/papers/cyclic_steps/</link>
+      <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/cyclic_steps/</guid>
+      <description>Published in *Marine and Petroleum Geology v. 393, p. 4-20*, 2017.</description>
+    </item>
+    <item>
+      <title>Sediment partitioning, continental slopes and base‐of‐slope systems</title>
+      <link>https://zsylvester.github.io/papers/sediment_partitioning/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/sediment_partitioning/</guid>
+      <description>Published in *Basin Research v. 29, p. 394-416*, 2017.</description>
     </item>
     <item>
       <title>Exploring (de)compaction with Python</title>
       <link>https://zsylvester.github.io/post/decompaction/</link>
       <pubDate>Wed, 12 Apr 2017 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/post/decompaction/</guid>
-      <description>All clastic sediments are subject to compaction (and reduction of porosity) as the result of increasingly tighter packing of grains under a thickening overburden. Decompaction - the estimation of the decompacted thickness of a rock column - is an important part of subsidence (or geohistory) analysis. The following exercise is loosely based on the excellent basin analysis textbook by Allen &amp;amp; Allen (2013), especially their Appendix 56.&#xA;Import stuff import numpy as np import matplotlib.</description>
+      <description>&lt;p&gt;All clastic sediments are subject to compaction (and reduction of porosity) as the result of increasingly tighter packing of grains under a thickening overburden. Decompaction - the estimation of the decompacted thickness of a rock column - is an important part of subsidence (or geohistory) analysis. The following exercise is loosely based on the excellent basin analysis textbook by Allen &amp;amp; Allen (2013), especially their Appendix 56.&lt;/p&gt;
+&lt;h2 id=&#34;import-stuff&#34;&gt;Import stuff&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00a&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0aa;text-decoration:underline&#34;&gt;numpy&lt;/span&gt; &lt;span style=&#34;color:#00a&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#0aa;text-decoration:underline&#34;&gt;np&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00a&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0aa;text-decoration:underline&#34;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span style=&#34;color:#00a&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#0aa;text-decoration:underline&#34;&gt;plt&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00a&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#0aa;text-decoration:underline&#34;&gt;functools&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00a&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#0aa;text-decoration:underline&#34;&gt;scipy.optimize&lt;/span&gt; &lt;span style=&#34;color:#00a&#34;&gt;import&lt;/span&gt; bisect
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;%matplotlib inline
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;%config InlineBackend.figure_format = &lt;span style=&#34;color:#a50&#34;&gt;&amp;#39;svg&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;plt.rcParams[&lt;span style=&#34;color:#a50&#34;&gt;&amp;#39;mathtext.fontset&amp;#39;&lt;/span&gt;] = &lt;span style=&#34;color:#a50&#34;&gt;&amp;#39;cm&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;posing-the-problem&#34;&gt;Posing the problem&lt;/h2&gt;
+&lt;p&gt;Given a sediment column of a certain lithology with its top at $y_1$ and its base at $y_2$, we are trying to find the thickness and average porosity of the same sediment column at a different depth (see figure below). We are going to set the new top $y_1&amp;rsquo;$ and work towards finding the new base $y_2&amp;rsquo;$.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Facies architecture of submarine channel deposits on the western Niger Delta slope: Implications for grain‐size and density stratification in turbidity currents</title>
+      <link>https://zsylvester.github.io/papers/nigeria_facies/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/nigeria_facies/</guid>
+      <description>Published in *Journal of Geophysical Research: Earth Surface v. 122, p. 473-491*, 2017.</description>
+    </item>
+    <item>
+      <title>High-resolution, millennial-scale patterns of bed compensation on a sand-rich intraslope submarine fan, western Niger Delta slope</title>
+      <link>https://zsylvester.github.io/papers/nigeria_compensation/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/nigeria_compensation/</guid>
+      <description>Published in *GSA Bulletin v. 129, p. 23-37*, 2017.</description>
+    </item>
+    <item>
+      <title>Three-Dimensional Numerical Modeling of Eustatic Control On Continental-Margin Sand Distribution</title>
+      <link>https://zsylvester.github.io/papers/dionisos_modeling/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/dionisos_modeling/</guid>
+      <description>Published in *Journal of Sedimentray Research v. 86, p. 1434-1443*, 2016.</description>
+    </item>
+    <item>
+      <title>Development of cutoff-related knickpoints during early evolution of submarine channels</title>
+      <link>https://zsylvester.github.io/papers/submarine_cutoffs/</link>
+      <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/submarine_cutoffs/</guid>
+      <description>Published in *Geology (2016) 44 (10): 835-838*, 2016.</description>
+    </item>
+    <item>
+      <title>The stratigraphic record of submarine-channel evolution</title>
+      <link>https://zsylvester.github.io/papers/channel_evolution/</link>
+      <pubDate>Sun, 04 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/channel_evolution/</guid>
+      <description>Published in *The Sedimentary Record v. 14, p. 4-11*, 2016.</description>
+    </item>
+    <item>
+      <title>A new approach for conditioning process-based geologic models to well data</title>
+      <link>https://zsylvester.github.io/papers/conditioning/</link>
+      <pubDate>Sun, 01 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/conditioning/</guid>
+      <description>Published in *Mathematical Geosciences v. 48, p. 371-397*, 2016.</description>
+    </item>
+    <item>
+      <title>Stratigraphic rule-based reservoir modeling</title>
+      <link>https://zsylvester.github.io/papers/rule_based_modeling/</link>
+      <pubDate>Tue, 01 Dec 2015 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/rule_based_modeling/</guid>
+      <description>Published in *Bulletin of Canadian Petroleum Geology v. 63, p. 287-303*, 2015.</description>
+    </item>
+    <item>
+      <title>Stratigraphic evolution of intraslope minibasins: Insights from surface-based model</title>
+      <link>https://zsylvester.github.io/papers/minibasins/</link>
+      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/minibasins/</guid>
+      <description>Published in *AAPG Bulletin v. 99, p. 1099-1129*, 2015.</description>
     </item>
     <item>
       <title>Exploring the diffusion equation with Python</title>
       <link>https://zsylvester.github.io/post/diffusion_equation/</link>
       <pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/post/diffusion_equation/</guid>
-      <description>Ever since I became interested in science, I started to have a vague idea that calculus, matrix algebra, partial differential equations, and numerical methods are all fundamental to the physical sciences and engineering and they are linked in some way to each other. The emphasis here is on the word vague; I have to admit that I had no clear, detailed understanding of how these links actually work. It seems like my formal education both in math and physics stopped just short of where everything would have nicely come together.</description>
+      <description>&lt;p&gt;Ever since I became interested in science, I started to have a vague idea that calculus, matrix algebra, partial differential equations, and numerical methods are all fundamental to the physical sciences and engineering and they are linked in some way to each other. The emphasis here is on the word vague; I have to admit that I had no clear, detailed understanding of how these links actually work. It seems like my formal education both in math and physics stopped just short of where everything would have nicely come together. Papers that are really important in geomorphology, sedimentology or stratigraphy seemed impossible to read as soon as they started assuming that I knew quite a bit about convective acceleration, numerical schemes, boundary conditions, and Cholesky factorization. Because I didn’t.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Key Future Directions For Research On Turbidity Currents and Their Deposits</title>
+      <link>https://zsylvester.github.io/papers/future_directions/</link>
+      <pubDate>Sun, 01 Feb 2015 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/future_directions/</guid>
+      <description>Published in *Journal of Sedimentary Research v. 85, p. 153-169*, 2015.</description>
+    </item>
+    <item>
+      <title>Detecting baffle mudstones using microfossils: an integrated working example from the Cardamom Field, Block 427 Garden Banks, Gulf of Mexico</title>
+      <link>https://zsylvester.github.io/papers/mudstone_baffles/</link>
+      <pubDate>Sat, 01 Nov 2014 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/mudstone_baffles/</guid>
+      <description>Published in *Palaeogeography, palaeoclimatology, palaeoecology v. 413, p. 133-143*, 2014.</description>
+    </item>
+    <item>
+      <title>3-D Numerical Simulation of Turbidity Currents in Submarine Canyons off the Niger Delta</title>
+      <link>https://zsylvester.github.io/papers/nigeria_channel_simulation/</link>
+      <pubDate>Sun, 01 Jul 2012 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/nigeria_channel_simulation/</guid>
+      <description>Published in *Marine Geology v. 326–328, p. 55-66*, 2012.</description>
+    </item>
+    <item>
+      <title>Three-dimensional numerical simulation of turbidity currents in a submarine channel on the seafloor of the Niger Delta slope</title>
+      <link>https://zsylvester.github.io/papers/nigeria_channel_simulation_2/</link>
+      <pubDate>Wed, 16 May 2012 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/nigeria_channel_simulation_2/</guid>
+      <description>Published in *Journal of Geophysical Research v. 117, C05026*, 2012.</description>
+    </item>
+    <item>
+      <title>A model of submarine channel-levee evolution based on channel trajectories: Implications for stratigraphic architecture</title>
+      <link>https://zsylvester.github.io/papers/submarine_channel_model/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/submarine_channel_model/</guid>
+      <description>Published in *Marine and Petroleum Geology 28, p. 716-727*, 2011.</description>
+    </item>
+    <item>
+      <title>Turbidite channel architecture: Recognizing and quantifying the distribution of channel-base drapes using core and dipmeter data</title>
+      <link>https://zsylvester.github.io/papers/shale_drapes/</link>
+      <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/shale_drapes/</guid>
+      <description>Published in *AAPG Memoir 92, p. 195-210*, 2010.</description>
     </item>
   </channel>
 </rss>

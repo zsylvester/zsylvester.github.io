@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Erosion on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/tags/erosion/</link>
     <description>Recent content in Erosion on Zoltán Sylvester</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
     <lastBuildDate>Fri, 06 Feb 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/tags/erosion/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -14,7 +13,7 @@
       <link>https://zsylvester.github.io/post/diffusion_equation/</link>
       <pubDate>Fri, 06 Feb 2015 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/post/diffusion_equation/</guid>
-      <description>Ever since I became interested in science, I started to have a vague idea that calculus, matrix algebra, partial differential equations, and numerical methods are all fundamental to the physical sciences and engineering and they are linked in some way to each other. The emphasis here is on the word vague; I have to admit that I had no clear, detailed understanding of how these links actually work. It seems like my formal education both in math and physics stopped just short of where everything would have nicely come together.</description>
+      <description>&lt;p&gt;Ever since I became interested in science, I started to have a vague idea that calculus, matrix algebra, partial differential equations, and numerical methods are all fundamental to the physical sciences and engineering and they are linked in some way to each other. The emphasis here is on the word vague; I have to admit that I had no clear, detailed understanding of how these links actually work. It seems like my formal education both in math and physics stopped just short of where everything would have nicely come together. Papers that are really important in geomorphology, sedimentology or stratigraphy seemed impossible to read as soon as they started assuming that I knew quite a bit about convective acceleration, numerical schemes, boundary conditions, and Cholesky factorization. Because I didn’t.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,26 +1,95 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/tags/</link>
     <description>Recent content in Tags on Zoltán Sylvester</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Geomorphology</title>
+      <link>https://zsylvester.github.io/tags/geomorphology/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/tags/geomorphology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Meandering</title>
+      <link>https://zsylvester.github.io/tags/meandering/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/tags/meandering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Review</title>
+      <link>https://zsylvester.github.io/tags/review/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/tags/review/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rivers</title>
+      <link>https://zsylvester.github.io/tags/rivers/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/tags/rivers/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sedimentology</title>
+      <link>https://zsylvester.github.io/tags/sedimentology/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/tags/sedimentology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Modeling</title>
+      <link>https://zsylvester.github.io/tags/modeling/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/tags/modeling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Seismic</title>
+      <link>https://zsylvester.github.io/tags/seismic/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/tags/seismic/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Stratigraphy</title>
+      <link>https://zsylvester.github.io/tags/stratigraphy/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/tags/stratigraphy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Submarine Channels</title>
+      <link>https://zsylvester.github.io/tags/submarine-channels/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/tags/submarine-channels/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Geology</title>
       <link>https://zsylvester.github.io/tags/geology/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/tags/geology/</guid>
       <description></description>
     </item>
     <item>
-      <title>Geomorphology</title>
-      <link>https://zsylvester.github.io/tags/geomorphology/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://zsylvester.github.io/tags/geomorphology/</guid>
+      <title>Salt Tectonics</title>
+      <link>https://zsylvester.github.io/tags/salt-tectonics/</link>
+      <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/tags/salt-tectonics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Point Bars</title>
+      <link>https://zsylvester.github.io/tags/point-bars/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/tags/point-bars/</guid>
       <description></description>
     </item>
     <item>
@@ -31,13 +100,6 @@
       <description></description>
     </item>
     <item>
-      <title>Meandering</title>
-      <link>https://zsylvester.github.io/tags/meandering/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://zsylvester.github.io/tags/meandering/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Python</title>
       <link>https://zsylvester.github.io/tags/python/</link>
       <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
@@ -45,17 +107,10 @@
       <description></description>
     </item>
     <item>
-      <title>Rivers</title>
-      <link>https://zsylvester.github.io/tags/rivers/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://zsylvester.github.io/tags/rivers/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sedimentology</title>
-      <link>https://zsylvester.github.io/tags/sedimentology/</link>
-      <pubDate>Sat, 13 Mar 2021 00:00:00 +0000</pubDate>
-      <guid>https://zsylvester.github.io/tags/sedimentology/</guid>
+      <title>Tectonics</title>
+      <link>https://zsylvester.github.io/tags/tectonics/</link>
+      <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/tags/tectonics/</guid>
       <description></description>
     </item>
     <item>
@@ -66,17 +121,10 @@
       <description></description>
     </item>
     <item>
-      <title>Modeling</title>
-      <link>https://zsylvester.github.io/tags/modeling/</link>
-      <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>https://zsylvester.github.io/tags/modeling/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Stratigraphy</title>
-      <link>https://zsylvester.github.io/tags/stratigraphy/</link>
-      <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>https://zsylvester.github.io/tags/stratigraphy/</guid>
+      <title>Salt</title>
+      <link>https://zsylvester.github.io/tags/salt/</link>
+      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/tags/salt/</guid>
       <description></description>
     </item>
     <item>
@@ -108,24 +156,10 @@
       <description></description>
     </item>
     <item>
-      <title>Salt</title>
-      <link>https://zsylvester.github.io/tags/salt/</link>
-      <pubDate>Sat, 16 Jul 2011 00:00:00 +0000</pubDate>
-      <guid>https://zsylvester.github.io/tags/salt/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tectonics</title>
-      <link>https://zsylvester.github.io/tags/tectonics/</link>
-      <pubDate>Sat, 16 Jul 2011 00:00:00 +0000</pubDate>
-      <guid>https://zsylvester.github.io/tags/tectonics/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Seismic</title>
-      <link>https://zsylvester.github.io/tags/seismic/</link>
-      <pubDate>Mon, 18 Apr 2011 00:00:00 +0000</pubDate>
-      <guid>https://zsylvester.github.io/tags/seismic/</guid>
+      <title>Turbidites</title>
+      <link>https://zsylvester.github.io/tags/turbidites/</link>
+      <pubDate>Wed, 01 Aug 2007 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/tags/turbidites/</guid>
       <description></description>
     </item>
   </channel>

@@ -1,20 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tectonics on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/tags/tectonics/</link>
     <description>Recent content in Tectonics on Zoltán Sylvester</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Sat, 16 Jul 2011 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2020 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/tags/tectonics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How do basin margins record long-term tectonic and climatic changes?</title>
+      <link>https://zsylvester.github.io/papers/zhang_et_al_geology/</link>
+      <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/zhang_et_al_geology/</guid>
+      <description>Published in *Geology, v. 48, p. 893-897*, 2020.</description>
+    </item>
+    <item>
+      <title>Conversion of tectonic and climatic forcings into records of sediment supply and provenance</title>
+      <link>https://zsylvester.github.io/papers/sed_supply_and_provenance/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/sed_supply_and_provenance/</guid>
+      <description>Published in *Scientific Reports, v. 9, p. 1-7*, 2019.</description>
+    </item>
+    <item>
+      <title>detritalPy: A Python‐based Toolset for Visualizing and Analyzing Detrital Geo‐Thermochronologic Data</title>
+      <link>https://zsylvester.github.io/papers/detrital_py/</link>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/detrital_py/</guid>
+      <description>Published in *The Depositional Record, v. 4, p. 202-215*, 2018.</description>
+    </item>
+    <item>
+      <title>Cyclic steps and related supercritical bedforms: Building blocks of deep-water depositional systems, western North America</title>
+      <link>https://zsylvester.github.io/papers/cyclic_steps/</link>
+      <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/cyclic_steps/</guid>
+      <description>Published in *Marine and Petroleum Geology v. 393, p. 4-20*, 2017.</description>
+    </item>
     <item>
       <title>Salt and sediment: a brief history of ideas</title>
       <link>https://zsylvester.github.io/post/salt_and_sediment/</link>
       <pubDate>Sat, 16 Jul 2011 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/post/salt_and_sediment/</guid>
-      <description>Salty weirdness Salt is a weird kind of rock. At first sight, it behaves like most other rocks: if you pick up a piece, it is hard, it is heavy, and it breaks if hit with a hammer. But put it under stress for thousands of years, and salt will behave like a fluid: relatively small forces can cause it to flow toward less stressful surroundings. This often means it will try to find its way to the surface.</description>
+      <description>&lt;h2 id=&#34;salty-weirdness&#34;&gt;Salty weirdness&lt;/h2&gt;
+&lt;p&gt;Salt is a weird kind of rock. At first sight, it behaves like most other rocks: if you pick up a piece, it is hard, it is heavy, and it breaks if hit with a hammer. But put it under stress for thousands of years, and salt will behave like a fluid: relatively small forces can cause it to flow toward less stressful surroundings. This often means it will try to find its way to the surface.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Migration–aggradation history and 3-D seismic geomorphology of submarine channels in the Pleistocene Benin-major Canyon, western Niger Delta slope</title>
+      <link>https://zsylvester.github.io/papers/benin/</link>
+      <pubDate>Fri, 01 Jun 2007 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/benin/</guid>
+      <description>Published in *Marine and Petroleum Geology v. 24, p. 406-433*, 2007.</description>
     </item>
   </channel>
 </rss>

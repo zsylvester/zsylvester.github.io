@@ -1,27 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Researches on Zoltán Sylvester</title>
+    <title>Research on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/research/</link>
-    <description>Recent content in Researches on Zoltán Sylvester</description>
-    <generator>Hugo</generator>
+    <description>Recent content in Research on Zoltán Sylvester</description>
+    <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Sun, 16 Mar 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate></lastBuildDate>
     <atom:link href="https://zsylvester.github.io/research/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Meandering</title>
-      <link>https://zsylvester.github.io/research/meandering/</link>
-      <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>https://zsylvester.github.io/research/meandering/</guid>
-      <description>blah blah blah</description>
-    </item>
-    <item>
-      <title>Seismic stratigraphy</title>
-      <link>https://zsylvester.github.io/research/seismic_strat/</link>
-      <pubDate>Sun, 16 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>https://zsylvester.github.io/research/seismic_strat/</guid>
-      <description>blah blah blah</description>
-    </item>
   </channel>
 </rss>

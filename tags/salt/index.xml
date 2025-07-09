@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Salt on Zoltán Sylvester</title>
     <link>https://zsylvester.github.io/tags/salt/</link>
     <description>Recent content in Salt on Zoltán Sylvester</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <copyright>Copyright (c) 2018 Zoltan Sylvester</copyright>
-    <lastBuildDate>Sat, 16 Jul 2011 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/tags/salt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stratigraphic evolution of intraslope minibasins: Insights from surface-based model</title>
+      <link>https://zsylvester.github.io/papers/minibasins/</link>
+      <pubDate>Mon, 01 Jun 2015 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/minibasins/</guid>
+      <description>Published in *AAPG Bulletin v. 99, p. 1099-1129*, 2015.</description>
+    </item>
     <item>
       <title>Salt and sediment: a brief history of ideas</title>
       <link>https://zsylvester.github.io/post/salt_and_sediment/</link>
       <pubDate>Sat, 16 Jul 2011 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/post/salt_and_sediment/</guid>
-      <description>Salty weirdness Salt is a weird kind of rock. At first sight, it behaves like most other rocks: if you pick up a piece, it is hard, it is heavy, and it breaks if hit with a hammer. But put it under stress for thousands of years, and salt will behave like a fluid: relatively small forces can cause it to flow toward less stressful surroundings. This often means it will try to find its way to the surface.</description>
+      <description>&lt;h2 id=&#34;salty-weirdness&#34;&gt;Salty weirdness&lt;/h2&gt;
+&lt;p&gt;Salt is a weird kind of rock. At first sight, it behaves like most other rocks: if you pick up a piece, it is hard, it is heavy, and it breaks if hit with a hammer. But put it under stress for thousands of years, and salt will behave like a fluid: relatively small forces can cause it to flow toward less stressful surroundings. This often means it will try to find its way to the surface.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
