@@ -6,8 +6,15 @@
     <description>Recent content in Python on Zoltán Sylvester</description>
     <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Segmenteverygrain: A Python module for segmentation of grains in images</title>
+      <link>https://zsylvester.github.io/papers/segmenteverygrain/</link>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/segmenteverygrain/</guid>
+      <description>Published in *Journal of Open Source Software v. 10, p. 7953*, 2025.</description>
+    </item>
     <item>
       <title>Point bars and counter point bars: Why is sediment deposited on the &#39;wrong&#39; side of a meander bend?</title>
       <link>https://zsylvester.github.io/post/counter_point_bars/</link>

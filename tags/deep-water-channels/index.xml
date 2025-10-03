@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Deep-Water Channels on Zoltán Sylvester</title>
+    <link>https://zsylvester.github.io/tags/deep-water-channels/</link>
+    <description>Recent content in Deep-Water Channels on Zoltán Sylvester</description>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zsylvester.github.io/tags/deep-water-channels/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The impact of reservoir architecture on dynamic connectivity in sinuous deep-water channel systems</title>
+      <link>https://zsylvester.github.io/papers/channel_connectivity/</link>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/channel_connectivity/</guid>
+      <description>Published in *Interpretation v. 13, p. T607-T628*, 2025.</description>
+    </item>
+  </channel>
+</rss>

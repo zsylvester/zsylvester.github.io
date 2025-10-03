@@ -6,8 +6,29 @@
     <description>Recent content in Papers on Zoltán Sylvester</description>
     <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/papers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Segmenteverygrain: A Python module for segmentation of grains in images</title>
+      <link>https://zsylvester.github.io/papers/segmenteverygrain/</link>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/segmenteverygrain/</guid>
+      <description>Published in *Journal of Open Source Software v. 10, p. 7953*, 2025.</description>
+    </item>
+    <item>
+      <title>The impact of reservoir architecture on dynamic connectivity in sinuous deep-water channel systems</title>
+      <link>https://zsylvester.github.io/papers/channel_connectivity/</link>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/channel_connectivity/</guid>
+      <description>Published in *Interpretation v. 13, p. T607-T628*, 2025.</description>
+    </item>
+    <item>
+      <title>Three-dimensional anatomy of a Cretaceous river avulsion</title>
+      <link>https://zsylvester.github.io/papers/cedar_mountain_avulsion/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/cedar_mountain_avulsion/</guid>
+      <description>Published in *Geology v. 52, p. 885-890*, 2024.</description>
+    </item>
     <item>
       <title>Meandering streamflows across landscapes and scales: a review and discussion</title>
       <link>https://zsylvester.github.io/papers/meandering_book_intro/</link>
@@ -42,6 +63,13 @@
       <pubDate>Mon, 05 Feb 2024 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/papers/stratigraphy_space_time/</guid>
       <description>Published in *Earth Science Reviews, v. 250, 104206*, 2024.</description>
+    </item>
+    <item>
+      <title>Submarine‐channel meandering reset by landslide filling, Taranaki Basin, New Zealand</title>
+      <link>https://zsylvester.github.io/papers/taranaki_channels/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/taranaki_channels/</guid>
+      <description>Published in *Marine and Petroleum Geology v. 24, p. 406-433*, 2007.</description>
     </item>
     <item>
       <title>Automated multi-well stratigraphic correlation and model building using relative geologic time</title>
