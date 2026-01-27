@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>A frozen history of meandering: Mapping and modeling ice-wedge polygons on point bars | Zoltán Sylvester</title>
+<meta name="keywords" content="meandering, point bars, machine learning, rivers, permafrost, arctic">
+<meta name="description" content="A number of meandering rivers in the Arctic, especially in Siberia, have point bars with strikingly structured permafrost polygon patterns. We use a Unet-type convolutional neural network to map the polygons.">
+<meta name="author" content="Z. Sylvester">
+<link rel="canonical" href="https://zsylvester.github.io/presentations/permafrost_polygons_2023/">
+<link crossorigin="anonymous" href="https://zsylvester.github.io/assets/css/stylesheet.f74c9efcb192313e06a45d8afd79aff95600db65e6455e9d17f0349faf066450.css" integrity="sha256-90ye/LGSMT4GpF2K/Xmv&#43;VYA22XmRV6dF/A0n68GZFA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://zsylvester.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://zsylvester.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://zsylvester.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://zsylvester.github.io/apple-touch-icon.png">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://zsylvester.github.io/presentations/permafrost_polygons_2023/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://zsylvester.github.io/presentations/permafrost_polygons_2023/">
+  <meta property="og:site_name" content="Zoltán Sylvester">
+  <meta property="og:title" content="A frozen history of meandering: Mapping and modeling ice-wedge polygons on point bars">
+  <meta property="og:description" content="A number of meandering rivers in the Arctic, especially in Siberia, have point bars with strikingly structured permafrost polygon patterns. We use a Unet-type convolutional neural network to map the polygons.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="presentations">
+    <meta property="article:published_time" content="2023-11-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-11-09T00:00:00+00:00">
+    <meta property="article:tag" content="Meandering">
+    <meta property="article:tag" content="Point Bars">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="Rivers">
+    <meta property="article:tag" content="Permafrost">
+    <meta property="article:tag" content="Arctic">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A frozen history of meandering: Mapping and modeling ice-wedge polygons on point bars">
+<meta name="twitter:description" content="A number of meandering rivers in the Arctic, especially in Siberia, have point bars with strikingly structured permafrost polygon patterns. We use a Unet-type convolutional neural network to map the polygons.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Presentations",
+      "item": "https://zsylvester.github.io/presentations/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "A frozen history of meandering: Mapping and modeling ice-wedge polygons on point bars",
+      "item": "https://zsylvester.github.io/presentations/permafrost_polygons_2023/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "A frozen history of meandering: Mapping and modeling ice-wedge polygons on point bars",
+  "name": "A frozen history of meandering: Mapping and modeling ice-wedge polygons on point bars",
+  "description": "A number of meandering rivers in the Arctic, especially in Siberia, have point bars with strikingly structured permafrost polygon patterns. We use a Unet-type convolutional neural network to map the polygons.",
+  "keywords": [
+    "meandering", "point bars", "machine learning", "rivers", "permafrost", "arctic"
+  ],
+  "articleBody": "Video Abstract A number of meandering rivers in the Arctic, especially in Siberia, have point bars with strikingly structured permafrost polygon patterns. These seem to mimic not just the scroll ‘bar’ lines that are often visible in permafrost-free point bars, but the radial growth lines as well that tend to be perpendicular to the scrolls and have not been observed before. We use a Unet-type convolutional neural network to map the polygons. The network is trained with image tiles derived from manually mapped scroll- and radial lines on nine point bars. Post-processing of the semantic segmentation results allows the identification of individual polygons; a Python ‘networkx’ graph is used to study the relations between the polygons. A simple model of meandering suggests a preliminary explanation of how these beautiful patterns might form.\nEvent Permafrost Discovery Gateway Monthly Webinar Series, November 9, 2023.\n",
+  "wordCount" : "142",
+  "inLanguage": "en",
+  "datePublished": "2023-11-09T00:00:00Z",
+  "dateModified": "2023-11-09T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "Z. Sylvester"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://zsylvester.github.io/presentations/permafrost_polygons_2023/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Zoltán Sylvester",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://zsylvester.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{equation*}", right: "\\end{equation*}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{align*}", right: "\\end{align*}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+ 
+
+
+</head>
+
+<body class="" id="top">
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://zsylvester.github.io/" accesskey="h" title="Zoltán Sylvester">
+                <img src="https://zsylvester.github.io/favicon.ico" alt="" aria-label="logo"
+                    height="18"
+                    width="18">Zoltán Sylvester</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://zsylvester.github.io/research/" title="Research">
+                    <span>Research</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zsylvester.github.io/papers/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zsylvester.github.io/presentations/" title="Presentations">
+                    <span>Presentations</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zsylvester.github.io/post/" title="Blog">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://zsylvester.github.io/art/" title="Art">
+                    <span>Art</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      A frozen history of meandering: Mapping and modeling ice-wedge polygons on point bars
+    </h1>
+    <div class="post-meta"><span title='2023-11-09 00:00:00 +0000 UTC'>November 9, 2023</span>&nbsp;&middot;&nbsp;Z. Sylvester&nbsp;&middot;&nbsp;<a href="https://www.youtube.com/watch?v=vE-va6LCqj0" rel="noopener noreferrer" target="_blank">Watch on YouTube</a>
+
+</div>
+  </header> 
+  <div class="post-content"><h5 id="video">Video</h5>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/vE-va6LCqj0?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<hr>
+<h5 id="abstract">Abstract</h5>
+<p>A number of meandering rivers in the Arctic, especially in Siberia, have point bars with strikingly structured permafrost polygon patterns. These seem to mimic not just the scroll ‘bar’ lines that are often visible in permafrost-free point bars, but the radial growth lines as well that tend to be perpendicular to the scrolls and have not been observed before. We use a Unet-type convolutional neural network to map the polygons. The network is trained with image tiles derived from manually mapped scroll- and radial lines on nine point bars. Post-processing of the semantic segmentation results allows the identification of individual polygons; a Python ‘networkx’ graph is used to study the relations between the polygons. A simple model of meandering suggests a preliminary explanation of how these beautiful patterns might form.</p>
+<hr>
+<h5 id="event">Event</h5>
+<p>Permafrost Discovery Gateway Monthly Webinar Series, November 9, 2023.</p>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://zsylvester.github.io/tags/meandering/">Meandering</a></li>
+      <li><a href="https://zsylvester.github.io/tags/point-bars/">Point Bars</a></li>
+      <li><a href="https://zsylvester.github.io/tags/machine-learning/">Machine Learning</a></li>
+      <li><a href="https://zsylvester.github.io/tags/rivers/">Rivers</a></li>
+      <li><a href="https://zsylvester.github.io/tags/permafrost/">Permafrost</a></li>
+      <li><a href="https://zsylvester.github.io/tags/arctic/">Arctic</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2026 Zoltán Sylvester</span> ·     
+    <span>
+    Powered by 
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">hugo</a>, <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">papermod</a>, &amp;
+        <a href="https://github.com/pmichaillat/hugo-website/" rel="noopener" target="_blank">hugo-website</a>.
+    </span>
+</footer>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+</html>

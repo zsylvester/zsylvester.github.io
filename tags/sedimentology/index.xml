@@ -51,11 +51,25 @@
       <description>Published in *Basin Research, v. 35, p. 1961-1984*, 2023.</description>
     </item>
     <item>
+      <title>Stratigraphic correlation: Old concepts inform new approaches</title>
+      <link>https://zsylvester.github.io/presentations/beg_chronostratigraphy_2022/</link>
+      <pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/beg_chronostratigraphy_2022/</guid>
+      <description>In this talk, I first want to revisit and visualize the basic ideas about how time is recorded - or not recorded - in sedimentary deposits and then show how chronostratigraphic diagrams can be used as key elements of an automated workflow for correlating geophysical well logs.</description>
+    </item>
+    <item>
       <title>Giant meandering channel evolution, Campos deep-water salt basin, Brazil</title>
       <link>https://zsylvester.github.io/papers/campos_giant_channels/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/papers/campos_giant_channels/</guid>
       <description>This paper analyzes the evolution of giant meandering submarine channels in the Campos Basin, Brazil, and their interaction with salt diapirs. Published in *Geosphere*, 2021.</description>
+    </item>
+    <item>
+      <title>Chronostratigraphic diagrams revisited: Visualization and correlation in the time domain</title>
+      <link>https://zsylvester.github.io/presentations/chronostratigraphy_liverpool_2021/</link>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/chronostratigraphy_liverpool_2021/</guid>
+      <description>We use experimental data from the ‘Jurassic Tank‘ flume (St. Anthony Falls Laboratory) to create three-dimensional chronostratigraphic diagrams, compute stratigraphic completeness, and test several sequence stratigraphic concepts.</description>
     </item>
     <item>
       <title>Autogenic translation and counter point bar deposition in meandering rivers</title>
@@ -107,6 +121,13 @@
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/papers/campos_translation/</guid>
       <description>Published in *The Depositional Record, v. 6, p. 259-272*, 2019.</description>
+    </item>
+    <item>
+      <title>meanderpy: A simple model of meandering</title>
+      <link>https://zsylvester.github.io/presentations/meanderpy_csdms_2019/</link>
+      <pubDate>Wed, 22 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/meanderpy_csdms_2019/</guid>
+      <description>A talk about &amp;#39;meanderpy&amp;#39; at the 2019 CSDMS meeting</description>
     </item>
     <item>
       <title>Conversion of tectonic and climatic forcings into records of sediment supply and provenance</title>

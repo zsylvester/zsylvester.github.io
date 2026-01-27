@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Landslides on Zoltán Sylvester</title>
+    <link>https://zsylvester.github.io/tags/landslides/</link>
+    <description>Recent content in Landslides on Zoltán Sylvester</description>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zsylvester.github.io/tags/landslides/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Landslide influence on delta stratigraphy, northeastern Gulf of Mexico</title>
+      <link>https://zsylvester.github.io/papers/deltas_w_landslides/</link>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/deltas_w_landslides/</guid>
+      <description>Published in *Geosphere*, 2026.</description>
+    </item>
+  </channel>
+</rss>

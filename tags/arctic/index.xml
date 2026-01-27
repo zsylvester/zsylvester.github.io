@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Arctic on Zoltán Sylvester</title>
+    <link>https://zsylvester.github.io/tags/arctic/</link>
+    <description>Recent content in Arctic on Zoltán Sylvester</description>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zsylvester.github.io/tags/arctic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A frozen history of meandering: Mapping and modeling ice-wedge polygons on point bars</title>
+      <link>https://zsylvester.github.io/presentations/permafrost_polygons_2023/</link>
+      <pubDate>Thu, 09 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/permafrost_polygons_2023/</guid>
+      <description>A number of meandering rivers in the Arctic, especially in Siberia, have point bars with strikingly structured permafrost polygon patterns. We use a Unet-type convolutional neural network to map the polygons.</description>
+    </item>
+  </channel>
+</rss>

@@ -6,8 +6,15 @@
     <description>Recent content in Papers on Zoltán Sylvester</description>
     <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/papers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Landslide influence on delta stratigraphy, northeastern Gulf of Mexico</title>
+      <link>https://zsylvester.github.io/papers/deltas_w_landslides/</link>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/deltas_w_landslides/</guid>
+      <description>Published in *Geosphere*, 2026.</description>
+    </item>
     <item>
       <title>Segmenteverygrain: A Python module for segmentation of grains in images</title>
       <link>https://zsylvester.github.io/papers/segmenteverygrain/</link>

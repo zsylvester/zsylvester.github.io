@@ -15,5 +15,12 @@
       <guid>https://zsylvester.github.io/papers/segmenteverygrain/</guid>
       <description>Published in *Journal of Open Source Software v. 10, p. 7953*, 2025.</description>
     </item>
+    <item>
+      <title>A frozen history of meandering: Mapping and modeling ice-wedge polygons on point bars</title>
+      <link>https://zsylvester.github.io/presentations/permafrost_polygons_2023/</link>
+      <pubDate>Thu, 09 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/permafrost_polygons_2023/</guid>
+      <description>A number of meandering rivers in the Arctic, especially in Siberia, have point bars with strikingly structured permafrost polygon patterns. We use a Unet-type convolutional neural network to map the polygons.</description>
+    </item>
   </channel>
 </rss>

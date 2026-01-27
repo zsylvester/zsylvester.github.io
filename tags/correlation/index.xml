@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Correlation on Zoltán Sylvester</title>
+    <link>https://zsylvester.github.io/tags/correlation/</link>
+    <description>Recent content in Correlation on Zoltán Sylvester</description>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 May 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zsylvester.github.io/tags/correlation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stratigraphic correlation: Old concepts inform new approaches</title>
+      <link>https://zsylvester.github.io/presentations/beg_chronostratigraphy_2022/</link>
+      <pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/beg_chronostratigraphy_2022/</guid>
+      <description>In this talk, I first want to revisit and visualize the basic ideas about how time is recorded - or not recorded - in sedimentary deposits and then show how chronostratigraphic diagrams can be used as key elements of an automated workflow for correlating geophysical well logs.</description>
+    </item>
+    <item>
+      <title>Chronostratigraphic diagrams revisited: Visualization and correlation in the time domain</title>
+      <link>https://zsylvester.github.io/presentations/chronostratigraphy_liverpool_2021/</link>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/chronostratigraphy_liverpool_2021/</guid>
+      <description>We use experimental data from the ‘Jurassic Tank‘ flume (St. Anthony Falls Laboratory) to create three-dimensional chronostratigraphic diagrams, compute stratigraphic completeness, and test several sequence stratigraphic concepts.</description>
+    </item>
+  </channel>
+</rss>

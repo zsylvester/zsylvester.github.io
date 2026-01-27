@@ -6,8 +6,15 @@
     <description>Recent content in Geomorphology on Zoltán Sylvester</description>
     <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/tags/geomorphology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Landslide influence on delta stratigraphy, northeastern Gulf of Mexico</title>
+      <link>https://zsylvester.github.io/papers/deltas_w_landslides/</link>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/papers/deltas_w_landslides/</guid>
+      <description>Published in *Geosphere*, 2026.</description>
+    </item>
     <item>
       <title>Meandering streamflows across landscapes and scales: a review and discussion</title>
       <link>https://zsylvester.github.io/papers/meandering_book_intro/</link>
@@ -88,6 +95,13 @@
       <description>Published in *Journal of Geophysical Research: Earth Surface, v. 126, e2020JF006058*, 2021.</description>
     </item>
     <item>
+      <title>The three-dimensional geometry and stratigraphic record of meandering</title>
+      <link>https://zsylvester.github.io/presentations/nsrg_meandering_2021/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/nsrg_meandering_2021/</guid>
+      <description>This presentation explores the dynamics of meandering systems in both fluvial and submarine environments, focusing on the predictability of channel migration and the resulting stratigraphic heterogeneities.</description>
+    </item>
+    <item>
       <title>The stratigraphic evolution of a submarine channel: Linking seafloor dynamics to depositional products</title>
       <link>https://zsylvester.github.io/papers/chile_channel/</link>
       <pubDate>Mon, 20 Jul 2020 00:00:00 +0000</pubDate>
@@ -107,6 +121,13 @@
       <pubDate>Mon, 27 May 2019 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/papers/campos_translation/</guid>
       <description>Published in *The Depositional Record, v. 6, p. 259-272*, 2019.</description>
+    </item>
+    <item>
+      <title>meanderpy: A simple model of meandering</title>
+      <link>https://zsylvester.github.io/presentations/meanderpy_csdms_2019/</link>
+      <pubDate>Wed, 22 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/meanderpy_csdms_2019/</guid>
+      <description>A talk about &amp;#39;meanderpy&amp;#39; at the 2019 CSDMS meeting</description>
     </item>
     <item>
       <title>Conversion of tectonic and climatic forcings into records of sediment supply and provenance</title>

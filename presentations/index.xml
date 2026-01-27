@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Presentations on Zoltán Sylvester</title>
+    <link>https://zsylvester.github.io/presentations/</link>
+    <description>Recent content in Presentations on Zoltán Sylvester</description>
+    <generator>Hugo -- 0.148.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://zsylvester.github.io/presentations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A frozen history of meandering: Mapping and modeling ice-wedge polygons on point bars</title>
+      <link>https://zsylvester.github.io/presentations/permafrost_polygons_2023/</link>
+      <pubDate>Thu, 09 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/permafrost_polygons_2023/</guid>
+      <description>A number of meandering rivers in the Arctic, especially in Siberia, have point bars with strikingly structured permafrost polygon patterns. We use a Unet-type convolutional neural network to map the polygons.</description>
+    </item>
+    <item>
+      <title>Stratigraphic correlation: Old concepts inform new approaches</title>
+      <link>https://zsylvester.github.io/presentations/beg_chronostratigraphy_2022/</link>
+      <pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/beg_chronostratigraphy_2022/</guid>
+      <description>In this talk, I first want to revisit and visualize the basic ideas about how time is recorded - or not recorded - in sedimentary deposits and then show how chronostratigraphic diagrams can be used as key elements of an automated workflow for correlating geophysical well logs.</description>
+    </item>
+    <item>
+      <title>Chronostratigraphic diagrams revisited: Visualization and correlation in the time domain</title>
+      <link>https://zsylvester.github.io/presentations/chronostratigraphy_liverpool_2021/</link>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/chronostratigraphy_liverpool_2021/</guid>
+      <description>We use experimental data from the ‘Jurassic Tank‘ flume (St. Anthony Falls Laboratory) to create three-dimensional chronostratigraphic diagrams, compute stratigraphic completeness, and test several sequence stratigraphic concepts.</description>
+    </item>
+    <item>
+      <title>The three-dimensional geometry and stratigraphic record of meandering</title>
+      <link>https://zsylvester.github.io/presentations/nsrg_meandering_2021/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/nsrg_meandering_2021/</guid>
+      <description>This presentation explores the dynamics of meandering systems in both fluvial and submarine environments, focusing on the predictability of channel migration and the resulting stratigraphic heterogeneities.</description>
+    </item>
+    <item>
+      <title>meanderpy: A simple model of meandering</title>
+      <link>https://zsylvester.github.io/presentations/meanderpy_csdms_2019/</link>
+      <pubDate>Wed, 22 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/meanderpy_csdms_2019/</guid>
+      <description>A talk about &amp;#39;meanderpy&amp;#39; at the 2019 CSDMS meeting</description>
+    </item>
+  </channel>
+</rss>

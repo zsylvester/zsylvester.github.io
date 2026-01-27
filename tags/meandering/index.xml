@@ -23,6 +23,13 @@
       <description>This paper investigates the relationship between post-cutoff bend curvature and channel kinematics in meandering rivers using Trinity River data. Published in *Geological Society, London, Special Publications*, 2024.</description>
     </item>
     <item>
+      <title>A frozen history of meandering: Mapping and modeling ice-wedge polygons on point bars</title>
+      <link>https://zsylvester.github.io/presentations/permafrost_polygons_2023/</link>
+      <pubDate>Thu, 09 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/permafrost_polygons_2023/</guid>
+      <description>A number of meandering rivers in the Arctic, especially in Siberia, have point bars with strikingly structured permafrost polygon patterns. We use a Unet-type convolutional neural network to map the polygons.</description>
+    </item>
+    <item>
       <title>Giant meandering channel evolution, Campos deep-water salt basin, Brazil</title>
       <link>https://zsylvester.github.io/papers/campos_giant_channels/</link>
       <pubDate>Fri, 06 Aug 2021 00:00:00 +0000</pubDate>
@@ -51,6 +58,20 @@
       <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       <guid>https://zsylvester.github.io/papers/donovan_et_al_jgr/</guid>
       <description>Published in *Journal of Geophysical Research: Earth Surface, v. 126, e2020JF006058*, 2021.</description>
+    </item>
+    <item>
+      <title>The three-dimensional geometry and stratigraphic record of meandering</title>
+      <link>https://zsylvester.github.io/presentations/nsrg_meandering_2021/</link>
+      <pubDate>Tue, 05 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/nsrg_meandering_2021/</guid>
+      <description>This presentation explores the dynamics of meandering systems in both fluvial and submarine environments, focusing on the predictability of channel migration and the resulting stratigraphic heterogeneities.</description>
+    </item>
+    <item>
+      <title>meanderpy: A simple model of meandering</title>
+      <link>https://zsylvester.github.io/presentations/meanderpy_csdms_2019/</link>
+      <pubDate>Wed, 22 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/meanderpy_csdms_2019/</guid>
+      <description>A talk about &amp;#39;meanderpy&amp;#39; at the 2019 CSDMS meeting</description>
     </item>
     <item>
       <title>Does river migration slow down in high-curvature bends?</title>
