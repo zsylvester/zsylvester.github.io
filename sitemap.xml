@@ -2,8 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://zsylvester.github.io/presentations/rivers_beg_seminar_2026/</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://zsylvester.github.io/tags/geomorphology/</loc>
-    <lastmod>2026-01-09T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/tags/meandering/</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/presentations/</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/tags/remote-sensing/</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/tags/sedimentology/</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/tags/stratigraphy/</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/tags/</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/</loc>
+    <lastmod>2026-03-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/papers/deltas_w_landslides/</loc>
     <lastmod>2026-01-09T00:00:00+00:00</lastmod>
@@ -20,16 +44,7 @@
     <loc>https://zsylvester.github.io/tags/seismic/</loc>
     <lastmod>2026-01-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/tags/stratigraphy/</loc>
-    <lastmod>2026-01-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://zsylvester.github.io/tags/submarine-channels/</loc>
-    <lastmod>2026-01-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/tags/</loc>
-    <lastmod>2026-01-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/</loc>
     <lastmod>2026-01-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/tags/bend-cutoffs/</loc>
@@ -65,9 +80,6 @@
     <loc>https://zsylvester.github.io/tags/reservoir-modeling/</loc>
     <lastmod>2025-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zsylvester.github.io/tags/sedimentology/</loc>
-    <lastmod>2025-08-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://zsylvester.github.io/papers/segmenteverygrain/</loc>
     <lastmod>2025-08-01T00:00:00+00:00</lastmod>
   </url><url>
@@ -94,9 +106,6 @@
   </url><url>
     <loc>https://zsylvester.github.io/papers/cedar_mountain_avulsion/</loc>
     <lastmod>2024-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/tags/meandering/</loc>
-    <lastmod>2024-07-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/papers/meandering_book_intro/</loc>
     <lastmod>2024-07-11T00:00:00+00:00</lastmod>
@@ -142,9 +151,6 @@
   </url><url>
     <loc>https://zsylvester.github.io/tags/point-bars/</loc>
     <lastmod>2023-11-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/presentations/</loc>
-    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/papers/chronolog/</loc>
     <lastmod>2023-05-23T00:00:00+00:00</lastmod>

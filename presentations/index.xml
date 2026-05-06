@@ -6,8 +6,15 @@
     <description>Recent content in Presentations on Zoltán Sylvester</description>
     <generator>Hugo -- 0.148.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://zsylvester.github.io/presentations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Accreting, fast and slow: Geometry, kinematics and sediment load of fluvial channels</title>
+      <link>https://zsylvester.github.io/presentations/rivers_beg_seminar_2026/</link>
+      <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://zsylvester.github.io/presentations/rivers_beg_seminar_2026/</guid>
+      <description>We developed &amp;lsquo;rivabar&amp;rsquo;, a graph-based Python tool that automatically extracts river centerlines and banklines from time-lapse satellite imagery, and use it to investigate how sediment load drives channel migration patterns and stratigraphic complexity in single-thread and multi-thread rivers.</description>
+    </item>
     <item>
       <title>A frozen history of meandering: Mapping and modeling ice-wedge polygons on point bars</title>
       <link>https://zsylvester.github.io/presentations/permafrost_polygons_2023/</link>

@@ -40,7 +40,9 @@
     <meta property="article:tag" content="Stratigraphy">
     <meta property="article:tag" content="Modeling">
     <meta property="article:tag" content="Geology">
-<meta name="twitter:card" content="summary">
+    <meta property="og:image" content="https://zsylvester.github.io/img/log_correlation_permian_basin.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zsylvester.github.io/img/log_correlation_permian_basin.jpg">
 <meta name="twitter:title" content="Automated multi-well stratigraphic correlation and model building using relative geologic time">
 <meta name="twitter:description" content="Published in *Basin Research, v. 35, p. 1961-1984*, 2023.">
 
@@ -78,7 +80,7 @@
   "articleBody": "Abstract Stratigraphic correlation of geophysical well logs is one of the most importantand most time-consuming—tasks that applied geoscientists perform on a daily basis. Using the dynamic time warping (DTW) algorithm, automated correlation of two wells is a fairly simple task; DTW can also be used to correlate a large number of wells along a single path. However, errors accumulate along a path and loops cannot be closed. To create a three-dimensionally consistent correlation framework, we use a Python implementation of the Wheeler and Hale (2014) approach, which is based on the idea of stretching and squeezing all logs into a chronostratigraphic diagram that has relative geologic time (RGT) on its y- axis. The depth shifts needed for the RGT transformation are computed by translating the outputs of a large number of pairwise DTW correlations into a least-squares optimization problem that is solved through the conjugate gradient method. The resulting chronostratigraphic diagram provides an overview of the overall stratigraphy and its variability; and the correlation framework is significantly different from what one could get from correlating based on lithologic similarity between two logs. To create geologically intuitive well-log cross sections, we use a multi-scale blocking method that relies on the continuous wavelet transform to identify stratigraphic units of a certain scale in one well and then propagate these boundaries to all the other wells. We demonstrate the usefulness of this approach on a data set with close to 700 wells from the Permian Basin, West Texas. Linear channel bodies in the deepwater Spraberry Formation are easily detected and clearly highlighted in maps and cross sections. The methodology is robust enough for mapping subtle stratigraphic details, previously considered feasible only through manual interpretation. More importantly, it can be used to quickly build three-dimensional stratigraphic models for large segments of sedimentary basins where enough log data are available.\nCitation Z. Sylvester (2023). Automated multi-well stratigraphic correlation and model building using relative geologic time. Basin Research, v. 35, p. 1961-1984. doi: Link\n@article{sylvester2023_automated, author = {Z. Sylvester}, year = {2023}, title = {Automated multi-well stratigraphic correlation and model building using relative geologic time}, journal = {Basin Research}, volume = {35}, pages = {1961--1984}, url = {https://onlinelibrary.wiley.com/doi/10.1111/bre.12787}} Related material Supplementary Material ",
   "wordCount" : "366",
   "inLanguage": "en",
-  "datePublished": "2023-05-23T00:00:00Z",
+  "image":"https://zsylvester.github.io/img/log_correlation_permian_basin.jpg","datePublished": "2023-05-23T00:00:00Z",
   "dateModified": "2023-05-23T00:00:00Z",
   "author":[{
     "@type": "Person",
@@ -183,6 +185,10 @@
 
 </div>
   </header> 
+<figure class="entry-cover">
+        <img loading="eager" src="https://zsylvester.github.io/img/log_correlation_permian_basin.jpg" alt="Chronostratigraphic log correlation in the Permian Basin">
+        
+</figure>
   <div class="post-content"><h5 id="abstract">Abstract</h5>
 <p>Stratigraphic correlation of geophysical well logs is one of the most importantand most time-consuming—tasks that applied geoscientists perform on a daily basis. Using the dynamic time warping (DTW) algorithm, automated correlation of two wells is a fairly simple task; DTW can also be used to correlate a large number of wells along a single path. However, errors accumulate along a path and loops cannot be closed. To create a three-dimensionally consistent correlation framework, we use a Python implementation of the Wheeler and Hale (2014) approach, which is based on the idea of stretching and squeezing all logs into a chronostratigraphic diagram that has relative geologic time (RGT) on its y- axis. The depth shifts needed for the RGT transformation are computed by translating the outputs of a large number of pairwise DTW correlations into a least-squares optimization problem that is solved through the conjugate gradient method. The resulting chronostratigraphic diagram provides an overview of the overall stratigraphy and its variability; and the correlation framework is significantly different from what one could get from correlating based on lithologic similarity between two logs. To create geologically intuitive well-log cross sections, we use a multi-scale blocking method that relies on the continuous wavelet transform to identify stratigraphic units of a certain scale in one well and then propagate these boundaries to all the other wells. We demonstrate the usefulness of this approach on a data set with close to 700 wells from the Permian Basin, West Texas. Linear channel bodies in the deepwater Spraberry Formation are easily detected and clearly highlighted in maps and cross sections. The methodology is robust enough for mapping subtle stratigraphic details, previously considered feasible only through manual interpretation. More importantly, it can be used to quickly build three-dimensional stratigraphic models for large segments of sedimentary basins where enough log data are available.</p>
 <hr>
