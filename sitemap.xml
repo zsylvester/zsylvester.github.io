@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://zsylvester.github.io/research/</loc>
+    <lastmod>2026-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zsylvester.github.io/</loc>
+    <lastmod>2026-10-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://zsylvester.github.io/tags/correlation/</loc>
     <lastmod>2026-07-02T00:00:00+00:00</lastmod>
   </url><url>
@@ -27,9 +33,6 @@
     <lastmod>2026-07-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/presentations/strange_ordinariness_gsa_2026/</loc>
-    <lastmod>2026-07-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/</loc>
     <lastmod>2026-07-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/presentations/rivers_beg_seminar_2026/</loc>
@@ -142,9 +145,6 @@
   </url><url>
     <loc>https://zsylvester.github.io/papers/taranaki_channels/</loc>
     <lastmod>2024-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zsylvester.github.io/research/</loc>
-    <lastmod>2024-01-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zsylvester.github.io/presentations/permafrost_polygons_2023/</loc>
     <lastmod>2023-11-09T00:00:00+00:00</lastmod>
